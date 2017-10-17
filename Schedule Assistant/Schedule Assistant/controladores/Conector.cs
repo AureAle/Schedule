@@ -14,6 +14,8 @@ namespace Schedule_Assistant
         OleDbConnection conectar;
         OleDbCommand comando;
 
+//************************************************ control *******************************************************
+
         private void ConnectTo()
         {
             //cambiar ruta
@@ -44,6 +46,17 @@ namespace Schedule_Assistant
             ConnectTo();
         }
 
+
+/*
+ * CRUD:
+ * create
+ * read
+ * update
+ * Delete
+ */
+// ****************************************** escritura *******************************************
+
+        /// <summary> registra el maestro indicado enla base de datos </summary>
         public void InsertarProfe(Profe p)
         {
             try
@@ -68,67 +81,7 @@ namespace Schedule_Assistant
             }
         }
 
-
-        public List<Profe> MostrarNombres()
-        {
-            List<Profe> profesLista = new List<Profe>();
-
-            try
-            {
-                comando.CommandText = "SELECT * FROM Profesores";
-                comando.CommandType = System.Data.CommandType.Text;
-                conectar.Open();
-                OleDbDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
-                {
-                    Profe p = new Profe();
-                    p.Id = Convert.ToInt32(lector["ID"].ToString());
-                    p.Nombre1 = lector["Nombre"].ToString();
-                    //p.Hora1 = lector["Horarios"].ToString();
-
-                    profesLista.Add(p);
-                }
-
-                return profesLista;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (conectar != null)
-                {
-                    conectar.Close();
-                }
-            }
-        }
-
-        public void Actualizar(Profe anteriorP, Profe nuevoP)
-        {
-            try
-            {
-                comando.CommandText = "UPDATE Profesores SET Nombre='" + nuevoP.Nombre1 + "' WHERE ID= " + anteriorP.Id;
-                comando.CommandType = System.Data.CommandType.Text;
-                conectar.Open();
-                comando.ExecuteNonQuery();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (conectar != null)
-                {
-                    conectar.Close();
-                }
-            }
-
-        }
-
+        /// <summary> registra las horas no disponibles del maestro indicado en la base de datos </summary>
         public void AgregarHorariosNoDisponibles(Profe p, HoraNoDisponible hnd)//Agregar a la base de datos
         {
 
@@ -139,7 +92,6 @@ namespace Schedule_Assistant
                 comando.CommandType = System.Data.CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
-
 
             }
             catch (Exception)
@@ -155,30 +107,6 @@ namespace Schedule_Assistant
             }
         }      
 
-        //revisar en la base de datos bien(?) 
-        public void ActualizarMaterias(Profe anteriorP, Profe nuevoP)
-        {
-            try
-            {
-                //comando.CommandText = "UPDATE Profesores SET Materias='" + nuevoP.Materias1 + "' WHERE ID= " + anteriorP.Id;
-                comando.CommandType = System.Data.CommandType.Text;
-                conectar.Open();
-                comando.ExecuteNonQuery();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (conectar != null)
-                {
-                    conectar.Close();
-                }
-            }
-
-        }
         //creo que esto ya no va (?)
         public void AgregarHorario(Profe p)
         {
@@ -204,6 +132,102 @@ namespace Schedule_Assistant
 
         }
 
+
+//*********************************** lectura ****************************************************
+
+        /// <summary> retorna un array de todos los profesores en la base de datos </summary>
+        public Profe[] MostrarNombres()
+        {
+            List<Profe> profesLista = new List<Profe>();
+
+            try
+            {
+                comando.CommandText = "SELECT * FROM Profesores";
+                comando.CommandType = System.Data.CommandType.Text;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Profe p = new Profe();
+                    p.Id = (int)lector["ID"];
+                    p.Nombre1 = lector["Nombre"].ToString();
+                    //p.Hora1 = lector["Horarios"].ToString();
+
+                    profesLista.Add(p);
+                }
+
+                return profesLista.ToArray();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conectar != null)
+                {
+                    conectar.Close();
+                }
+            }
+        }
+
+
+//****************************************** modificar *******************************************
+
+        public void Actualizar(Profe anteriorP, Profe nuevoP)
+        {
+            try
+            {
+                comando.CommandText = "UPDATE Profesores SET Nombre='" + nuevoP.Nombre1 + "' WHERE ID= " + anteriorP.Id;
+                comando.CommandType = System.Data.CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conectar != null)
+                {
+                    conectar.Close();
+                }
+            }
+
+        }
+
+        //revisar en la base de datos bien(?) 
+        public void ActualizarMaterias(Profe anteriorP, Profe nuevoP)
+        {
+            try
+            {
+                //comando.CommandText = "UPDATE Profesores SET Materias='" + nuevoP.Materias1 + "' WHERE ID= " + anteriorP.Id;
+                comando.CommandType = System.Data.CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conectar != null)
+                {
+                    conectar.Close();
+                }
+            }
+
+        }
+
+
+//*************************************** borrar ************************************************
+
+        /// <summary> elimina al maestro indicado de la base de datos </summary>
         public void Borrar(Profe p)
         {
             try

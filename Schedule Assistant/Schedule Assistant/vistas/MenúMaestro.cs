@@ -23,7 +23,7 @@ namespace Schedule_Assistant
         public void LlenarListaProfesores()
         {
             lstProfesores.Items.Clear();
-            lstProfesores.Items.AddRange(c.MostrarNombres().ToArray());
+            lstProfesores.Items.AddRange(c.MostrarNombres());
         }
 
         private void lstProfesores_SelectedIndexChanged(object sender, EventArgs e)
