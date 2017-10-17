@@ -1,0 +1,13 @@
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\bin\Debug\Schedule Assistant.exe.config
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\bin\Debug\Schedule Assistant.exe
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\bin\Debug\Schedule Assistant.pdb
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule_Assistant.Home.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenú.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúHorasNoDisponibles.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaestro.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaterias.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule_Assistant.Properties.Resources.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule Assistant.exe
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule Assistant.pdb

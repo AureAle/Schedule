@@ -45,54 +45,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conector.cs" />
-    <Compile Include="Home.cs">
+    <Compile Include="controladores\Conector.cs" />
+    <Compile Include="vistas\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="vistas\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoraNoDisponible.cs" />
-    <Compile Include="Menú.cs">
+    <Compile Include="objetos\HoraNoDisponible.cs" />
+    <Compile Include="vistas\Menú.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menú.Designer.cs">
+    <Compile Include="vistas\Menú.Designer.cs">
       <DependentUpon>Menú.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenúHorasNoDisponibles.cs">
+    <Compile Include="vistas\MenúHorasNoDisponibles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenúHorasNoDisponibles.Designer.cs">
+    <Compile Include="vistas\MenúHorasNoDisponibles.Designer.cs">
       <DependentUpon>MenúHorasNoDisponibles.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenúMaestro.cs">
+    <Compile Include="vistas\MenúMaestro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenúMaestro.Designer.cs">
+    <Compile Include="vistas\MenúMaestro.Designer.cs">
       <DependentUpon>MenúMaestro.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenúMaterias.cs">
+    <Compile Include="vistas\MenúMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenúMaterias.Designer.cs">
+    <Compile Include="vistas\MenúMaterias.Designer.cs">
       <DependentUpon>MenúMaterias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profe.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="objetos\Profe.cs" />
+    <Compile Include="controladores\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="vistas\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menú.resx">
+    <EmbeddedResource Include="vistas\Menú.resx">
       <DependentUpon>Menú.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenúHorasNoDisponibles.resx">
+    <EmbeddedResource Include="vistas\MenúHorasNoDisponibles.resx">
       <DependentUpon>MenúHorasNoDisponibles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenúMaestro.resx">
+    <EmbeddedResource Include="vistas\MenúMaestro.resx">
       <DependentUpon>MenúMaestro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenúMaterias.resx">
+    <EmbeddedResource Include="vistas\MenúMaterias.resx">
       <DependentUpon>MenúMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -117,5 +117,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
