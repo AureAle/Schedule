@@ -19,7 +19,7 @@ namespace Schedule_Assistant
         private void ConnectTo()
         {
             //cambiar ruta
-            conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\auren\OneDrive\Documentos\PI 3ero\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
+            conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
             comando = conectar.CreateCommand();
         }
 
@@ -82,7 +82,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary> registra las horas no disponibles del maestro indicado en la base de datos </summary>
-        public void AgregarHorariosNoDisponibles(Profe p, HoraNoDisponible hnd)
+        public void AgregarHorariosNoDisponibles(Profe p, HoraNoDisponible hnd)//Agregar a la base de datos
         {
 
             try
@@ -107,30 +107,7 @@ namespace Schedule_Assistant
             }
         }      
 
-        //creo que esto ya no va (?)
-        public void AgregarHorario(Profe p)
-        {
-            try
-            {
-                //comando.CommandText = "UPDATE Profesores SET Horarios='" + p.Hora1 + "' WHERE ID=" + p.Id;
-                comando.CommandType = System.Data.CommandType.Text;
-                conectar.Open();
-                comando.ExecuteNonQuery();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (conectar != null)
-                {
-                    conectar.Close();
-                }
-            }
-
-        }
+        
 
 
 //*********************************** lectura ****************************************************
@@ -175,7 +152,7 @@ namespace Schedule_Assistant
 
 //****************************************** modificar *******************************************
 
-        public void Actualizar(Profe anteriorP, Profe nuevoP)
+        public void ActualizarProfesor(Profe anteriorP, Profe nuevoP)
         {
             try
             {
@@ -199,30 +176,7 @@ namespace Schedule_Assistant
 
         }
 
-        //revisar en la base de datos bien(?) 
-        public void ActualizarMaterias(Profe anteriorP, Profe nuevoP)
-        {
-            try
-            {
-                //comando.CommandText = "UPDATE Profesores SET Materias='" + nuevoP.Materias1 + "' WHERE ID= " + anteriorP.Id;
-                comando.CommandType = System.Data.CommandType.Text;
-                conectar.Open();
-                comando.ExecuteNonQuery();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (conectar != null)
-                {
-                    conectar.Close();
-                }
-            }
-
-        }
+       
 
 
 //*************************************** borrar ************************************************

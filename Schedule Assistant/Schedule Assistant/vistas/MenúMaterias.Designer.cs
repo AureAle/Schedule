@@ -38,17 +38,17 @@
             // 
             // txtMateria
             // 
-            this.txtMateria.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMateria.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtMateria.Location = new System.Drawing.Point(281, 200);
             this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(292, 29);
+            this.txtMateria.Size = new System.Drawing.Size(292, 26);
             this.txtMateria.TabIndex = 19;
             // 
             // bttnBorrarMateria
             // 
             this.bttnBorrarMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnBorrarMateria.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnBorrarMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnBorrarMateria.ForeColor = System.Drawing.Color.SteelBlue;
             this.bttnBorrarMateria.Location = new System.Drawing.Point(213, 544);
             this.bttnBorrarMateria.Name = "bttnBorrarMateria";
@@ -59,30 +59,30 @@
             // 
             // lstListaMateriasProfesores
             // 
-            this.lstListaMateriasProfesores.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstListaMateriasProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstListaMateriasProfesores.ForeColor = System.Drawing.Color.SteelBlue;
             this.lstListaMateriasProfesores.FormattingEnabled = true;
-            this.lstListaMateriasProfesores.ItemHeight = 21;
+            this.lstListaMateriasProfesores.ItemHeight = 20;
             this.lstListaMateriasProfesores.Location = new System.Drawing.Point(213, 252);
             this.lstListaMateriasProfesores.Name = "lstListaMateriasProfesores";
-            this.lstListaMateriasProfesores.Size = new System.Drawing.Size(360, 277);
+            this.lstListaMateriasProfesores.Size = new System.Drawing.Size(360, 264);
             this.lstListaMateriasProfesores.TabIndex = 17;
             // 
             // lblMateria
             // 
             this.lblMateria.AutoSize = true;
-            this.lblMateria.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMateria.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblMateria.Location = new System.Drawing.Point(209, 204);
             this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(66, 21);
+            this.lblMateria.Size = new System.Drawing.Size(66, 20);
             this.lblMateria.TabIndex = 16;
             this.lblMateria.Text = "Materia:";
             // 
             // bttnAgregarMaterias
             // 
             this.bttnAgregarMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnAgregarMaterias.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnAgregarMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnAgregarMaterias.ForeColor = System.Drawing.Color.SteelBlue;
             this.bttnAgregarMaterias.Location = new System.Drawing.Point(427, 544);
             this.bttnAgregarMaterias.Name = "bttnAgregarMaterias";
@@ -94,17 +94,17 @@
             // lblMaterias
             // 
             this.lblMaterias.AutoSize = true;
-            this.lblMaterias.Font = new System.Drawing.Font("Arial Unicode MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaterias.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblMaterias.Location = new System.Drawing.Point(330, 106);
             this.lblMaterias.Name = "lblMaterias";
-            this.lblMaterias.Size = new System.Drawing.Size(165, 50);
+            this.lblMaterias.Size = new System.Drawing.Size(161, 42);
             this.lblMaterias.TabIndex = 20;
             this.lblMaterias.Text = "Materias";
             // 
             // MenúMaterias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(783, 683);
@@ -114,10 +114,10 @@
             this.Controls.Add(this.lstListaMateriasProfesores);
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.bttnAgregarMaterias);
-            this.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenúMaterias";
             this.Text = "MenúMaterias";
             this.ResumeLayout(false);
