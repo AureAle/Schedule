@@ -82,7 +82,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary> registra las horas no disponibles del maestro indicado en la base de datos </summary>
-        public void AgregarHorariosNoDisponibles(Profe p, HoraNoDisponible hnd)//Agregar a la base de datos
+        public void AgregarHorariosNoDisponibles(Profe p, HoraNoDisponible hnd)
         {
 
             try
