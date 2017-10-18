@@ -10,12 +10,12 @@ namespace Schedule_Assistant
         
     {
         private int id;
-        private DateTime hora;
-        private string día;
+        private int hora;
+        private int día;
 
         public int Id { get => id; set => id = value; }
-        public DateTime Hora { get => hora; set => hora = value; }
-        public string Día { get => día; set => día = value; }
+        public int Hora { get => hora; set => hora = value; }
+        public int Día { get => día; set => día = value; }
 
 
     }

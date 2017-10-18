@@ -15,7 +15,13 @@ namespace Schedule_Assistant
         public frmMenú()
         {
             InitializeComponent();
-           
+            Home home = new Home();
+            home.MdiParent = this;
+            home.Show();
+
+            home.Size = pnlFondo.Size;
+            home.Location = pnlFondo.Location;
+
         }
 
         private void btnAdminProfes_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace Schedule_Assistant
 {
-    partial class MenúMaestro
+    partial class MenuMaestro
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,9 @@
             this.bttnModificarMaterias = new System.Windows.Forms.Button();
             this.bttnEliminarProfesor = new System.Windows.Forms.Button();
             this.bttnModificarProfesor = new System.Windows.Forms.Button();
+            this.lblNuevoNombre = new System.Windows.Forms.Label();
             this.bttnGuardarNuevoNombre = new System.Windows.Forms.Button();
+            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblMaestros
@@ -60,8 +62,6 @@
             this.txtNombreProfesor.Name = "txtNombreProfesor";
             this.txtNombreProfesor.Size = new System.Drawing.Size(294, 26);
             this.txtNombreProfesor.TabIndex = 2;
-            this.txtNombreProfesor.Click += new System.EventHandler(this.txtNombreProfesor_Click);
-            this.txtNombreProfesor.Leave += new System.EventHandler(this.txtNombreProfesor_Leave);
             // 
             // bttnAgregarProfesor
             // 
@@ -96,7 +96,7 @@
             this.lstProfesores.ItemHeight = 20;
             this.lstProfesores.Location = new System.Drawing.Point(227, 232);
             this.lstProfesores.Name = "lstProfesores";
-            this.lstProfesores.Size = new System.Drawing.Size(532, 324);
+            this.lstProfesores.Size = new System.Drawing.Size(532, 264);
             this.lstProfesores.TabIndex = 10;
             this.lstProfesores.SelectedIndexChanged += new System.EventHandler(this.lstProfesores_SelectedIndexChanged);
             // 
@@ -147,11 +147,22 @@
             this.bttnModificarProfesor.ForeColor = System.Drawing.Color.SteelBlue;
             this.bttnModificarProfesor.Location = new System.Drawing.Point(334, 594);
             this.bttnModificarProfesor.Name = "bttnModificarProfesor";
-            this.bttnModificarProfesor.Size = new System.Drawing.Size(86, 46);
+            this.bttnModificarProfesor.Size = new System.Drawing.Size(90, 46);
             this.bttnModificarProfesor.TabIndex = 27;
             this.bttnModificarProfesor.Text = "Modificar";
             this.bttnModificarProfesor.UseVisualStyleBackColor = false;
             this.bttnModificarProfesor.Click += new System.EventHandler(this.bttnModificarProfesor_Click);
+            // 
+            // lblNuevoNombre
+            // 
+            this.lblNuevoNombre.AutoSize = true;
+            this.lblNuevoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoNombre.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblNuevoNombre.Location = new System.Drawing.Point(223, 540);
+            this.lblNuevoNombre.Name = "lblNuevoNombre";
+            this.lblNuevoNombre.Size = new System.Drawing.Size(114, 20);
+            this.lblNuevoNombre.TabIndex = 33;
+            this.lblNuevoNombre.Text = "NuevoNombre:";
             // 
             // bttnGuardarNuevoNombre
             // 
@@ -159,21 +170,33 @@
             this.bttnGuardarNuevoNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnGuardarNuevoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnGuardarNuevoNombre.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnGuardarNuevoNombre.Location = new System.Drawing.Point(677, 172);
+            this.bttnGuardarNuevoNombre.Location = new System.Drawing.Point(666, 532);
             this.bttnGuardarNuevoNombre.Name = "bttnGuardarNuevoNombre";
             this.bttnGuardarNuevoNombre.Size = new System.Drawing.Size(93, 36);
-            this.bttnGuardarNuevoNombre.TabIndex = 31;
+            this.bttnGuardarNuevoNombre.TabIndex = 32;
             this.bttnGuardarNuevoNombre.Text = "Guardar";
             this.bttnGuardarNuevoNombre.UseVisualStyleBackColor = false;
             this.bttnGuardarNuevoNombre.Click += new System.EventHandler(this.bttnGuardarNuevoNombre_Click);
             // 
-            // MenúMaestro
+            // txtNuevoNombre
+            // 
+            this.txtNuevoNombre.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNuevoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNuevoNombre.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtNuevoNombre.Location = new System.Drawing.Point(366, 536);
+            this.txtNuevoNombre.Name = "txtNuevoNombre";
+            this.txtNuevoNombre.Size = new System.Drawing.Size(294, 26);
+            this.txtNuevoNombre.TabIndex = 31;
+            // 
+            // MenuMaestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(983, 680);
+            this.Controls.Add(this.lblNuevoNombre);
             this.Controls.Add(this.bttnGuardarNuevoNombre);
+            this.Controls.Add(this.txtNuevoNombre);
             this.Controls.Add(this.bttnHorariosProfesor);
             this.Controls.Add(this.bttnModificarMaterias);
             this.Controls.Add(this.bttnEliminarProfesor);
@@ -184,9 +207,8 @@
             this.Controls.Add(this.txtNombreProfesor);
             this.Controls.Add(this.lblMaestros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MenúMaestro";
+            this.Name = "MenuMaestro";
             this.Text = "Maestro";
-            this.Click += new System.EventHandler(this.MenúMaestro_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +225,8 @@
         private System.Windows.Forms.Button bttnModificarMaterias;
         private System.Windows.Forms.Button bttnEliminarProfesor;
         private System.Windows.Forms.Button bttnModificarProfesor;
+        private System.Windows.Forms.Label lblNuevoNombre;
         private System.Windows.Forms.Button bttnGuardarNuevoNombre;
+        private System.Windows.Forms.TextBox txtNuevoNombre;
     }
 }
