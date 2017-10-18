@@ -141,7 +141,7 @@ namespace Schedule_Assistant
         private void txtNombreProfesor_Click(object sender, EventArgs e)
         {
             txtNombreProfesor.Text = "";
-            txtNombreProfesor.ForeColor = Color.Black;
+            txtNombreProfesor.ForeColor = Color.SteelBlue;
         }
         //PERMANECERA LA MARCA DE AGUA CUANDO SE SIGA EN MODO MODIFICAR PROFESOR
         private void txtNombreProfesor_Leave(object sender, EventArgs e)
@@ -158,7 +158,7 @@ namespace Schedule_Assistant
             bttnGuardarNuevoNombre.Visible = false;
             bttnAgregarProfesor.Visible = true;
             txtNombreProfesor.Text = "";
-            txtNombreProfesor.ForeColor = Color.Black;
+            txtNombreProfesor.ForeColor = Color.SteelBlue;
         }
     }
 }
