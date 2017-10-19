@@ -12,16 +12,13 @@ namespace Schedule_Assistant
 {
     public partial class frmMenú : Form
     {
+
+        private MenuMaestro;
+
+
         public frmMenú()
         {
             InitializeComponent();
-            Home home = new Home();
-            home.MdiParent = this;
-            home.Show();
-
-            home.Size = pnlFondo.Size;
-            home.Location = pnlFondo.Location;
-
         }
 
         private void btnAdminProfes_Click(object sender, EventArgs e)
@@ -36,12 +33,7 @@ namespace Schedule_Assistant
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
-            home.MdiParent = this;
-            home.Show();
-
-            home.Size = pnlFondo.Size;
-            home.Location = pnlFondo.Location;
+            
         }
     }
 }
