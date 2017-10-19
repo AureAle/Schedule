@@ -39,3 +39,16 @@ C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule Assistant.exe
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.exe.config
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.exe
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.pdb
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.Home.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenú.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúHorasNoDisponibles.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaestro.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaterias.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.Properties.Resources.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.exe
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.pdb

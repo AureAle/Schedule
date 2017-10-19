@@ -19,7 +19,7 @@ namespace Schedule_Assistant
         private void ConnectTo()
         {
             //cambiar ruta
-            conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule\HorariosDB.accdb; Persist Security Info = False; ");
+            conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
             comando = conectar.CreateCommand();
         }
 

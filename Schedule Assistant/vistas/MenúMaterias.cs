@@ -16,5 +16,10 @@ namespace Schedule_Assistant
         {
             InitializeComponent();
         }
+
+        private void bttnModificarCreditos_Click(object sender, EventArgs e)
+        {
+            //INHABILITAR EL CAMPO MATERIA Y APARECER BOTON GUARDAR
+        }
     }
 }
