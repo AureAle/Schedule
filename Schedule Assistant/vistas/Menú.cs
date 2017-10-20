@@ -1,26 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Linq;
+using System.Drawing;
+using Schedule_Assistant;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Schedule_Assistant
 {
     public partial class frmMenú : Form
     {
-
-        private MenuMaestro;
-
+        private MenúMaestro maestro;
+        private MenúHorasNoDisponibles noDisponible;
+        private MenúMaterias materias;
 
         public frmMenú()
         {
             InitializeComponent();
         }
 
+        
         private void btnAdminProfes_Click(object sender, EventArgs e)
         {
             MenúMaestro maestro = new MenúMaestro();
@@ -34,6 +36,11 @@ namespace Schedule_Assistant
         private void btnHome_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnCrearHorarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

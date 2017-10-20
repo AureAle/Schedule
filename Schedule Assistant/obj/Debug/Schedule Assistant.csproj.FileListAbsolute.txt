@@ -55,3 +55,10 @@ C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.
 C:\Users\20137306\source\repos\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.exe.config
 C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.exe
 C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
+C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csprojResolveAssemblyReference.cache
+C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenú.resources
+C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúHorasNoDisponibles.resources
+C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaestro.resources
+C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaterias.resources
+C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.Properties.Resources.resources
+C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache

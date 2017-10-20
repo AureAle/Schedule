@@ -109,6 +109,7 @@
             this.btnCrearHorarios.Size = new System.Drawing.Size(67, 69);
             this.btnCrearHorarios.TabIndex = 24;
             this.btnCrearHorarios.UseVisualStyleBackColor = false;
+            this.btnCrearHorarios.Click += new System.EventHandler(this.btnCrearHorarios_Click);
             // 
             // label3
             // 
