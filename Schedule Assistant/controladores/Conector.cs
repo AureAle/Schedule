@@ -61,7 +61,7 @@ namespace Schedule_Assistant
         {
             try
             {
-                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('" + p.Nombre1 + "')";
+                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('" + p.Nombre+ "')";
                 comando.CommandType = System.Data.CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -127,8 +127,8 @@ namespace Schedule_Assistant
                 while (lector.Read())
                 {
                     Profe p = new Profe();
-                    p.Id = (int)lector["ID"];
-                    p.Nombre1 = lector["Nombre"].ToString();
+                    p.id = (int)lector["ID"];
+                    p.Nombre= lector["Nombre"].ToString();
                     //p.Hora1 = lector["Horarios"].ToString();
 
                     profesLista.Add(p);

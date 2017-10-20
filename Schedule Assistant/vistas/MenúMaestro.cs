@@ -114,7 +114,7 @@ namespace Schedule_Assistant
             if(NombreProfesorNoVacio())
             {
                 Profe p = new Profe();
-                p.Nombre1 = txtNombreProfesor.Text;
+                p.Nombre = txtNombreProfesor.Text;
                 c.InsertarProfe(p);
 
                 LlenarListaProfesores();

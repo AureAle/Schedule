@@ -23,23 +23,31 @@ namespace Schedule_Assistant
         }
 
         
-        private void btnAdminProfes_Click(object sender, EventArgs e)
-        {
-            MenúMaestro maestro = new MenúMaestro();
-            maestro.MdiParent = this;
-            maestro.Show();
-
-            maestro.Size = pnlFondo.Size;
-            maestro.Location = pnlFondo.Location;
-        }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
-            
+            noDisponible.Visible = false;
+            materias.Visible = false;
         }
 
+        private void btnAdminProfes_Click(object sender, EventArgs e)
+        {
+            if (maestro == null)
+            {
+                maestro = new MenúMaestro();
+                maestro.MdiParent = this;
+                maestro.Size = pnlFondo.Size;
+                maestro.Location = pnlFondo.Location;
+            }
+                
+            maestro.Show();
+           
+        }
+
+        
         private void btnCrearHorarios_Click(object sender, EventArgs e)
         {
+
+
 
         }
     }

@@ -8,16 +8,10 @@ namespace Schedule_Assistant
 {
     class Profe
     {
-        int id;
-        String Nombre;
-        String Hora;
-        String Materias;
-
-
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public int Id { get => id; set => id = value; }
-        //public String Hora1 { get => Hora; set => Hora = value; }
-        //public string Materias1 { get => Materias; set => Materias = value; }
+        public int id;
+        public String nombre;
+        public String hora;
+        public String materias;
 
         public override string ToString()
         {
