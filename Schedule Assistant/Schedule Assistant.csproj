@@ -47,6 +47,12 @@
   <ItemGroup>
     <Compile Include="controladores\Conector.cs" />
     <Compile Include="objetos\HoraNoDisponible.cs" />
+    <Compile Include="vistas\CrearHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\CrearHorarios.Designer.cs">
+      <DependentUpon>CrearHorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistas\Menú.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="objetos\Profe.cs" />
     <Compile Include="controladores\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="vistas\CrearHorarios.resx">
+      <DependentUpon>CrearHorarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vistas\Menú.resx">
       <DependentUpon>Menú.cs</DependentUpon>
     </EmbeddedResource>

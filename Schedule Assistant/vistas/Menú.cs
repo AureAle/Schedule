@@ -7,6 +7,7 @@ using Schedule_Assistant;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using Schedule_Assistant.vistas;
 using System.Collections.Generic;
 
 namespace Schedule_Assistant
@@ -16,6 +17,7 @@ namespace Schedule_Assistant
         private MenúMaestro maestro;
         private MenúHorasNoDisponibles noDisponible;
         private MenúMaterias materias;
+        private CrearHorarios horarios;
 
         public frmMenú()
         {
