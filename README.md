@@ -1,2 +1,2 @@
-# Teacher-assistant
-aplicacion que ayuda a los maestros con sus gurpos, asistencas, alumnos y calificaciones
+# ScheduleAssistant
+aplicacion que facilita el trabajo de directivos a la hora de hacer horarios grupales
