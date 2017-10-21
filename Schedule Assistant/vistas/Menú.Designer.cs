@@ -148,6 +148,7 @@
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(849, 609);
             this.pnlFondo.TabIndex = 2;
+            this.pnlFondo.Visible = false;
             // 
             // pictureBox1
             // 

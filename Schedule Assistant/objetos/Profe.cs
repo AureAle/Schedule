@@ -8,14 +8,29 @@ namespace Schedule_Assistant
 {
     class Profe
     {
-        public int id;
-        public String nombre;
-        public String hora;
-        public String materias;
+//*********************** atributos *********************
+        private int id;
+        private String nombre;
 
-        public override string ToString()
+
+//*********************** constructor *********************
+        public Profe(int id, string nombre)
         {
-            return Nombre;
+            this.id = id;
+            this.nombre = nombre;
         }
+
+
+//*********************** geters *********************
+        public int Id { get => id;}
+        public string Nombre { get => nombre; }
+
+
+//*********************** metodos *********************
+        public override string ToString()
+        { return Nombre; }
+
+
+
     }
 }

@@ -27,8 +27,10 @@ namespace Schedule_Assistant
         
         private void btnHome_Click(object sender, EventArgs e)
         {
+            maestro.Visible = false;
             noDisponible.Visible = false;
             materias.Visible = false;
+            horarios.Visible = false;
         }
 
         private void btnAdminProfes_Click(object sender, EventArgs e)
@@ -39,9 +41,10 @@ namespace Schedule_Assistant
                 maestro.MdiParent = this;
                 maestro.Size = pnlFondo.Size;
                 maestro.Location = pnlFondo.Location;
+                maestro.Show();
             }
-                
-            maestro.Show();
+
+            maestro.Visible = true;
            
         }
 

@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Schedule_Assistant
 {
     public partial class MenúMaestro : Form  
-
     {
-        Conector c = new Conector();
+
+//******************************** variables *********************************
+
+
+//******************************** constructor *********************************
         public MenúMaestro()
         {
             InitializeComponent();
@@ -31,8 +34,9 @@ namespace Schedule_Assistant
         public void LlenarListaProfesores()
         {
             lstProfesores.Items.Clear();
-            lstProfesores.Items.AddRange(c.MostrarNombres());
+            lstProfesores.Items.AddRange(Conector.MostrarNombres());
         }
+
         //VALIDACION PARA CAMPO NOMBRE VACIO
         public Boolean NombreProfesorNoVacio()
         {
@@ -46,6 +50,8 @@ namespace Schedule_Assistant
                 return true;
             }
         }
+
+
         //MUESTRA LAS OPCIONES UNICAMENTE CUANDO SE SELECCIONA ALGUN PROFESOR
         private void lstProfesores_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -89,6 +95,7 @@ namespace Schedule_Assistant
             
             
         }
+
         //SE ELIMINA EL PROFESOR SELECCIONADO VALIDADO
         private void bttnEliminarProfesor_Click(object sender, EventArgs e)
         {
@@ -98,24 +105,22 @@ namespace Schedule_Assistant
             }
             else
             {
-                Profe p = new Profe();
-                p = lstProfesores.SelectedItem as Profe;
-                c.Borrar(p);
+                Profe p = lstProfesores.SelectedItem as Profe;
+                Conector.BorrarProfe(p.Id);
                 LlenarListaProfesores();
             }
             
            
       
         }
-        //AGREGAR UN NUEVO PROFESOR
+        
+        /// <summary> registra al profesor indicado en la base de datos </summary>
         private void bttnAgregarProfesor_Click(object sender, EventArgs e)
         {
             //VALIDACION DE CAMPO TXTNOMBREPROFESOR NO VACIO
             if(NombreProfesorNoVacio())
             {
-                Profe p = new Profe();
-                p.Nombre = txtNombreProfesor.Text;
-                c.InsertarProfe(p);
+                Conector.InsertarProfe(txtNombreProfesor.Text);
 
                 LlenarListaProfesores();
                 txtNombreProfesor.Clear();
@@ -127,11 +132,9 @@ namespace Schedule_Assistant
         {
             if(NombreProfesorNoVacio())
             {
-                Profe antuguoProfe = new Profe();
-                Profe nuevoProfe = new Profe();
-                antuguoProfe = lstProfesores.SelectedItem as Profe;
-                nuevoProfe.Nombre1 = txtNombreProfesor.Text;
-                c.ActualizarProfesor(antuguoProfe, nuevoProfe);
+                Profe profe = lstProfesores.SelectedItem as Profe;
+                string nombre = txtNombreProfesor.Text;
+                Conector.ActualizarProfesor(profe.Id, nombre);
                 LlenarListaProfesores();
                 txtNombreProfesor.Text = "";
             }

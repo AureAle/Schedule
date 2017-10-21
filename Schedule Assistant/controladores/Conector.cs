@@ -1,51 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
-
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Schedule_Assistant
 {
-    class Conector
+    abstract class Conector
     {
 
-        OleDbConnection conectar;
-        OleDbCommand comando;
+        static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=HorariosDB.mdb; Persist Security Info = False; ");
+        static OleDbCommand comando = conectar.CreateCommand();
 
 //************************************************ control *******************************************************
-
-        private void ConnectTo()
-        {
-            //cambiar ruta
-            conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
-            comando = conectar.CreateCommand();
-        }
 
         public Boolean verificarConexion()
         {
             try
             {
+                comando = conectar.CreateCommand();
+
                 conectar.Open();
-                if (conectar.State == System.Data.ConnectionState.Open)
+                if (conectar.State == ConnectionState.Open)
                 {
                     return true;
                 }
                 else return false;
 
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                throw new ApplicationException();
             }
         }
-
-        public Conector()
-        {
-            ConnectTo();
-        }
-
 
 /*
  * CRUD:
@@ -56,28 +42,22 @@ namespace Schedule_Assistant
  */
 // ****************************************** escritura *******************************************
 
-        /// <summary> registra el maestro indicado enla base de datos </summary>
-        public void InsertarProfe(Profe p)
+        /// <summary> registra el maestro indicado enla base de datos, retorna su id </summary>
+        public static int InsertarProfe(string nombre)
         {
             try
             {
-                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('" + p.Nombre+ "')";
-                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('" + nombre+ "')";
+                comando.CommandType = CommandType.Text;
                 conectar.Open();
-                comando.ExecuteNonQuery();
-
-                // INSERT INTO Profesores (Nombre) VALUES(''); drop horariosdb; '()
-            }
-            catch (Exception)
-            {
-                throw;
+                //comando.ExecuteNonQuery();
+                object id = comando.ExecuteScalar();
+                return (int)id;
             }
             finally
             {
-                if (conectar != null)
-                {
+                if (conectar.State == ConnectionState.Open)
                     conectar.Close();
-                }
             }
         }
 
@@ -89,21 +69,15 @@ namespace Schedule_Assistant
             {
                 //revisar en la base de datos bien 
                 comando.CommandText = "INSERT INTO HorasNoDisponibles (datos) VALUES('" + p.Id + "', '" + hnd.Día + "', '" + hnd.Hora + "')";
-                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
 
             }
-            catch (Exception)
-            {
-                throw;
-            }
             finally
             {
-                if (conectar != null)
-                {
+                if (conectar.State == ConnectionState.Open)
                     conectar.Close();
-                }
             }
         }      
 
@@ -113,67 +87,53 @@ namespace Schedule_Assistant
 //*********************************** lectura ****************************************************
 
         /// <summary> retorna un array de todos los profesores en la base de datos </summary>
-        public Profe[] MostrarNombres()
+        public static Profe[] MostrarNombres()
         {
             List<Profe> profesLista = new List<Profe>();
 
             try
             {
                 comando.CommandText = "SELECT * FROM Profesores";
-                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandType = CommandType.Text;
                 conectar.Open();
                 OleDbDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
-                    Profe p = new Profe();
-                    p.id = (int)lector["ID"];
-                    p.Nombre= lector["Nombre"].ToString();
-                    //p.Hora1 = lector["Horarios"].ToString();
+                    int id = (int)lector["ID"];
+                    string  nombre = lector["Nombre"].ToString();
+                    Profe p = new Profe(id, nombre);
 
                     profesLista.Add(p);
                 }
 
                 return profesLista.ToArray();
             }
-            catch (Exception)
-            {
-                throw;
-            }
             finally
             {
-                if (conectar != null)
-                {
+                if (conectar.State == ConnectionState.Open)
                     conectar.Close();
-                }
             }
         }
 
 
 //****************************************** modificar *******************************************
 
-        public void ActualizarProfesor(Profe anteriorP, Profe nuevoP)
+        public static void ActualizarProfesor(int id, string nombre)
         {
             try
             {
-                comando.CommandText = "UPDATE Profesores SET Nombre='" + nuevoP.Nombre1 + "' WHERE ID= " + anteriorP.Id;
-                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "UPDATE Profesores SET Nombre='" + nombre + "' WHERE ID= " + id;
+                comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
 
             }
-            catch (Exception)
-            {
-                throw;
-            }
             finally
             {
-                if (conectar != null)
-                {
+                if (conectar.State == ConnectionState.Open)
                     conectar.Close();
-                }
             }
-
         }
 
        
@@ -182,26 +142,20 @@ namespace Schedule_Assistant
 //*************************************** borrar ************************************************
 
         /// <summary> elimina al maestro indicado de la base de datos </summary>
-        public void Borrar(Profe p)
+        public static void BorrarProfe(int id)
         {
             try
             {
-                comando.CommandText = "DELETE FROM Profesores WHERE ID =" + p.Id;
-                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "DELETE FROM Profesores WHERE ID =" +id;
+                comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
 
             }
-            catch (Exception)
-            {
-                throw;
-            }
             finally
             {
-                if (conectar != null)
-                {
+                if (conectar.State == ConnectionState.Open)
                     conectar.Close();
-                }
             }
         }
     }
