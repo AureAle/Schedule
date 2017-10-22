@@ -7,8 +7,9 @@ namespace Schedule_Assistant
 {
     abstract class Conector
     {
+        //coment
 
-        static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
+        static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
         static OleDbCommand comando = conectar.CreateCommand();
 
 //************************************************ control *******************************************************
@@ -153,7 +154,7 @@ namespace Schedule_Assistant
                     int dia = (int)lector["dia"];
                     HoraNoDisponible hnd = new HoraNoDisponible(id, hora, dia);
 
-                    horasLista.Add(p);
+                    //horasLista.Add(p);
                 }
 
                 return horasLista.ToArray();

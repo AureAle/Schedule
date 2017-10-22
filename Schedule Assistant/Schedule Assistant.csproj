@@ -54,29 +54,29 @@
     <Compile Include="vistas\CrearHorarios.Designer.cs">
       <DependentUpon>CrearHorarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\Menú.cs">
+    <Compile Include="vistas\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\Menú.Designer.cs">
-      <DependentUpon>Menú.cs</DependentUpon>
+    <Compile Include="vistas\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\MenúHorasNoDisponibles.cs">
+    <Compile Include="vistas\MenuHorasNoDisponibles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\MenúHorasNoDisponibles.Designer.cs">
-      <DependentUpon>MenúHorasNoDisponibles.cs</DependentUpon>
+    <Compile Include="vistas\MenuHorasNoDisponibles.Designer.cs">
+      <DependentUpon>MenuHorasNoDisponibles.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\MenúMaestro.cs">
+    <Compile Include="vistas\MenuMaestro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\MenúMaestro.Designer.cs">
-      <DependentUpon>MenúMaestro.cs</DependentUpon>
+    <Compile Include="vistas\MenuMaestro.Designer.cs">
+      <DependentUpon>MenuMaestro.cs</DependentUpon>
     </Compile>
-    <Compile Include="vistas\MenúMaterias.cs">
+    <Compile Include="vistas\MenuMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\MenúMaterias.Designer.cs">
-      <DependentUpon>MenúMaterias.cs</DependentUpon>
+    <Compile Include="vistas\MenuMaterias.Designer.cs">
+      <DependentUpon>MenuMaterias.cs</DependentUpon>
     </Compile>
     <Compile Include="objetos\Profe.cs" />
     <Compile Include="controladores\Program.cs" />
@@ -84,17 +84,17 @@
     <EmbeddedResource Include="vistas\CrearHorarios.resx">
       <DependentUpon>CrearHorarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\Menú.resx">
-      <DependentUpon>Menú.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\MenúHorasNoDisponibles.resx">
-      <DependentUpon>MenúHorasNoDisponibles.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\MenuHorasNoDisponibles.resx">
+      <DependentUpon>MenuHorasNoDisponibles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\MenúMaestro.resx">
-      <DependentUpon>MenúMaestro.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\MenuMaestro.resx">
+      <DependentUpon>MenuMaestro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vistas\MenúMaterias.resx">
-      <DependentUpon>MenúMaterias.cs</DependentUpon>
+    <EmbeddedResource Include="vistas\MenuMaterias.resx">
+      <DependentUpon>MenuMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

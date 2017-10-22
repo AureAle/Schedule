@@ -16,7 +16,7 @@ namespace Schedule_Assistant
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenú());
+            Application.Run(new frmMenu());
         }
     }
 }

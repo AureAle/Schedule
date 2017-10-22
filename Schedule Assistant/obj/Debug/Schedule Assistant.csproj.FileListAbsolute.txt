@@ -77,3 +77,30 @@ C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\bin\Debug\Schedule Assi
 C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.pdb
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csprojResolveAssemblyReference.cache
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.CrearHorarios.resources
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.csprojResolveAssemblyReference.cache
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.CrearHorarios.resources
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.Properties.Resources.resources
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.exe
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\bin\Debug\Schedule Assistant.exe.config
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\bin\Debug\Schedule Assistant.exe
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\bin\Debug\Schedule Assistant.pdb
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenu.resources
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuHorasNoDisponibles.resources
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaestro.resources
+C:\Users\auren\Downloads\PI\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaterias.resources
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\bin\Debug\Schedule Assistant.exe.config
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\bin\Debug\Schedule Assistant.exe
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\bin\Debug\Schedule Assistant.pdb
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.csprojResolveAssemblyReference.cache
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.CrearHorarios.resources
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenu.resources
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuHorasNoDisponibles.resources
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaestro.resources
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaterias.resources
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.Properties.Resources.resources
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.exe
+C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
