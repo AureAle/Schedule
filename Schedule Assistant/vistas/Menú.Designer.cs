@@ -59,7 +59,7 @@
             this.pnlOpciones.Controls.Add(this.btnAdminProfes);
             this.pnlOpciones.Location = new System.Drawing.Point(0, 0);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(119, 609);
+            this.pnlOpciones.Size = new System.Drawing.Size(119, 642);
             this.pnlOpciones.TabIndex = 1;
             // 
             // lbl
@@ -146,15 +146,16 @@
             this.pnlFondo.Controls.Add(this.pcbLogo);
             this.pnlFondo.Location = new System.Drawing.Point(117, 0);
             this.pnlFondo.Name = "pnlFondo";
-            this.pnlFondo.Size = new System.Drawing.Size(849, 609);
+            this.pnlFondo.Size = new System.Drawing.Size(1143, 642);
             this.pnlFondo.TabIndex = 2;
             this.pnlFondo.Visible = false;
+            this.pnlFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFondo_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(727, 498);
+            this.pictureBox1.Location = new System.Drawing.Point(1021, 531);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -167,7 +168,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(308, 263);
+            this.lblName.Location = new System.Drawing.Point(455, 280);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(400, 55);
             this.lblName.TabIndex = 4;
@@ -179,7 +180,7 @@
             this.pcbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
-            this.pcbLogo.Location = new System.Drawing.Point(136, 159);
+            this.pcbLogo.Location = new System.Drawing.Point(283, 176);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(248, 213);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -191,15 +192,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(967, 609);
+            this.ClientSize = new System.Drawing.Size(1261, 642);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlFondo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.MaximizeBox = false;
             this.Name = "frmMenú";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule Assistant ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();
             this.pnlFondo.ResumeLayout(false);

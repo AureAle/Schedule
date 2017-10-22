@@ -137,6 +137,8 @@ namespace Schedule_Assistant
                 Conector.ActualizarProfesor(profe.Id, nombre);
                 LlenarListaProfesores();
                 txtNombreProfesor.Text = "";
+                bttnGuardarNuevoNombre.Visible = false;
+                bttnAgregarProfesor.Visible = true;
             }
             
         }
@@ -162,6 +164,11 @@ namespace Schedule_Assistant
             bttnAgregarProfesor.Visible = true;
             txtNombreProfesor.Text = "";
             txtNombreProfesor.ForeColor = Color.SteelBlue;
+        }
+
+        private void bttnModificarMaterias_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

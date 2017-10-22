@@ -8,7 +8,7 @@ namespace Schedule_Assistant
     abstract class Conector
     {
 
-        static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=HorariosDB.mdb; Persist Security Info = False; ");
+        static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
         static OleDbCommand comando = conectar.CreateCommand();
 
 //************************************************ control *******************************************************
@@ -43,16 +43,15 @@ namespace Schedule_Assistant
 // ****************************************** escritura *******************************************
 
         /// <summary> registra el maestro indicado enla base de datos, retorna su id </summary>
-        public static int InsertarProfe(string nombre)
+        public static void InsertarProfe(String nombre)
         {
             try
             {
-                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('" + nombre+ "')";
+                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('"+ nombre+ "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
-                //comando.ExecuteNonQuery();
-                object id = comando.ExecuteScalar();
-                return (int)id;
+                comando.ExecuteNonQuery();
+                
             }
             finally
             {
@@ -68,7 +67,7 @@ namespace Schedule_Assistant
             try
             {
                 //revisar en la base de datos bien 
-                comando.CommandText = "INSERT INTO HorasNoDisponibles (datos) VALUES('" + p.Id + "', '" + hnd.Día + "', '" + hnd.Hora + "')";
+                comando.CommandText = "INSERT INTO HorasNoDisponibles (profesor, hora, dia) VALUES('" + p.Id + "', '" + hnd.Día + "', '" + hnd.Hora + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -79,7 +78,26 @@ namespace Schedule_Assistant
                 if (conectar.State == ConnectionState.Open)
                     conectar.Close();
             }
-        }      
+        }   
+
+        //AGREGAR CLASES POR PROFESOR
+        public void AgregarMaterias(Profe p, String materia, int creditos)
+        {
+            try
+            {
+                 
+                comando.CommandText = "INSERT INTO Clases (maestro, materia, creditos) VALUES('" + p.Id + "', '" + materia + "', '" + creditos + "')";
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
 
         
 
@@ -108,6 +126,37 @@ namespace Schedule_Assistant
                 }
 
                 return profesLista.ToArray();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        //OBTENER HORAS NO DISPONIBLES DE UN PROFESOR
+        public HoraNoDisponible[] MostrarHorasNoDisponibles(Profe p)
+        {
+            List<HoraNoDisponible> horasLista = new List<HoraNoDisponible>();
+            //REVISAR
+            try
+            {
+                comando.CommandText = "SELECT * FROM HorasNoDisponibles WHERE profesor= " + p.Id;
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    int id = (int)lector["ID"];
+                    int hora = (int)lector["hora"];
+                    int dia = (int)lector["dia"];
+                    HoraNoDisponible hnd = new HoraNoDisponible(id, hora, dia);
+
+                    horasLista.Add(p);
+                }
+
+                return horasLista.ToArray();
             }
             finally
             {
@@ -158,5 +207,42 @@ namespace Schedule_Assistant
                     conectar.Close();
             }
         }
+
+        //BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND
+        public static void BorrarHoraNoDisponible(HoraNoDisponible hnd)
+        {
+            try
+            {
+                comando.CommandText = "DELETE FROM HorasNoDisponibles WHERE ID =" + hnd.Id;
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        public static void BorrarMateria(Clase c)
+        {
+            try
+            {
+                comando.CommandText = "DELETE FROM Clases WHERE ID =" + c.Id;
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
     }
+
+    
 }

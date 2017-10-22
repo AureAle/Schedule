@@ -13,16 +13,16 @@ namespace Schedule_Assistant
         private int id;
         private int hora;
         private int dia;
-        private int idprofesor;
+       // private int idprofesor;
 
 
 //*********************** constructor *********************
-        public HoraNoDisponible(int id, int hora, int día, int idprofesor)
+        public HoraNoDisponible(int id, int hora, int día)
         {
             this.id = id;
             this.hora = hora;
             this.dia = día;
-            this.idprofesor = idprofesor;
+           // this.idprofesor = idprofesor;
         }
 
 
@@ -30,7 +30,7 @@ namespace Schedule_Assistant
         public int Id { get => id; }
         public int Hora { get => hora; }
         public int Día { get => dia; }
-        public int Idprofesor { get => idprofesor;  }
+        //public int Idprofesor { get => idprofesor;  }
 
 
 //*********************** metodos *********************

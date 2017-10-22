@@ -16,5 +16,15 @@ namespace Schedule_Assistant.vistas
         {
             InitializeComponent();
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CrearHorarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -156,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(783, 683);
+            this.ClientSize = new System.Drawing.Size(849, 609);
             this.Controls.Add(this.bttnGuardarCreditos);
             this.Controls.Add(this.bttnModificarCreditos);
             this.Controls.Add(this.label1);
