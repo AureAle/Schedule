@@ -149,7 +149,6 @@
             this.pnlFondo.Size = new System.Drawing.Size(1143, 642);
             this.pnlFondo.TabIndex = 2;
             this.pnlFondo.Visible = false;
-            this.pnlFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFondo_Paint);
             // 
             // pictureBox1
             // 
@@ -200,10 +199,10 @@
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "frmMenu";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule Assistant ";
             this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();
             this.pnlFondo.ResumeLayout(false);

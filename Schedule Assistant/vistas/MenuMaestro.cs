@@ -14,17 +14,16 @@ namespace Schedule_Assistant
     
     public partial class MenuMaestro : Form  
     {
-        
 
-        //******************************** variables *********************************
+//******************************** constructor *********************************
 
 
-        //******************************** constructor *********************************
         public MenuMaestro()
         {
             InitializeComponent();
 
             LlenarListaProfesores();
+
             bttnEliminarProfesor.Visible = false;
             bttnModificarProfesor.Visible = false;
             bttnHorariosProfesor.Visible = false;
@@ -33,15 +32,19 @@ namespace Schedule_Assistant
             bttnGuardarNuevoNombre.Visible = false;
             
         }
-        //LIMPIA Y LLENA LA LISTA DE PROFESORES
-        public void LlenarListaProfesores()
+        
+        /// <summary> LIMPIA Y LLENA LA LISTA DE PROFESORES  </summary>
+        private void LlenarListaProfesores()
         {
             lstProfesores.Items.Clear();
             lstProfesores.Items.AddRange(Conector.MostrarNombres());
         }
 
-        //VALIDACION PARA CAMPO NOMBRE VACIO
-        public Boolean NombreProfesorNoVacio()
+
+//******************************** metodos *********************************
+        
+        /// <summary> VALIDACION PARA CAMPO NOMBRE VACIO </summary>
+        private Boolean NombreProfesorNoVacio()
         {
             if(txtNombreProfesor.Text.Length==0 || txtNombreProfesor.Text == "Escriba el nuevo Nombre")
             {
@@ -54,8 +57,7 @@ namespace Schedule_Assistant
             }
         }
 
-
-        //MUESTRA LAS OPCIONES UNICAMENTE CUANDO SE SELECCIONA ALGUN PROFESOR
+        /// <summary> MUESTRA LAS OPCIONES UNICAMENTE CUANDO SE SELECCIONA ALGUN PROFESOR </summary>
         private void lstProfesores_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(lstProfesores.SelectedIndex!=-1)
@@ -64,10 +66,11 @@ namespace Schedule_Assistant
                 bttnModificarProfesor.Visible = true;
                 bttnHorariosProfesor.Visible = true;
                 bttnModificarMaterias.Visible = true;
-
             }
-           
         }
+
+
+//******************************** click *********************************
 
         protected void bttnHorariosProfesor_Click(object sender, EventArgs e)
         {
@@ -79,14 +82,12 @@ namespace Schedule_Assistant
 
 
         }
-         
-        //CAMBIAR BOTONES PARA MODIFICAR PROFESOR Y ESTABLECE UN MENSAJE TIPO MARCA DE AGUA
+
+        /// <summary> CAMBIAR BOTONES PARA MODIFICAR PROFESOR Y ESTABLECE UN MENSAJE TIPO MARCA DE AGUA </summary>
         private void bttnModificarProfesor_Click(object sender, EventArgs e)
         {
             if(lstProfesores.SelectedIndex==-1)
-            {
                 MessageBox.Show("Se requiere seleccionar un Profesor", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
             {
                 if (txtNombreProfesor.Text.Length == 0)
@@ -101,8 +102,8 @@ namespace Schedule_Assistant
             
             
         }
-
-        //SE ELIMINA EL PROFESOR SELECCIONADO VALIDADO
+        
+        /// <summary> SE ELIMINA EL PROFESOR SELECCIONADO VALIDADO </summary>
         private void bttnEliminarProfesor_Click(object sender, EventArgs e)
         {
             if (lstProfesores.SelectedIndex == -1)
@@ -133,7 +134,8 @@ namespace Schedule_Assistant
             }
             
         }
-        //SE MODIFICA EL PROFESOR SIEMPRE Y CUANDO NO ESTE VACIO EL CUADRO DE TEXTO
+
+        /// <summary> SE MODIFICA EL PROFESOR SIEMPRE Y CUANDO NO ESTE VACIO EL CUADRO DE TEXTO </summary>am>
         private void bttnGuardarNuevoNombre_Click(object sender, EventArgs e)
         {
             if(NombreProfesorNoVacio())
@@ -148,13 +150,15 @@ namespace Schedule_Assistant
             }
             
         }
-        //EN MODO MODIFICAR AL HACER CLICK EN EL CUADRO DE TEXTO SE VACIA
+        
+        /// <summary> EN MODO MODIFICAR AL HACER CLICK EN EL CUADRO DE TEXTO SE VACIA </summary>
         private void txtNombreProfesor_Click(object sender, EventArgs e)
         {
             txtNombreProfesor.Text = "";
             txtNombreProfesor.ForeColor = Color.SteelBlue;
         }
-        //PERMANECERA LA MARCA DE AGUA CUANDO SE SIGA EN MODO MODIFICAR PROFESOR
+        
+        /// <summary> PERMANECERA LA MARCA DE AGUA CUANDO SE SIGA EN MODO MODIFICAR PROFESOR </summary>
         private void txtNombreProfesor_Leave(object sender, EventArgs e)
         {
             if (txtNombreProfesor.Text.Length == 0 && bttnGuardarNuevoNombre.Visible==true)
@@ -163,7 +167,8 @@ namespace Schedule_Assistant
                 txtNombreProfesor.ForeColor = Color.Gray;
             }
         }
-        //SI HACE CLICK EN ALGUN OTRO LUGAR SE CAMBIA A MODO AGREGAR PROFESOR
+        
+        /// <summary> SI HACE CLICK EN ALGUN OTRO LUGAR SE CAMBIA A MODO AGREGAR PROFESOR  </summary>
         private void MenúMaestro_Click(object sender, EventArgs e)
         {
             bttnGuardarNuevoNombre.Visible = false;
@@ -172,14 +177,11 @@ namespace Schedule_Assistant
             txtNombreProfesor.ForeColor = Color.SteelBlue;
         }
 
+        /// <summary>  </summary>
         private void bttnModificarMaterias_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void MenuMaestro_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

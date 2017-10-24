@@ -7,8 +7,7 @@ namespace Schedule_Assistant
 {
     abstract class Conector
     {
-        //coment
-
+        //antes de empezar hagan una copia de la DB en "repos\Schedule\Schedule Assistant\bin\Debug"
         static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=HorariosDB.accdb");
         static OleDbCommand comando = conectar.CreateCommand();
 
@@ -22,15 +21,13 @@ namespace Schedule_Assistant
 
                 conectar.Open();
                 if (conectar.State == ConnectionState.Open)
-                {
                     return true;
-                }
-                else return false;
 
+                else return false;
             }
             catch (Exception ex)
             {
-                throw new ApplicationException();
+                throw new ApplicationException("error inesperado con la base de datos");
             }
         }
 
@@ -51,7 +48,8 @@ namespace Schedule_Assistant
                 comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('"+ nombre+ "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
-                comando.ExecuteNonQuery();
+                int id = (int)comando.ExecuteScalar();
+                System.Console.WriteLine("maestro Nº" + id + " registrado");
                 
             }
             finally
@@ -192,11 +190,11 @@ namespace Schedule_Assistant
 //*************************************** borrar ************************************************
 
         /// <summary> elimina al maestro indicado de la base de datos </summary>
-        public static void BorrarProfe(int id)
+        public static void BorrarProfe(int idProfe)
         {
             try
             {
-                comando.CommandText = "DELETE FROM Profesores WHERE ID =" +id;
+                comando.CommandText = "DELETE FROM Profesores WHERE ID =" + idProfe;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -210,11 +208,11 @@ namespace Schedule_Assistant
         }
 
         /// <summary> BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND </summary>
-        public static void BorrarHoraNoDisponible(HoraNoDisponible hnd)
+        public static void BorrarHoraNoDisponible(int idHoraND)
         {
             try
             {
-                comando.CommandText = "DELETE FROM HorasNoDisponibles WHERE ID =" + hnd.Id;
+                comando.CommandText = "DELETE FROM HorasNoDisponibles WHERE ID =" + idHoraND;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -227,11 +225,12 @@ namespace Schedule_Assistant
             }
         }
 
-        public static void BorrarMateria(Clase c)
+        /// <summary> BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND </summary>
+        public static void BorrarMateria(int idMateria)
         {
             try
             {
-                comando.CommandText = "DELETE FROM Clases WHERE ID =" + c.Id;
+                comando.CommandText = "DELETE FROM Clases WHERE ID =" + idMateria;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
