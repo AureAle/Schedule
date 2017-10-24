@@ -9,7 +9,7 @@ namespace Schedule_Assistant
     {
         //coment
 
-        static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\HorariosDB.accdb; Persist Security Info = False; ");
+        static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=HorariosDB.accdb");
         static OleDbCommand comando = conectar.CreateCommand();
 
 //************************************************ control *******************************************************
@@ -79,9 +79,9 @@ namespace Schedule_Assistant
                 if (conectar.State == ConnectionState.Open)
                     conectar.Close();
             }
-        }   
+        }
 
-        //AGREGAR CLASES POR PROFESOR
+        /// <summary> registra la materia indicada, relacionada al profesor indicado, en la base de datos </summary>
         public void AgregarMaterias(Profe p, String materia, int creditos)
         {
             try
@@ -135,7 +135,7 @@ namespace Schedule_Assistant
             }
         }
 
-        //OBTENER HORAS NO DISPONIBLES DE UN PROFESOR
+        /// <summary> OBTENER HORAS NO DISPONIBLES DE UN PROFESOR </summary>
         public HoraNoDisponible[] MostrarHorasNoDisponibles(Profe p)
         {
             List<HoraNoDisponible> horasLista = new List<HoraNoDisponible>();
@@ -209,7 +209,7 @@ namespace Schedule_Assistant
             }
         }
 
-        //BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND
+        /// <summary> BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND </summary>
         public static void BorrarHoraNoDisponible(HoraNoDisponible hnd)
         {
             try

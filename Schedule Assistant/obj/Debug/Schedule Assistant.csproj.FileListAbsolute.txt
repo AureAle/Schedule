@@ -63,10 +63,6 @@ C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule_As
 C:\Users\20137306\source\repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache
 C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csprojResolveAssemblyReference.cache
 C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.CrearHorarios.resources
-C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenú.resources
-C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúHorasNoDisponibles.resources
-C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaestro.resources
-C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenúMaterias.resources
 C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.Properties.Resources.resources
 C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache
 C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
@@ -104,3 +100,7 @@ C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Ass
 C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
 C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.exe
 C:\Users\xboxm\Desktop\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenu.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuHorasNoDisponibles.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaestro.resources
+C:\Users\javier\Source\Repos\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaterias.resources

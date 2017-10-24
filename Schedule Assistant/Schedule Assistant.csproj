@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clase.cs" />
+    <Compile Include="objetos\Clase.cs" />
     <Compile Include="controladores\Conector.cs" />
     <Compile Include="objetos\HoraNoDisponible.cs" />
     <Compile Include="vistas\CrearHorarios.cs">
