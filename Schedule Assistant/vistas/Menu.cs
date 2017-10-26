@@ -15,7 +15,7 @@ namespace Schedule_Assistant
     public partial class frmMenu : Form
     {
         private MenuMaestro maestro = new MenuMaestro();
-        private MenuHorasNoDisponibles noDisponible =new MenuHorasNoDisponibles();
+        //private MenuHorasNoDisponibles noDisponible =new MenuHorasNoDisponibles();
         private MenuMaterias materias =new MenuMaterias();
         private CrearHorarios horarios= new CrearHorarios();
 
@@ -38,15 +38,15 @@ namespace Schedule_Assistant
            // horarios.Anchor = pnlFondo.Anchor;
             horarios.Show();
 
-            noDisponible.MdiParent = this;
-            noDisponible.Size = new Size(1143, 642);
-            noDisponible.Location = pnlFondo.Location;
-            //noDisponible.Anchor = pnlFondo.Anchor;
-            noDisponible.Show();
+           // noDisponible.MdiParent = this;
+            //noDisponible.Size = new Size(1143, 642);
+            //noDisponible.Location = pnlFondo.Location;
+                  //noDisponible.Anchor = pnlFondo.Anchor;
+            //noDisponible.Show();
 
             pnlFondo.Visible = true;
             maestro.Visible = false;
-            noDisponible.Visible = false;
+           // noDisponible.Visible = false;
             materias.Visible = false;
             horarios.Visible = false;
         }

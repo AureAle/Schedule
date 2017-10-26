@@ -74,12 +74,10 @@ namespace Schedule_Assistant
 
         protected void bttnHorariosProfesor_Click(object sender, EventArgs e)
         {
-                     
-           //(?) 
-            
-            
-            
 
+            Profe p=lstProfesores.SelectedItem as Profe;
+            MenuHorasNoDisponibles horas = new MenuHorasNoDisponibles(p.Id, p.Nombre);
+            horas.ShowDialog();
 
         }
 

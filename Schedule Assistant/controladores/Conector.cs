@@ -60,13 +60,13 @@ namespace Schedule_Assistant
         }
 
         /// <summary> registra las horas no disponibles del maestro indicado en la base de datos </summary>
-        public void AgregarHorariosNoDisponibles(Profe p, HoraNoDisponible hnd)//Agregar a la base de datos
+        public static void AgregarHorariosNoDisponibles(int idProfe, HoraNoDisponible hnd)//Agregar a la base de datos
         {
 
             try
             {
                 //revisar en la base de datos bien 
-                comando.CommandText = "INSERT INTO HorasNoDisponibles (profesor, hora, dia) VALUES('" + p.Id + "', '" + hnd.Día + "', '" + hnd.Hora + "')";
+                comando.CommandText = "INSERT INTO HorasNoDisponibles (profesor, hora, dia) VALUES('" + idProfe + "', '" + hnd.Hora1 + "', '" + hnd.Dia + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -134,13 +134,13 @@ namespace Schedule_Assistant
         }
 
         /// <summary> OBTENER HORAS NO DISPONIBLES DE UN PROFESOR </summary>
-        public HoraNoDisponible[] MostrarHorasNoDisponibles(Profe p)
+        public static HoraNoDisponible[] MostrarHorasNoDisponibles(int idProfe)
         {
             List<HoraNoDisponible> horasLista = new List<HoraNoDisponible>();
             //REVISAR
             try
             {
-                comando.CommandText = "SELECT * FROM HorasNoDisponibles WHERE profesor= " + p.Id;
+                comando.CommandText = "SELECT * FROM HorasNoDisponibles WHERE profesor= " + idProfe;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 OleDbDataReader lector = comando.ExecuteReader();
@@ -150,9 +150,9 @@ namespace Schedule_Assistant
                     int id = (int)lector["ID"];
                     int hora = (int)lector["hora"];
                     int dia = (int)lector["dia"];
-                    HoraNoDisponible hnd = new HoraNoDisponible(id, hora, dia);
-
-                    //horasLista.Add(p);
+                    HoraNoDisponible hnd = new HoraNoDisponible(hora, dia);
+                    hnd.Id1 = id;
+                    horasLista.Add(hnd);
                 }
 
                 return horasLista.ToArray();
@@ -166,7 +166,11 @@ namespace Schedule_Assistant
 
 
 //****************************************** modificar *******************************************
-
+        /// <summary>
+        /// Actualiza el Nombre de un Profesor
+        /// </summary>
+        /// <param name="id">int</param>
+        /// <param name="nombre">String</param>
         public static void ActualizarProfesor(int id, string nombre)
         {
             try
@@ -208,11 +212,11 @@ namespace Schedule_Assistant
         }
 
         /// <summary> BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND </summary>
-        public static void BorrarHoraNoDisponible(int idHoraND)
+        public static void BorrarHoraNoDisponible(HoraNoDisponible hnd)
         {
             try
             {
-                comando.CommandText = "DELETE FROM HorasNoDisponibles WHERE ID =" + idHoraND;
+                comando.CommandText = "DELETE FROM HorasNoDisponibles WHERE ID =" + hnd.Id1;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
