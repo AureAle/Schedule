@@ -178,8 +178,14 @@ namespace Schedule_Assistant
         /// <summary>  </summary>
         private void bttnModificarMaterias_Click(object sender, EventArgs e)
         {
-
+            Profe p = lstProfesores.SelectedItem as Profe;
+            MenuMaterias mm = new MenuMaterias(p.Id, p.Nombre);
+            mm.ShowDialog();
         }
 
+        private void MenuMaestro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

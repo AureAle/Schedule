@@ -80,12 +80,12 @@ namespace Schedule_Assistant
         }
 
         /// <summary> registra la materia indicada, relacionada al profesor indicado, en la base de datos </summary>
-        public void AgregarMaterias(Profe p, String materia, int creditos)
+        public static void AgregarMaterias(int idProfe, Clase c)
         {
             try
             {
                  
-                comando.CommandText = "INSERT INTO Clases (maestro, materia, creditos) VALUES('" + p.Id + "', '" + materia + "', '" + creditos + "')";
+                comando.CommandText = "INSERT INTO Clases (maestro, materia, creditos) VALUES('" + idProfe + "', '" + c.Nombre + "', '" + c.Creditos + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -164,8 +164,38 @@ namespace Schedule_Assistant
             }
         }
 
+        public static Clase[] MostrarClases(int idProfe)
+        {
+            List<Clase> clasesLista = new List<Clase>();
+            //REVISAR
+            try
+            {
+                comando.CommandText = "SELECT * FROM Clases WHERE maestro= " + idProfe;
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
 
-//****************************************** modificar *******************************************
+                while (lector.Read())
+                {
+                    int id = (int)lector["ID"];
+                    String nombre = lector["materia"].ToString();
+                    int creditos = (int)lector["creditos"];
+                    Clase c = new Clase(nombre, creditos);
+                    c.Id = id;
+                    clasesLista.Add(c);
+                }
+
+                return clasesLista.ToArray();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+
+        //****************************************** modificar *******************************************
         /// <summary>
         /// Actualiza el Nombre de un Profesor
         /// </summary>
@@ -188,10 +218,27 @@ namespace Schedule_Assistant
             }
         }
 
-       
+        public static void ActualizarClase(int id, int creditos)
+        {
+            try
+            {
+                comando.CommandText = "UPDATE Clases SET creditos='" + creditos + "' WHERE ID= " + id;
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
 
 
-//*************************************** borrar ************************************************
+
+
+        //*************************************** borrar ************************************************
 
         /// <summary> elimina al maestro indicado de la base de datos </summary>
         public static void BorrarProfe(int idProfe)
@@ -235,6 +282,23 @@ namespace Schedule_Assistant
             try
             {
                 comando.CommandText = "DELETE FROM Clases WHERE ID =" + idMateria;
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        public static void BorrarClase(Clase c)
+        {
+            try
+            {
+                comando.CommandText = "DELETE FROM Clases WHERE ID =" + c.Id;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();

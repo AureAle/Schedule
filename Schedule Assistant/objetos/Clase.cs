@@ -12,14 +12,19 @@ namespace Schedule_Assistant
         private String nombre;
         private int creditos;
 
-        public Clase(int id, String nombre, int creditos)
+        public Clase( String nombre, int creditos)
         {
-            this.nombre = nombre;
-            this.creditos = creditos;
+            this.Nombre = nombre;
+            this.Creditos = creditos;
         }
 
-        public int Id { get => id; }
-        public string NombreM { get => nombre; }
-        public int Creditos { get => Creditos; }
+        public int Id { get => id; set => id = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public int Creditos { get => creditos; set => creditos = value; }
+
+        public override string ToString()
+        {
+            return nombre + "  Creditos: " + creditos;
+        }
     }
 }

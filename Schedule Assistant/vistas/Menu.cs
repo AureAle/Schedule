@@ -16,7 +16,7 @@ namespace Schedule_Assistant
     {
         private MenuMaestro maestro = new MenuMaestro();
         //private MenuHorasNoDisponibles noDisponible =new MenuHorasNoDisponibles();
-        private MenuMaterias materias =new MenuMaterias();
+           //private MenuMaterias materias =new MenuMaterias();
         private CrearHorarios horarios= new CrearHorarios();
 
         public frmMenu()
@@ -47,7 +47,7 @@ namespace Schedule_Assistant
             pnlFondo.Visible = true;
             maestro.Visible = false;
            // noDisponible.Visible = false;
-            materias.Visible = false;
+           // materias.Visible = false;
             horarios.Visible = false;
         }
         

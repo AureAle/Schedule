@@ -204,6 +204,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maestro";
+            this.Load += new System.EventHandler(this.MenuMaestro_Load);
             this.Click += new System.EventHandler(this.MenúMaestro_Click);
             this.pnlProfe.ResumeLayout(false);
             this.pnlProfe.PerformLayout();
