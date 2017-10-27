@@ -164,6 +164,11 @@ namespace Schedule_Assistant
             }
         }
 
+        /// <summary>
+        /// Obtiene lista de clases registradas por id de profe
+        /// </summary>
+        /// <param name="idProfe">int</param>
+        /// <returns></returns>
         public static Clase[] MostrarClases(int idProfe)
         {
             List<Clase> clasesLista = new List<Clase>();
@@ -217,7 +222,11 @@ namespace Schedule_Assistant
                     conectar.Close();
             }
         }
-
+        /// <summary>
+        /// Modifica los creditos de una clase
+        /// </summary>
+        /// <param name="id">int</param>
+        /// <param name="creditos">int</param>
         public static void ActualizarClase(int id, int creditos)
         {
             try
@@ -276,7 +285,7 @@ namespace Schedule_Assistant
             }
         }
 
-        /// <summary> BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND </summary>
+        /// <summary> BORRAR Materias </summary>
         public static void BorrarMateria(int idMateria)
         {
             try
@@ -294,6 +303,10 @@ namespace Schedule_Assistant
             }
         }
 
+        /// <summary>
+        /// Borra la clase seleccionada
+        /// </summary>
+        /// <param name="c">Clase</param>
         public static void BorrarClase(Clase c)
         {
             try
