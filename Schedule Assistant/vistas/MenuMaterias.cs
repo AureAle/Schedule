@@ -26,7 +26,7 @@ namespace Schedule_Assistant
         public void LlenarListaMaterias()
         {
             lstListaMateriasProfesores.Items.Clear();
-            lstListaMateriasProfesores.Items.AddRange(Conector.MostrarClases(idProfe));
+            lstListaMateriasProfesores.Items.AddRange(Conector.leerClasesde(idProfe));
         }
 
         /// <summary> Bloquea botones de eliminar y agregar, bloque textbox materias </summary>

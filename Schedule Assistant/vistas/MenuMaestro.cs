@@ -37,7 +37,7 @@ namespace Schedule_Assistant
         private void LlenarListaProfesores()
         {
             lstProfesores.Items.Clear();
-            lstProfesores.Items.AddRange(Conector.MostrarNombres());
+            lstProfesores.Items.AddRange(Conector.leerTodosProfes());
         }
 
 
@@ -125,7 +125,7 @@ namespace Schedule_Assistant
             //VALIDACION DE CAMPO TXTNOMBREPROFESOR NO VACIO
             if(NombreProfesorNoVacio())
             {
-                Conector.InsertarProfe(txtNombreProfesor.Text);
+                Conector.AgregarProfe(txtNombreProfesor.Text);
 
                 LlenarListaProfesores();
                 txtNombreProfesor.Clear();

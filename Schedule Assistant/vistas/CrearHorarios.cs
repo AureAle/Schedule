@@ -14,7 +14,7 @@ namespace Schedule_Assistant.vistas
     public partial class CrearHorarios : Form
     {
 
-        private botonClase selecionado;
+        private botonClase claseSelec;
 
 #region constructor
 
@@ -31,7 +31,7 @@ namespace Schedule_Assistant.vistas
         {
             flowLayoutPanel1.Controls.Clear();
 
-            Clase[] clases = Conector.MostrarClasesTodas();
+            Clase[] clases = Conector.leetTodasClases();
             foreach (Clase clase in clases)
             {
                 botonClase boton = new botonClase(clase);
@@ -52,30 +52,18 @@ namespace Schedule_Assistant.vistas
 
         private void btnClase_Click(object sender, EventArgs e)
         {
-            selecionado = sender as botonClase;
-        }
-
-        private void tableLayoutPanel1_Click(object sender, EventArgs e)
-        {
-            //selecionado.Clase.Id
-            //tableLayoutPanel1.;
+            claseSelec = sender as botonClase;
         }
 
         private void hora_Click(object sender, EventArgs e)
         {
-            botonn = sender as botonClase;
+            botonClase boton = sender as botonClase;
 
-            tableLayoutPanel1.GetCellPosition(boton);
+            TableLayoutPanelCellPosition celda = tableLayoutPanel1.GetCellPosition(boton);
 
-
+            Conector.
         }
-
-        private void tableLayoutPanel1_MouseClick(object sender, MouseEventArgs e)
-        {
-            Point selectedCell = new Point(
-                e.X / (tableLayoutPanel1.Width / tableLayoutPanel1.ColumnCount),
-                e.Y / (tableLayoutPanel1.Height / tableLayoutPanel1.RowCount));
-        }
+        
     }
 
 #endregion

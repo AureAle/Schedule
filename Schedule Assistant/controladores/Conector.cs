@@ -35,11 +35,12 @@ namespace Schedule_Assistant
         #endregion
 
         // CRUD create read update y Delete
+        // agregar leer modificar borrar
 
         #region escritura
 
         /// <summary> registra el maestro indicado enla base de datos, retorna su id </summary>
-        public static void InsertarProfe(String nombre)
+        public static void AgregarProfe(String nombre)
         {
             try
             {
@@ -100,7 +101,7 @@ namespace Schedule_Assistant
 #region lectura
 
         /// <summary> retorna un array de todos los profesores en la base de datos </summary>
-        public static Profe[] MostrarNombres()
+        public static Profe[] leerTodosProfes()
         {
             List<Profe> profesLista = new List<Profe>();
 
@@ -130,7 +131,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary> OBTENER HORAS NO DISPONIBLES DE UN PROFESOR </summary>
-        public static HoraNoDisponible[] MostrarHorasNoDisponibles(int idProfe)
+        public static HoraNoDisponible[] leerHorasNoDisponiblesDe(int idProfe)
         {
             List<HoraNoDisponible> horasLista = new List<HoraNoDisponible>();
             //REVISAR
@@ -161,7 +162,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary>  Obtiene lista de clases registradas por id de profe </summary>
-        public static Clase[] MostrarClases(int idProfe)
+        public static Clase[] leerClasesde(int idProfe)
         {
             List<Clase> clasesLista = new List<Clase>();
             //REVISAR
@@ -193,7 +194,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary>  Obtiene lista de clases registradas por id de profe </summary>
-        public static Clase[] MostrarClasesTodas()
+        public static Clase[] leetTodasClases()
         {
             List<Clase> clasesLista = new List<Clase>();
             try
@@ -223,7 +224,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary> devuelve el nombre del maestro indicado </summary>
-        public static string nombreProfesor(int idProfe)
+        public static string leerNombreProfesor(int idProfe)
         {
             try
             {
@@ -243,7 +244,7 @@ namespace Schedule_Assistant
 
         #endregion
 
-        #region modificar
+        #region Actualizar
 
         /// <summary>
         /// Actualiza el Nombre de un Profesor

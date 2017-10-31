@@ -35,12 +35,12 @@ namespace Schedule_Assistant
         {
             lstListaHorariosProfesor.Items.Clear();
             int dia = cmbDia.SelectedIndex + 1;
-            for (int i = 0; i < Conector.MostrarHorasNoDisponibles(idProfe).Length; i++)
+            for (int i = 0; i < Conector.leerHorasNoDisponiblesDe(idProfe).Length; i++)
             {
 
-                if (dia == Conector.MostrarHorasNoDisponibles(idProfe)[i].Dia)
+                if (dia == Conector.leerHorasNoDisponiblesDe(idProfe)[i].Dia)
                 {
-                    lstListaHorariosProfesor.Items.Add(Conector.MostrarHorasNoDisponibles(idProfe)[i]);
+                    lstListaHorariosProfesor.Items.Add(Conector.leerHorasNoDisponiblesDe(idProfe)[i]);
 
                 }
             }
@@ -58,9 +58,9 @@ namespace Schedule_Assistant
             {
                 int hora = cmbHora.SelectedIndex + 1;
                 int dia = cmbDia.SelectedIndex + 1;
-                for (int i = 0; i < Conector.MostrarHorasNoDisponibles(idProfe).Length; i++)
+                for (int i = 0; i < Conector.leerHorasNoDisponiblesDe(idProfe).Length; i++)
                 {
-                    if (Conector.MostrarHorasNoDisponibles(idProfe)[i].Dia==dia && Conector.MostrarHorasNoDisponibles(idProfe)[i].Hora1==hora)
+                    if (Conector.leerHorasNoDisponiblesDe(idProfe)[i].Dia==dia && Conector.leerHorasNoDisponiblesDe(idProfe)[i].Hora1==hora)
                     {
                         noEsta = false;
                         break;

@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearHorarios));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlProfe = new System.Windows.Forms.Panel();
-            this.lblMaestros = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.botonClase1 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase3 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase2 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase4 = new Schedule_Assistant.componenetes_graficos.botonClase();
@@ -75,6 +71,10 @@
             this.botonClase39 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase40 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase41 = new Schedule_Assistant.componenetes_graficos.botonClase();
+            this.pnlProfe = new System.Windows.Forms.Panel();
+            this.lblMaestros = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.botonClase1 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlProfe.SuspendLayout();
@@ -153,47 +153,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(913, 593);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Click += new System.EventHandler(this.tableLayoutPanel1_Click);
-            this.tableLayoutPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseClick);
-            // 
-            // pnlProfe
-            // 
-            this.pnlProfe.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlProfe.Controls.Add(this.lblMaestros);
-            this.pnlProfe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlProfe.Location = new System.Drawing.Point(0, 0);
-            this.pnlProfe.Name = "pnlProfe";
-            this.pnlProfe.Size = new System.Drawing.Size(1196, 56);
-            this.pnlProfe.TabIndex = 33;
-            // 
-            // lblMaestros
-            // 
-            this.lblMaestros.AutoSize = true;
-            this.lblMaestros.Font = new System.Drawing.Font("Arial Unicode MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaestros.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblMaestros.Location = new System.Drawing.Point(504, 4);
-            this.lblMaestros.Name = "lblMaestros";
-            this.lblMaestros.Size = new System.Drawing.Size(268, 50);
-            this.lblMaestros.TabIndex = 1;
-            this.lblMaestros.Text = "Horario Grupo:";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.SkyBlue;
-            this.flowLayoutPanel1.Controls.Add(this.botonClase1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 54);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 626);
-            this.flowLayoutPanel1.TabIndex = 34;
-            // 
-            // botonClase1
-            // 
-            this.botonClase1.Location = new System.Drawing.Point(3, 3);
-            this.botonClase1.Name = "botonClase1";
-            this.botonClase1.Size = new System.Drawing.Size(157, 50);
-            this.botonClase1.TabIndex = 0;
-            this.botonClase1.Text = "botonClase1";
-            this.botonClase1.UseVisualStyleBackColor = true;
             // 
             // botonClase3
             // 
@@ -218,6 +177,7 @@
             this.botonClase4.Size = new System.Drawing.Size(176, 68);
             this.botonClase4.TabIndex = 1;
             this.botonClase4.UseVisualStyleBackColor = true;
+            this.botonClase4.Click += new System.EventHandler(this.hora_Click);
             // 
             // botonClase5
             // 
@@ -515,13 +475,52 @@
             this.botonClase41.TabIndex = 1;
             this.botonClase41.UseVisualStyleBackColor = true;
             // 
+            // pnlProfe
+            // 
+            this.pnlProfe.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlProfe.Controls.Add(this.lblMaestros);
+            this.pnlProfe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlProfe.Location = new System.Drawing.Point(0, 0);
+            this.pnlProfe.Name = "pnlProfe";
+            this.pnlProfe.Size = new System.Drawing.Size(1196, 56);
+            this.pnlProfe.TabIndex = 33;
+            // 
+            // lblMaestros
+            // 
+            this.lblMaestros.AutoSize = true;
+            this.lblMaestros.Font = new System.Drawing.Font("Arial Unicode MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaestros.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblMaestros.Location = new System.Drawing.Point(504, 4);
+            this.lblMaestros.Name = "lblMaestros";
+            this.lblMaestros.Size = new System.Drawing.Size(268, 50);
+            this.lblMaestros.TabIndex = 1;
+            this.lblMaestros.Text = "Horario Grupo:";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.flowLayoutPanel1.Controls.Add(this.botonClase1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 54);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 626);
+            this.flowLayoutPanel1.TabIndex = 34;
+            // 
+            // botonClase1
+            // 
+            this.botonClase1.Location = new System.Drawing.Point(3, 3);
+            this.botonClase1.Name = "botonClase1";
+            this.botonClase1.Size = new System.Drawing.Size(157, 50);
+            this.botonClase1.TabIndex = 0;
+            this.botonClase1.Text = "botonClase1";
+            this.botonClase1.UseVisualStyleBackColor = true;
+            // 
             // CrearHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1036, 698);
+            this.ClientSize = new System.Drawing.Size(1036, 732);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnlProfe);
             this.Controls.Add(this.panel1);
