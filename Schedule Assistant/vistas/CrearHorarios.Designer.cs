@@ -33,7 +33,9 @@
             this.pnlProfe = new System.Windows.Forms.Panel();
             this.lblMaestros = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.botonClase1 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.pnlProfe.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,7 +53,7 @@
             this.pnlProfe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlProfe.Location = new System.Drawing.Point(0, 0);
             this.pnlProfe.Name = "pnlProfe";
-            this.pnlProfe.Size = new System.Drawing.Size(1294, 56);
+            this.pnlProfe.Size = new System.Drawing.Size(1162, 56);
             this.pnlProfe.TabIndex = 33;
             // 
             // lblMaestros
@@ -68,10 +70,20 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.flowLayoutPanel1.Controls.Add(this.botonClase1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 54);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(135, 626);
             this.flowLayoutPanel1.TabIndex = 34;
+            // 
+            // botonClase1
+            // 
+            this.botonClase1.Location = new System.Drawing.Point(3, 3);
+            this.botonClase1.Name = "botonClase1";
+            this.botonClase1.Size = new System.Drawing.Size(123, 50);
+            this.botonClase1.TabIndex = 1;
+            this.botonClase1.Text = "botonClase1";
+            this.botonClase1.UseVisualStyleBackColor = true;
             // 
             // CrearHorarios
             // 
@@ -79,7 +91,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1294, 681);
+            this.ClientSize = new System.Drawing.Size(1036, 681);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnlProfe);
             this.Controls.Add(this.panel1);
@@ -94,6 +106,7 @@
             this.Load += new System.EventHandler(this.CrearHorarios_Load);
             this.pnlProfe.ResumeLayout(false);
             this.pnlProfe.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -104,5 +117,6 @@
         private System.Windows.Forms.Panel pnlProfe;
         private System.Windows.Forms.Label lblMaestros;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private componenetes_graficos.botonClase botonClase1;
     }
 }

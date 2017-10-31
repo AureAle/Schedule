@@ -10,8 +10,8 @@ namespace Schedule_Assistant
         //antes de empezar hagan una copia de la DB en "repos\Schedule\Schedule Assistant\bin\Debug"
         static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=HorariosDB.accdb");
         static OleDbCommand comando = conectar.CreateCommand();
-
-//************************************************ control *******************************************************
+        
+#region control
 
         public Boolean verificarConexion()
         {
@@ -25,20 +25,18 @@ namespace Schedule_Assistant
 
                 else return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new ApplicationException("error inesperado con la base de datos");
             }
         }
 
-/*
- * CRUD:
- * create
- * read
- * update
- * Delete
- */
-// ****************************************** escritura *******************************************
+
+        #endregion
+
+        // CRUD create read update y Delete
+
+        #region escritura
 
         /// <summary> registra el maestro indicado enla base de datos, retorna su id </summary>
         public static void InsertarProfe(String nombre)
@@ -81,16 +79,14 @@ namespace Schedule_Assistant
         }
 
         /// <summary> registra la materia indicada, relacionada al profesor indicado, en la base de datos </summary>
-        public static void AgregarMaterias(int idProfe, Clase c)
+        public static void AgregarMaterias(Clase clase)
         {
             try
             {
                  
-                comando.CommandText = "INSERT INTO Clases (maestro, materia, creditos) VALUES('" + idProfe + "', '" + c.Nombre + "', '" + c.Creditos + "')";
-                comando.CommandType = CommandType.Text;
+                comando.CommandText = "INSERT INTO Clases (maestro, materia, creditos) VALUES('" + clase.Profesor + "', '" + clase.NombreMateria + "', '" + clase.Creditos + "')";
                 conectar.Open();
                 comando.ExecuteNonQuery();
-
             }
             finally
             {
@@ -99,10 +95,9 @@ namespace Schedule_Assistant
             }
         }
 
-        
+        #endregion
 
-
-//*********************************** lectura ****************************************************
+#region lectura
 
         /// <summary> retorna un array de todos los profesores en la base de datos </summary>
         public static Profe[] MostrarNombres()
@@ -180,9 +175,10 @@ namespace Schedule_Assistant
                 while (lector.Read())
                 {
                     int id = (int)lector["ID"];
-                    String nombre = lector["materia"].ToString();
+                    String materia = lector["materia"].ToString();
                     int creditos = (int)lector["creditos"];
-                    Clase c = new Clase(nombre, creditos);
+                    int profesor = (int)lector["maestro"];
+                    Clase c = new Clase(materia, profesor, creditos);
                     c.Id = id;
                     clasesLista.Add(c);
                 }
@@ -209,9 +205,10 @@ namespace Schedule_Assistant
                 while (lector.Read())
                 {
                     int id = (int)lector["ID"];
-                    String nombre = lector["materia"].ToString();
+                    String materia = lector["materia"].ToString();
                     int creditos = (int)lector["creditos"];
-                    Clase c = new Clase(nombre, creditos);
+                    int profesor = (int)lector["maestro"];
+                    Clase c = new Clase(materia, profesor, creditos);
                     c.Id = id;
                     clasesLista.Add(c);
                 }
@@ -225,8 +222,29 @@ namespace Schedule_Assistant
             }
         }
 
+        /// <summary> devuelve el nombre del maestro indicado </summary>
+        public static string nombreProfesor(int idProfe)
+        {
+            try
+            {
+                comando.CommandText = "SELECT * FROM Profesores WHERE ID = " + idProfe;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
 
-        //****************************************** modificar *******************************************
+                return lector["Nombre"].ToString();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        #endregion
+
+        #region modificar
+
         /// <summary>
         /// Actualiza el Nombre de un Profesor
         /// </summary>
@@ -270,10 +288,9 @@ namespace Schedule_Assistant
             }
         }
 
+        #endregion
 
-
-
-        //*************************************** borrar ************************************************
+#region borrar
 
         /// <summary> elimina al maestro indicado de la base de datos </summary>
         public static void BorrarProfe(int idProfe)
@@ -329,10 +346,7 @@ namespace Schedule_Assistant
             }
         }
 
-        /// <summary>
-        /// Borra la clase seleccionada
-        /// </summary>
-        /// <param name="c">Clase</param>
+        /// <summary>Borra la clase seleccionada</summary>
         public static void BorrarClase(Clase c)
         {
             try
@@ -351,5 +365,6 @@ namespace Schedule_Assistant
         }
     }
 
-    
+#endregion
+
 }

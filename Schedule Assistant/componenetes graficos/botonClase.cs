@@ -16,18 +16,6 @@ namespace Schedule_Assistant.componenetes_graficos
         private Clase clase;
         private int disponibles;
 
-        [Description("clase a mostrar"), Category("Appearance")]
-        public Clase Clase
-        {
-            get { return clase; }
-            set
-            {
-                clase = value;
-                this.Invalidate();
-            }
-        }
-
-
         #endregion
 
 #region constructores
@@ -41,6 +29,11 @@ namespace Schedule_Assistant.componenetes_graficos
         {
             this.clase = clase;
             this.disponibles = clase.Creditos;
+
+            string profesor = Conector.nombreProfesor(clase.Profesor);
+            this.Text = clase.NombreMateria + Environment.NewLine + "/" + clase.Creditos;
+
+            this.AutoSize = true;
         }
 
 #endregion

@@ -79,5 +79,11 @@ namespace Schedule_Assistant
         {
 
         }
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnlOpciones.Visible = !pnlOpciones.Visible;
+        }
     }
 }

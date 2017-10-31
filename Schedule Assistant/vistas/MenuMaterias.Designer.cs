@@ -34,14 +34,15 @@
             this.lblMateria = new System.Windows.Forms.Label();
             this.bttnAgregarMaterias = new System.Windows.Forms.Button();
             this.lblMaterias = new System.Windows.Forms.Label();
-            this.txtCreditos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bttnModificarCreditos = new System.Windows.Forms.Button();
             this.bttnGuardarCreditos = new System.Windows.Forms.Button();
             this.pnlProfe = new System.Windows.Forms.Panel();
             this.lblHoras = new System.Windows.Forms.Label();
             this.lblNProfe = new System.Windows.Forms.Label();
+            this.UpDwnCreditos = new System.Windows.Forms.NumericUpDown();
             this.pnlProfe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDwnCreditos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMateria
@@ -113,16 +114,6 @@
             this.lblMaterias.TabIndex = 20;
             this.lblMaterias.Text = "Materias";
             // 
-            // txtCreditos
-            // 
-            this.txtCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCreditos.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtCreditos.Location = new System.Drawing.Point(478, 142);
-            this.txtCreditos.Name = "txtCreditos";
-            this.txtCreditos.Size = new System.Drawing.Size(93, 26);
-            this.txtCreditos.TabIndex = 21;
-            this.txtCreditos.Click += new System.EventHandler(this.txtCreditos_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -191,19 +182,41 @@
             this.lblNProfe.Size = new System.Drawing.Size(0, 33);
             this.lblNProfe.TabIndex = 35;
             // 
+            // UpDwnCreditos
+            // 
+            this.UpDwnCreditos.Location = new System.Drawing.Point(478, 145);
+            this.UpDwnCreditos.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.UpDwnCreditos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.UpDwnCreditos.Name = "UpDwnCreditos";
+            this.UpDwnCreditos.Size = new System.Drawing.Size(72, 26);
+            this.UpDwnCreditos.TabIndex = 36;
+            this.UpDwnCreditos.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // MenuMaterias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(704, 535);
+            this.Controls.Add(this.UpDwnCreditos);
             this.Controls.Add(this.lblNProfe);
             this.Controls.Add(this.lblHoras);
             this.Controls.Add(this.pnlProfe);
             this.Controls.Add(this.bttnGuardarCreditos);
             this.Controls.Add(this.bttnModificarCreditos);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCreditos);
             this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.bttnBorrarMateria);
             this.Controls.Add(this.lstListaMateriasProfesores);
@@ -219,6 +232,7 @@
             this.Click += new System.EventHandler(this.MenuMaterias_Click);
             this.pnlProfe.ResumeLayout(false);
             this.pnlProfe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDwnCreditos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,12 +246,12 @@
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.Button bttnAgregarMaterias;
         private System.Windows.Forms.Label lblMaterias;
-        private System.Windows.Forms.TextBox txtCreditos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bttnModificarCreditos;
         private System.Windows.Forms.Button bttnGuardarCreditos;
         private System.Windows.Forms.Panel pnlProfe;
         private System.Windows.Forms.Label lblHoras;
         private System.Windows.Forms.Label lblNProfe;
+        private System.Windows.Forms.NumericUpDown UpDwnCreditos;
     }
 }

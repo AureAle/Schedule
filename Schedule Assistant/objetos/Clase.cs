@@ -11,24 +11,28 @@ namespace Schedule_Assistant
 
 #region propiedades
         private int id;
-        private String nombre;
+        private String nombreMateria;
         private int creditos;
+        private int profesor;
 
-        
+
         public int Id { get => id; set => id = value; }
         /// <summary> nombre de la materia </summary>
-        public string Nombre { get => nombre; set => nombre = value; }
+        public string NombreMateria { get => nombreMateria; set => nombreMateria = value; }
         /// <summary> devuelve las horas que se da dicha materia a la semana </summary>
         public int Creditos { get => creditos; set => creditos = value; }
+        /// <summary> profesor que da dicha clase </summary>
+        public int Profesor { get => profesor; set => profesor = value; }
 
         #endregion
 
         #region contructor
-        public Clase( String nombre, int creditos)
-                {
-                    this.Nombre = nombre;
-                    this.Creditos = creditos;
-                }
+        public Clase( String materia,int profesor, int creditos)
+        {
+            this.nombreMateria = materia;
+            this.Creditos = creditos;
+            this.Profesor = profesor;
+        }
 
         #endregion
 
@@ -36,7 +40,7 @@ namespace Schedule_Assistant
 
         public override string ToString()
         {
-            return nombre + " | Créditos: " + creditos;
+            return nombreMateria + " | Créditos: " + creditos;
         }
 
 #endregion

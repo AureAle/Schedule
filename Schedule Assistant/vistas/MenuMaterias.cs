@@ -22,51 +22,40 @@ namespace Schedule_Assistant
             lblNProfe.Text = Nombre;
             LlenarListaMaterias();
         }
-        /// <summary>
-        /// Limpiar y llenar lista de materias
-        /// </summary>
+        /// <summary> Limpiar y llenar lista de materias  </summary>
         public void LlenarListaMaterias()
         {
             lstListaMateriasProfesores.Items.Clear();
             lstListaMateriasProfesores.Items.AddRange(Conector.MostrarClases(idProfe));
         }
-        //Bloquea botones de eliminar y agregar, bloque textbox materias
+
+        /// <summary> Bloquea botones de eliminar y agregar, bloque textbox materias </summary>
         private void bttnModificarCreditos_Click(object sender, EventArgs e)
         {
             bttnGuardarCreditos.Visible = true;
             bttnAgregarMaterias.Enabled = false;
             bttnBorrarMateria.Enabled = false;
             txtMateria.Enabled = false;
-            txtCreditos.Text = "Creditos";
-            txtCreditos.ForeColor = Color.Gray;
         }
-        /// <summary>
-        /// Toma el id de la materia seleccionada y los nuevos creditos para modificarlos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <summary>  Toma el id de la materia seleccionada y los nuevos creditos para modificarlos  </summary>
         private void bttnGuardarCreditos_Click(object sender, EventArgs e)
         {
             Clase c = lstListaMateriasProfesores.SelectedItem as Clase;
-            Conector.ActualizarClase(c.Id, Convert.ToInt32(txtCreditos.Text));
+            Conector.ActualizarClase(c.Id, (int)UpDwnCreditos.Value);
             LlenarListaMaterias();
         }
 
-        /// <summary>
-        /// Agrega una nueva materia validada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <summary> Agrega una nueva materia validada </summary>
         private void bttnAgregarMaterias_Click(object sender, EventArgs e)
         {
-            if(txtMateria.Text.Length==0 || txtCreditos.Text.Length==0)
+            if(txtMateria.Text.Length==0)
             {
-                MessageBox.Show("Se requiere llenar los campos 'Materia' y 'Creditos'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Se requiere llenar el campo 'Materia'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                Clase c = new Clase(txtMateria.Text, Convert.ToInt32(txtCreditos.Text));
-                Conector.AgregarMaterias(idProfe, c);
+                Clase clase = new Clase(txtMateria.Text, idProfe, (int)UpDwnCreditos.Value);
+                Conector.AgregarMaterias(clase);
                 LlenarListaMaterias();
             }
            
@@ -97,16 +86,8 @@ namespace Schedule_Assistant
             bttnAgregarMaterias.Enabled = true;
             bttnBorrarMateria.Enabled = true;
             txtMateria.Enabled = true;
-            txtCreditos.Text = "";
-            txtCreditos.ForeColor = Color.SteelBlue;
         }
-
-        private void txtCreditos_Click(object sender, EventArgs e)
-        {
-            txtCreditos.Text = "";
-            txtCreditos.ForeColor = Color.SteelBlue;
-        }
-
+        
         private void lstListaMateriasProfesores_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(lstListaMateriasProfesores.SelectedIndex!=-1)

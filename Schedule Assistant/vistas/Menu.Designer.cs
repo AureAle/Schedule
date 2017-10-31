@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlOpciones.SuspendLayout();
             this.pnlFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +61,6 @@
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(119, 642);
             this.pnlOpciones.TabIndex = 1;
-            this.pnlOpciones.Visible = false;
             // 
             // lbl
             // 
@@ -141,13 +141,14 @@
             this.pnlFondo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFondo.Controls.Add(this.button1);
             this.pnlFondo.Controls.Add(this.pictureBox1);
             this.pnlFondo.Controls.Add(this.lblName);
             this.pnlFondo.Controls.Add(this.pcbLogo);
             this.pnlFondo.Controls.Add(this.btnAdminProfes);
             this.pnlFondo.Location = new System.Drawing.Point(117, 0);
             this.pnlFondo.Name = "pnlFondo";
-            this.pnlFondo.Size = new System.Drawing.Size(1143, 642);
+            this.pnlFondo.Size = new System.Drawing.Size(902, 642);
             this.pnlFondo.TabIndex = 2;
             this.pnlFondo.Visible = false;
             this.pnlFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFondo_Paint);
@@ -156,7 +157,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1021, 531);
+            this.pictureBox1.Location = new System.Drawing.Point(780, 531);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,7 +170,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(455, 280);
+            this.lblName.Location = new System.Drawing.Point(335, 280);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(400, 55);
             this.lblName.TabIndex = 4;
@@ -181,19 +182,29 @@
             this.pcbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
-            this.pcbLogo.Location = new System.Drawing.Point(283, 176);
+            this.pcbLogo.Location = new System.Drawing.Point(163, 176);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(248, 213);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbLogo.TabIndex = 3;
             this.pcbLogo.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(595, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1261, 642);
+            this.ClientSize = new System.Drawing.Size(1020, 642);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlFondo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -204,7 +215,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule Assistant ";
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();
@@ -229,6 +239,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pcbLogo;
         public System.Windows.Forms.Panel pnlFondo;
+        private System.Windows.Forms.Button button1;
     }
 }
 
