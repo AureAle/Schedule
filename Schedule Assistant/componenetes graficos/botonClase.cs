@@ -16,6 +16,8 @@ namespace Schedule_Assistant.componenetes_graficos
         private Clase clase;
         private int disponibles;
 
+        internal Clase Clase { get => clase; }
+        
         #endregion
 
 #region constructores
@@ -24,20 +26,20 @@ namespace Schedule_Assistant.componenetes_graficos
             this.Size = new Size(50,50);
         }
 
-
         public botonClase(Clase clase)
         {
             this.clase = clase;
             this.disponibles = clase.Creditos;
 
             string profesor = Conector.nombreProfesor(clase.Profesor);
-            this.Text = clase.NombreMateria + Environment.NewLine + "/" + clase.Creditos;
+            this.Text = 
+                clase.NombreMateria + Environment.NewLine +
+                profesor + Environment.NewLine +
+                disponibles + "/" + clase.Creditos;
 
             this.AutoSize = true;
         }
 
-#endregion
-
-
+        #endregion
     }
 }

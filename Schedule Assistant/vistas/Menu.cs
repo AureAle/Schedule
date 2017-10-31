@@ -73,6 +73,8 @@ namespace Schedule_Assistant
             horarios.Visible = true;
             pnlFondo.Visible = false;
             maestro.Visible = false;
+
+            pnlOpciones.Visible = false;
         }
 
         private void pnlFondo_Paint(object sender, PaintEventArgs e)
@@ -81,9 +83,12 @@ namespace Schedule_Assistant
         }
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frmMenu_KeyDown(object sender, KeyEventArgs e)
         {
-            pnlOpciones.Visible = !pnlOpciones.Visible;
+            if (e.KeyCode.ToString() == "F1")
+            {
+                pnlOpciones.Visible = !pnlOpciones.Visible;
+            }
         }
     }
 }

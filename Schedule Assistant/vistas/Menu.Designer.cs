@@ -40,7 +40,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlOpciones.SuspendLayout();
             this.pnlFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +54,7 @@
             this.pnlOpciones.Controls.Add(this.lbl);
             this.pnlOpciones.Controls.Add(this.btnHome);
             this.pnlOpciones.Controls.Add(this.label5);
+            this.pnlOpciones.Controls.Add(this.btnAdminProfes);
             this.pnlOpciones.Controls.Add(this.btnCrearHorarios);
             this.pnlOpciones.Controls.Add(this.label3);
             this.pnlOpciones.Location = new System.Drawing.Point(0, 0);
@@ -129,7 +129,7 @@
             this.btnAdminProfes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdminProfes.BackgroundImage")));
             this.btnAdminProfes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminProfes.Location = new System.Drawing.Point(36, 203);
+            this.btnAdminProfes.Location = new System.Drawing.Point(26, 231);
             this.btnAdminProfes.Name = "btnAdminProfes";
             this.btnAdminProfes.Size = new System.Drawing.Size(64, 66);
             this.btnAdminProfes.TabIndex = 21;
@@ -141,11 +141,9 @@
             this.pnlFondo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFondo.Controls.Add(this.button1);
             this.pnlFondo.Controls.Add(this.pictureBox1);
             this.pnlFondo.Controls.Add(this.lblName);
             this.pnlFondo.Controls.Add(this.pcbLogo);
-            this.pnlFondo.Controls.Add(this.btnAdminProfes);
             this.pnlFondo.Location = new System.Drawing.Point(117, 0);
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(902, 642);
@@ -189,16 +187,6 @@
             this.pcbLogo.TabIndex = 3;
             this.pcbLogo.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(595, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +204,7 @@
             this.Text = "Schedule Assistant ";
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.frmMenu_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMenu_KeyDown);
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();
             this.pnlFondo.ResumeLayout(false);
@@ -239,7 +228,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pcbLogo;
         public System.Windows.Forms.Panel pnlFondo;
-        private System.Windows.Forms.Button button1;
     }
 }
 
