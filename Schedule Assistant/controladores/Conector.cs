@@ -165,11 +165,7 @@ namespace Schedule_Assistant
             }
         }
 
-        /// <summary>
-        /// Obtiene lista de clases registradas por id de profe
-        /// </summary>
-        /// <param name="idProfe">int</param>
-        /// <returns></returns>
+        /// <summary>  Obtiene lista de clases registradas por id de profe </summary>
         public static Clase[] MostrarClases(int idProfe)
         {
             List<Clase> clasesLista = new List<Clase>();
@@ -178,6 +174,35 @@ namespace Schedule_Assistant
             {
                 comando.CommandText = "SELECT * FROM Clases WHERE maestro= " + idProfe;
                 comando.CommandType = CommandType.Text;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    int id = (int)lector["ID"];
+                    String nombre = lector["materia"].ToString();
+                    int creditos = (int)lector["creditos"];
+                    Clase c = new Clase(nombre, creditos);
+                    c.Id = id;
+                    clasesLista.Add(c);
+                }
+
+                return clasesLista.ToArray();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        /// <summary>  Obtiene lista de clases registradas por id de profe </summary>
+        public static Clase[] MostrarClasesTodas()
+        {
+            List<Clase> clasesLista = new List<Clase>();
+            try
+            {
+                comando.CommandText = "SELECT * FROM Clases";
                 conectar.Open();
                 OleDbDataReader lector = comando.ExecuteReader();
 

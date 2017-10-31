@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Schedule_Assistant.componenetes_graficos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,12 @@ namespace Schedule_Assistant.vistas
 
         private void CrearHorarios_Load(object sender, EventArgs e)
         {
-
+            Clase[] clases = Conector.MostrarClasesTodas();
+            foreach(Clase clase in clases)
+            {
+                botonClase boton = new botonClase(clase);
+                flowLayoutPanel1.Controls.Add(boton);
+            }
         }
     }
 }
