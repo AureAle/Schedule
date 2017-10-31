@@ -48,9 +48,10 @@ namespace Schedule_Assistant
                 comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('"+ nombre+ "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
-                int id = (int)comando.ExecuteScalar();
-                System.Console.WriteLine("maestro Nº" + id + " registrado");
-                
+                comando.ExecuteNonQuery();
+                //int id = (int)comando.ExecuteScalar();
+                //System.Console.WriteLine("maestro Nº" + id + " registrado");
+
             }
             finally
             {

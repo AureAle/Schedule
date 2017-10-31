@@ -22,20 +22,22 @@ namespace Schedule_Assistant
         public frmMenu()
         {
             InitializeComponent();
+
+            btnAdminProfes.PerformClick();
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
              maestro.MdiParent = this;
-            maestro.Size = new Size(1143, 642);
+            maestro.Size = pnlFondo.Size; /*new Size(1143, 642);*/
             maestro.Location = pnlFondo.Location;
             //maestro.Anchor = pnlFondo.Anchor;
             maestro.Show();
 
             horarios.MdiParent = this;
-            horarios.Size = new Size(1143, 642);
-            horarios.Location = new Point(117, 0);
-           // horarios.Anchor = pnlFondo.Anchor;
+            horarios.Size = pnlFondo.Size; /*new Size(1143, 642);*/
+            horarios.Location = pnlFondo.Location; /*new Point(117, 0);*/
+            //horarios.Anchor = pnlFondo.Anchor;
             horarios.Show();
 
            // noDisponible.MdiParent = this;
@@ -49,6 +51,7 @@ namespace Schedule_Assistant
            // noDisponible.Visible = false;
            // materias.Visible = false;
             horarios.Visible = false;
+
         }
         
         private void btnHome_Click(object sender, EventArgs e)
@@ -72,5 +75,9 @@ namespace Schedule_Assistant
             maestro.Visible = false;
         }
 
+        private void pnlFondo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -121,7 +121,7 @@
   <data name="btnHome.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAArFJREFUeF7tmL1uE0EUhZ3Q0vIE1HkKaPIaKEjUqdNDQxAQIPwECEgIpaNLgYRE
+        EgAACxIB0t1+/AAAArFJREFUeF7tmL1uE0EUhZ3Q0vIE1HkKaPIaKEjUqdNDQxAQIPwECEgIpaNLgYRE
         SU8BNQ+Qnh9zzsxZs54Z7y7sbnYG3086cnb2+t5zj20p9swwDMMwjEmYz+fXKV2uF1r+l7ReIdSWr1if
         ELioFg4pNwQYvwS9g75A13QcwQWh1PIVZYYA00+dfc8P6LJuLcBZ2/IV5YUAw++d9T9c0S0HrrsuX1FW
         CDAbBnBVt9qWfyulKCcEGE0GgMe25S9IZYcAk1EAUOvyejqfX3YIMBgG8AbqtHwFz3QvRd4hwFwYwCrC
@@ -139,7 +139,7 @@
   <data name="btnCrearHorarios.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAABLJJREFUeF7tmsuqHGUUhU8S0KATr4jkBST4AoKTCMYEwUmG6iQRDPoMCTpUB5nq
+        EgAACxIB0t1+/AAABLJJREFUeF7tmsuqHGUUhU8S0KATr4jkBST4AoKTCMYEwUmG6iQRDPoMCTpUB5nq
         KJKpbyCJBgIRnAScSCbiRA0IXghCxOvap75eXV2n/uqqXd2nq6E/WCRn7V2r/r+67t17O3bs2LFjx44d
         Jf7bcphGHnK2FqaRh5ythWnkIWdrYRp5yDHYk4VhGuw85BjsycIwDXYecgz2ZGGYBjsPOQZ7sjBMg52H
         HIM9WRimwc5DjsGeLAzTYOchx2BPFoZpsPOQY7AnC8M02HnIMdiThWEa7DzkGOzJwjANdh5yDPZkYZgG
@@ -165,7 +165,7 @@
   <data name="btnAdminProfes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAz5JREFUeF7t179KXEEUx3ERwUqwF4QUYm2RgGCeQgvfwLxI8hy+Q1IKSRpL27R2
+        EgAACxIB0t1+/AAAAz5JREFUeF7t179KXEEUx3ERwUqwF4QUYm2RgGCeQgvfwLxI8hy+Q1IKSRpL27R2
         SZE+YGN+Z+7XgTUec2bvHO8F7wcGnLPnz+yud/fuxmKxWLS4v7/f1PqgdaN1x7K/LbZJWhqbwayXn68B
         e1pftTz22B7p3VlvZnjy5quxvfLfbMp/2CG6vxPWU2uy+XYA+xeLuqCsG/WcdL4dwK6zqBvKurGeQ+uQ
         7vPtAPZhE3VHWTfWc2gd0n3+8gKo6au/BF79h6B9DT33Hfwg82twsvmFGr/eG6EHGmDvxIWWXZP2wWTL
@@ -1052,7 +1052,7 @@
   <data name="pcbLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAEFNJREFUeF7tnQew5VQZx5feexGWuksXkLI4oPQmCi4jXUGKiAKWGQVFaQKC4kgT
+        EgAACxIB0t1+/AAAEFNJREFUeF7tnQew5VQZx5feexGWuksXkLI4oPQmCi4jXUGKiAKWGQVFaQKC4kgT
         QVylCQg40nRYEUREQIogIsqIgiuoqyLYG3b8/ZPv7bx7c06Sm5zk5b57fjP/YXn58uWcL+cmJ6dOiUQi
         keHjpZdeWhXtjU5El6KvokfQj9BPTE+gb6Eb0Xno7WhrtIi5iQwL3LSF0J5oFtLNrcM/0N3oA2h9u0Sk
         i3CD1kHno9+iptCTQ0+HJeyykYmGm7E+ug79F7XF79CpaClLRqRtFHykX/y/URX0eP8T+jP6j/5Qgd+g

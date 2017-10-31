@@ -56,11 +56,11 @@
             this.pnlOpciones.Controls.Add(this.label5);
             this.pnlOpciones.Controls.Add(this.btnCrearHorarios);
             this.pnlOpciones.Controls.Add(this.label3);
-            this.pnlOpciones.Controls.Add(this.btnAdminProfes);
             this.pnlOpciones.Location = new System.Drawing.Point(0, 0);
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(119, 642);
             this.pnlOpciones.TabIndex = 1;
+            this.pnlOpciones.Visible = false;
             // 
             // lbl
             // 
@@ -129,7 +129,7 @@
             this.btnAdminProfes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdminProfes.BackgroundImage")));
             this.btnAdminProfes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminProfes.Location = new System.Drawing.Point(26, 221);
+            this.btnAdminProfes.Location = new System.Drawing.Point(36, 203);
             this.btnAdminProfes.Name = "btnAdminProfes";
             this.btnAdminProfes.Size = new System.Drawing.Size(64, 66);
             this.btnAdminProfes.TabIndex = 21;
@@ -144,11 +144,13 @@
             this.pnlFondo.Controls.Add(this.pictureBox1);
             this.pnlFondo.Controls.Add(this.lblName);
             this.pnlFondo.Controls.Add(this.pcbLogo);
+            this.pnlFondo.Controls.Add(this.btnAdminProfes);
             this.pnlFondo.Location = new System.Drawing.Point(117, 0);
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(1143, 642);
             this.pnlFondo.TabIndex = 2;
             this.pnlFondo.Visible = false;
+            this.pnlFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFondo_Paint);
             // 
             // pictureBox1
             // 
@@ -202,6 +204,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule Assistant ";
             this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();

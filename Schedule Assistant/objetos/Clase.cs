@@ -24,7 +24,7 @@ namespace Schedule_Assistant
 
         public override string ToString()
         {
-            return nombre + "  Creditos: " + creditos;
+            return nombre + " | Créditos: " + creditos;
         }
     }
 }
