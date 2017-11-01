@@ -41,7 +41,7 @@ namespace Schedule_Assistant
         private void bttnGuardarCreditos_Click(object sender, EventArgs e)
         {
             Clase c = lstListaMateriasProfesores.SelectedItem as Clase;
-            Conector.ActualizarClase(c.Id, (int)UpDwnCreditos.Value);
+            Conector.actualizarClase(c.Id, (int)UpDwnCreditos.Value);
             LlenarListaMaterias();
         }
 
@@ -55,7 +55,7 @@ namespace Schedule_Assistant
             else
             {
                 Clase clase = new Clase(txtMateria.Text, idProfe, (int)UpDwnCreditos.Value);
-                Conector.AgregarMaterias(clase);
+                Conector.agregarMaterias(clase);
                 LlenarListaMaterias();
             }
            
@@ -71,7 +71,7 @@ namespace Schedule_Assistant
             if(lstListaMateriasProfesores.SelectedIndex!=-1)
             {
                 Clase c = lstListaMateriasProfesores.SelectedItem as Clase;
-                Conector.BorrarClase(c);
+                Conector.borrarClase(c);
                 LlenarListaMaterias();
             }
             else

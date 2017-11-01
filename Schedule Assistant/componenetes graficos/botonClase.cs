@@ -17,10 +17,11 @@ namespace Schedule_Assistant.componenetes_graficos
         private int disponibles;
 
         internal Clase Clase { get => clase; }
-        
+        public int Disponibles { get => disponibles; set => disponibles = value; }
+
         #endregion
 
-#region constructores
+        #region constructores
         public botonClase()
         {
             this.Size = new Size(50,50);
@@ -31,7 +32,7 @@ namespace Schedule_Assistant.componenetes_graficos
             this.clase = clase;
             this.disponibles = clase.Creditos;
 
-            string profesor = Conector.nombreProfesor(clase.Profesor);
+            string profesor = Conector.leerNombreProfesor(clase.Profesor);
             this.Text = 
                 clase.NombreMateria + Environment.NewLine +
                 profesor + Environment.NewLine +

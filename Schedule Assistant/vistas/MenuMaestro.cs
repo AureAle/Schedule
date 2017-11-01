@@ -111,7 +111,7 @@ namespace Schedule_Assistant
             else
             {
                 Profe p = lstProfesores.SelectedItem as Profe;
-                Conector.BorrarProfe(p.Id);
+                Conector.borrarProfe(p.Id);
                 LlenarListaProfesores();
             }
             
@@ -125,7 +125,7 @@ namespace Schedule_Assistant
             //VALIDACION DE CAMPO TXTNOMBREPROFESOR NO VACIO
             if(NombreProfesorNoVacio())
             {
-                Conector.AgregarProfe(txtNombreProfesor.Text);
+                Conector.agregarProfe(txtNombreProfesor.Text);
 
                 LlenarListaProfesores();
                 txtNombreProfesor.Clear();
@@ -140,7 +140,7 @@ namespace Schedule_Assistant
             {
                 Profe profe = lstProfesores.SelectedItem as Profe;
                 string nombre = txtNombreProfesor.Text;
-                Conector.ActualizarProfesor(profe.Id, nombre);
+                Conector.actualizarProfesor(profe.Id, nombre);
                 LlenarListaProfesores();
                 txtNombreProfesor.Text = "";
                 bttnGuardarNuevoNombre.Visible = false;

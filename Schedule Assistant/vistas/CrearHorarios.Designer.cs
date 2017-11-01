@@ -33,7 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.botonClase3 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase2 = new Schedule_Assistant.componenetes_graficos.botonClase();
-            this.botonClase4 = new Schedule_Assistant.componenetes_graficos.botonClase();
+            this.btnHora11 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase5 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase6 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase7 = new Schedule_Assistant.componenetes_graficos.botonClase();
@@ -101,7 +101,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.botonClase3, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.botonClase2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.botonClase4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnHora11, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.botonClase5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.botonClase6, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.botonClase7, 1, 2);
@@ -170,14 +170,14 @@
             this.botonClase2.TabIndex = 1;
             this.botonClase2.UseVisualStyleBackColor = true;
             // 
-            // botonClase4
+            // btnHora11
             // 
-            this.botonClase4.Location = new System.Drawing.Point(3, 3);
-            this.botonClase4.Name = "botonClase4";
-            this.botonClase4.Size = new System.Drawing.Size(176, 68);
-            this.botonClase4.TabIndex = 1;
-            this.botonClase4.UseVisualStyleBackColor = true;
-            this.botonClase4.Click += new System.EventHandler(this.hora_Click);
+            this.btnHora11.Location = new System.Drawing.Point(3, 3);
+            this.btnHora11.Name = "btnHora11";
+            this.btnHora11.Size = new System.Drawing.Size(176, 68);
+            this.btnHora11.TabIndex = 1;
+            this.btnHora11.UseVisualStyleBackColor = true;
+            this.btnHora11.Click += new System.EventHandler(this.hora_Click);
             // 
             // botonClase5
             // 
@@ -552,7 +552,7 @@
         private componenetes_graficos.botonClase botonClase1;
         private componenetes_graficos.botonClase botonClase3;
         private componenetes_graficos.botonClase botonClase2;
-        private componenetes_graficos.botonClase botonClase4;
+        private componenetes_graficos.botonClase btnHora11;
         private componenetes_graficos.botonClase botonClase5;
         private componenetes_graficos.botonClase botonClase6;
         private componenetes_graficos.botonClase botonClase7;

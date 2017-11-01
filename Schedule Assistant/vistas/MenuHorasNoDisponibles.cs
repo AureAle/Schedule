@@ -70,7 +70,7 @@ namespace Schedule_Assistant
                 if (noEsta)
                 {
                     HoraNoDisponible hnd = new HoraNoDisponible(hora, dia);
-                    Conector.AgregarHorariosNoDisponibles(idProfe, hnd);
+                    Conector.agregarHorariosNoDisponibles(idProfe, hnd);
 
                     LlenarListaHoras();
                     
@@ -108,7 +108,7 @@ namespace Schedule_Assistant
             if(lstListaHorariosProfesor.SelectedIndex!=-1)
             {
                 HoraNoDisponible hnd = lstListaHorariosProfesor.SelectedItem as HoraNoDisponible;
-                Conector.BorrarHoraNoDisponible(hnd);
+                Conector.borrarHoraNoDisponible(hnd);
                 LlenarListaHoras();
             }
             else

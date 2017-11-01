@@ -40,7 +40,7 @@ namespace Schedule_Assistant
         #region escritura
 
         /// <summary> registra el maestro indicado enla base de datos, retorna su id </summary>
-        public static void AgregarProfe(String nombre)
+        public static void agregarProfe(String nombre)
         {
             try
             {
@@ -59,8 +59,25 @@ namespace Schedule_Assistant
             }
         }
 
+        internal static void agregarHoraClase(int dia, int hora, int clase, int grupo, int aula)
+        {
+            try
+            {
+                comando.CommandText =
+                    "INSERT INTO Horario " +"(dia, hora, clase, grupo, aula) " +
+                    "VALUES(" + dia + "," + hora + "," + clase + "," + grupo + "," + aula + ")";
+                conectar.Open();
+                comando.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
         /// <summary> registra las horas no disponibles del maestro indicado en la base de datos </summary>
-        public static void AgregarHorariosNoDisponibles(int idProfe, HoraNoDisponible hnd)//Agregar a la base de datos
+        public static void agregarHorariosNoDisponibles(int idProfe, HoraNoDisponible hnd)//Agregar a la base de datos
         {
 
             try
@@ -80,7 +97,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary> registra la materia indicada, relacionada al profesor indicado, en la base de datos </summary>
-        public static void AgregarMaterias(Clase clase)
+        public static void agregarMaterias(Clase clase)
         {
             try
             {
@@ -246,12 +263,8 @@ namespace Schedule_Assistant
 
         #region Actualizar
 
-        /// <summary>
-        /// Actualiza el Nombre de un Profesor
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <param name="nombre">String</param>
-        public static void ActualizarProfesor(int id, string nombre)
+        /// <summary> Actualiza el Nombre de un Profesor </summary>
+        public static void actualizarProfesor(int id, string nombre)
         {
             try
             {
@@ -267,12 +280,9 @@ namespace Schedule_Assistant
                     conectar.Close();
             }
         }
-        /// <summary>
-        /// Modifica los creditos de una clase
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <param name="creditos">int</param>
-        public static void ActualizarClase(int id, int creditos)
+        
+        /// <summary> Modifica los creditos de una clase </summary>
+        public static void actualizarClase(int id, int creditos)
         {
             try
             {
@@ -294,7 +304,7 @@ namespace Schedule_Assistant
 #region borrar
 
         /// <summary> elimina al maestro indicado de la base de datos </summary>
-        public static void BorrarProfe(int idProfe)
+        public static void borrarProfe(int idProfe)
         {
             try
             {
@@ -312,7 +322,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary> BORRAR HORAS NO DISPONIBLES, SOLO PIDE HND POR QUE SOLO OCUPAS EL ID DE LA HORA SELECICONADA QUE ES UN OBJETO HND </summary>
-        public static void BorrarHoraNoDisponible(HoraNoDisponible hnd)
+        public static void borrarHoraNoDisponible(HoraNoDisponible hnd)
         {
             try
             {
@@ -330,7 +340,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary> BORRAR Materias </summary>
-        public static void BorrarMateria(int idMateria)
+        public static void borrarMateria(int idMateria)
         {
             try
             {
@@ -348,7 +358,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary>Borra la clase seleccionada</summary>
-        public static void BorrarClase(Clase c)
+        public static void borrarClase(Clase c)
         {
             try
             {
