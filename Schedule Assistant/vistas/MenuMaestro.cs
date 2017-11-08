@@ -74,10 +74,16 @@ namespace Schedule_Assistant
 
         protected void bttnHorariosProfesor_Click(object sender, EventArgs e)
         {
-
-            Profe p=lstProfesores.SelectedItem as Profe;
-            MenuHorasNoDisponibles horas = new MenuHorasNoDisponibles(p.Id, p.Nombre);
-            horas.ShowDialog();
+            if (lstProfesores.SelectedIndex == -1)
+            {
+                MessageBox.Show("Se requiere seleccionar un Profesor", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Profe p = lstProfesores.SelectedItem as Profe;
+                MenuHorasNoDisponibles horas = new MenuHorasNoDisponibles(p.Id, p.Nombre);
+                horas.ShowDialog();
+            }
 
         }
 
@@ -178,9 +184,17 @@ namespace Schedule_Assistant
         /// <summary>  </summary>
         private void bttnModificarMaterias_Click(object sender, EventArgs e)
         {
-            Profe p = lstProfesores.SelectedItem as Profe;
-            MenuMaterias mm = new MenuMaterias(p.Id, p.Nombre);
-            mm.ShowDialog();
+            if (lstProfesores.SelectedIndex == -1)
+            {
+                MessageBox.Show("Se requiere seleccionar un Profesor", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Profe p = lstProfesores.SelectedItem as Profe;
+                MenuMaterias mm = new MenuMaterias(p.Id, p.Nombre);
+                mm.ShowDialog();
+            }
+            
         }
 
         private void MenuMaestro_Load(object sender, EventArgs e)
