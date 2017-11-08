@@ -51,7 +51,7 @@ namespace Schedule_Assistant.componenetes_graficos
 
 #region metodos
 
-        public void asignar(Clase clase)
+        public Boolean asignar(Clase clase)
         {
             if (this.disponible==false)
             {
@@ -59,6 +59,7 @@ namespace Schedule_Assistant.componenetes_graficos
                  * feedback negativo
                  * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
                  */
+                return false;
             }
             if (this.clase != null)
             {
@@ -66,7 +67,11 @@ namespace Schedule_Assistant.componenetes_graficos
                  * feedback advertencia
                  * por ejemplo un messagebox;
                  *  y despues se sobreescribe la clase
+                 *  
+                 *  si se sobreescribe
+                 *  return true;
                  */
+                return false;
             }
             else
             {
@@ -78,6 +83,7 @@ namespace Schedule_Assistant.componenetes_graficos
 
                 this.AutoSize = true;
 
+                return true;
                 //registrar en la base de datos?
             }
             

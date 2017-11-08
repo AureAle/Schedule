@@ -13,7 +13,7 @@ namespace Schedule_Assistant.vistas
     public partial class CrearHorarios : Form
     {
         
-        private botonClase claseSelec;
+        private botonClase botonClaseSelec;
 
 #region constructor
 
@@ -39,13 +39,17 @@ namespace Schedule_Assistant.vistas
             }
         }
 
+        //qiza sea mejor que este sea comportamiento del boton mismo.
         public void selecQuitarHora()
         {
-            if (claseSelec.Disponibles < 1)
-                claseSelec.Disponibles--;
+            if (botonClaseSelec.Disponibles < 1)
+            {
+                botonClaseSelec.Disponibles--;
+                //actualizar el boton
+            }
             else
             {
-                claseSelec = null;
+                botonClaseSelec = null;
                 //despintar horas no disponibles
             }
         }
@@ -56,31 +60,39 @@ namespace Schedule_Assistant.vistas
 
         private void btnClase_Click(object sender, EventArgs e)
         {
-            if(claseSelec != null)
+            if(botonClaseSelec != null)
             {
                 //despintar horas no disponibles
             }
 
-            claseSelec = sender as botonClase;
+            botonClaseSelec = sender as botonClase;
             //colorear las horas en las que no pueda ir el maestro
         }
 
-        private void hora_Click(object sender, EventArgs e)
+        private void botonHora_Click(object sender, EventArgs e)
         {
-            if (claseSelec != null)
+            if (botonClaseSelec == null)
+            {
+                //nada
+            }
+            else
             {
                 //idnetificar
-                botonClase boton = sender as botonClase;
+                BotonHoraC boton = sender as BotonHoraC;
                 TableLayoutPanelCellPosition celda = tableLayoutPanel1.GetCellPosition(boton);
+                Clase clase = botonClaseSelec.Clase;
 
-                Clase clase = boton.Clase;
+                Boolean aceptado = boton.asignar(clase);
+                if (aceptado)
+                {
+                    //registrar en la base de datos
+                    Conector.agregarHoraClase(celda.Column, celda.Row, clase.Id, 1, 1);
 
-                //ejecutar
-                Conector.agregarHoraClase(celda.Column, celda.Row, clase.Id, 1, 1);
 
-                //almacenar
+                    //restar una hora
+                    selecQuitarHora();
+                }
 
-                //restar una hora
             }
 
         }

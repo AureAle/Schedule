@@ -64,10 +64,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.botonHoraC1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.botonHoraC2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.botonHoraC3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.botonHoraC4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.botonHoraC1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(117, 33);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -139,6 +139,8 @@
             // 
             // botonHoraC1
             // 
+            this.botonHoraC1.Clase = null;
+            this.botonHoraC1.Disponible = false;
             this.botonHoraC1.Location = new System.Drawing.Point(3, 3);
             this.botonHoraC1.Name = "botonHoraC1";
             this.botonHoraC1.Size = new System.Drawing.Size(176, 68);
@@ -147,6 +149,8 @@
             // 
             // botonHoraC2
             // 
+            this.botonHoraC2.Clase = null;
+            this.botonHoraC2.Disponible = false;
             this.botonHoraC2.Location = new System.Drawing.Point(3, 77);
             this.botonHoraC2.Name = "botonHoraC2";
             this.botonHoraC2.Size = new System.Drawing.Size(176, 68);
@@ -155,6 +159,8 @@
             // 
             // botonHoraC3
             // 
+            this.botonHoraC3.Clase = null;
+            this.botonHoraC3.Disponible = false;
             this.botonHoraC3.Location = new System.Drawing.Point(185, 3);
             this.botonHoraC3.Name = "botonHoraC3";
             this.botonHoraC3.Size = new System.Drawing.Size(176, 68);
@@ -163,6 +169,8 @@
             // 
             // botonHoraC4
             // 
+            this.botonHoraC4.Clase = null;
+            this.botonHoraC4.Disponible = false;
             this.botonHoraC4.Location = new System.Drawing.Point(185, 77);
             this.botonHoraC4.Name = "botonHoraC4";
             this.botonHoraC4.Size = new System.Drawing.Size(176, 68);
