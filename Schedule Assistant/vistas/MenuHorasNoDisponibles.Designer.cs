@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuHorasNoDisponibles));
             this.bttnEliminarHoraProfesor = new System.Windows.Forms.Button();
             this.lstListaHorariosProfesor = new System.Windows.Forms.ListBox();
             this.lblHora = new System.Windows.Forms.Label();
@@ -150,11 +151,11 @@
             // lblMaestros
             // 
             this.lblMaestros.AutoSize = true;
-            this.lblMaestros.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaestros.Font = new System.Drawing.Font("Arial Unicode MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaestros.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblMaestros.Location = new System.Drawing.Point(131, 9);
+            this.lblMaestros.Location = new System.Drawing.Point(131, 5);
             this.lblMaestros.Name = "lblMaestros";
-            this.lblMaestros.Size = new System.Drawing.Size(378, 42);
+            this.lblMaestros.Size = new System.Drawing.Size(382, 50);
             this.lblMaestros.TabIndex = 1;
             this.lblMaestros.Text = "Horas no disponibles ";
             this.lblMaestros.Click += new System.EventHandler(this.lblMaestros_Click);
@@ -162,11 +163,11 @@
             // lblHoras
             // 
             this.lblHoras.AutoSize = true;
-            this.lblHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoras.Font = new System.Drawing.Font("Arial Unicode MS", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoras.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblHoras.Location = new System.Drawing.Point(23, 83);
             this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(133, 33);
+            this.lblHoras.Size = new System.Drawing.Size(135, 39);
             this.lblHoras.TabIndex = 2;
             this.lblHoras.Text = "Profesor:";
             // 
@@ -199,6 +200,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MenuHorasNoDisponibles";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
