@@ -13,15 +13,17 @@ namespace Schedule_Assistant.componenetes_graficos
     {
 
 #region propiedades
+
         private Clase clase;
         private int disponibles;
 
         internal Clase Clase { get => clase; }
         public int Disponibles { get => disponibles; set => disponibles = value; }
 
-        #endregion
+#endregion
 
-        #region constructores
+#region constructores
+
         public botonClase()
         {
             this.Size = new Size(50,50);
@@ -41,6 +43,7 @@ namespace Schedule_Assistant.componenetes_graficos
             this.AutoSize = true;
         }
 
-        #endregion
+#endregion
+
     }
 }
