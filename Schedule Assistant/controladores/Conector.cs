@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Collections.Generic;
+using SA_objetos;
 
 namespace Schedule_Assistant
 {

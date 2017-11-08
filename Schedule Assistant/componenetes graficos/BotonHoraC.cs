@@ -1,4 +1,5 @@
 ﻿using System;
+using SA_objetos;
 using System.Linq;
 using System.Text;
 using System.Drawing;
@@ -15,10 +16,20 @@ namespace Schedule_Assistant.componenetes_graficos
 #region propiedades
 
         private Clase clase;
-        private int dia;
-        private int hora;
+        private Boolean disponible;
+        
+        public Clase Clase { get => clase; set => clase = value; }
 
-        internal Clase Clase { get => clase; }
+        /// <summary> define si se le puede asignar una clase </summary>
+        public Boolean Disponible
+        {
+            get => disponible;
+            set
+            {
+                this.disponible = value;
+                this.BackColor = value ? Color.Transparent : Color.MistyRose;
+            }
+        }
         //public int Dia { get => dia; set => dia = value; }
         //public int Hora { get => hora; set => hora = value; }
 
@@ -28,19 +39,48 @@ namespace Schedule_Assistant.componenetes_graficos
 #region constructores
 
         public BotonHoraC()
-        {
-            this.Size = new Size(50, 50);
-        }
+        {  }
 
         public BotonHoraC(Clase clase)
         {
-            this.clase = clase;
+            //si este metodo guarda en la base de datos, entonces es un pleonasmo o es reciproco
+            this.asignar(clase);
+        }
 
-            string profesor = Conector.leerNombreProfesor(clase.Profesor);
-            this.Text =
-                clase.NombreMateria + Environment.NewLine + profesor;
+#endregion
 
-            this.AutoSize = true;
+#region metodos
+
+        public void asignar(Clase clase)
+        {
+            if (this.disponible==false)
+            {
+                /*
+                 * feedback negativo
+                 * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
+                 */
+            }
+            if (this.clase != null)
+            {
+                /*
+                 * feedback advertencia
+                 * por ejemplo un messagebox;
+                 *  y despues se sobreescribe la clase
+                 */
+            }
+            else
+            {
+                this.clase = clase;
+
+                string profesor = Conector.leerNombreProfesor(clase.Profesor);
+                this.Text =
+                    clase.NombreMateria + Environment.NewLine + profesor;
+
+                this.AutoSize = true;
+
+                //registrar en la base de datos?
+            }
+            
         }
 
 #endregion

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
 using Schedule_Assistant.componenetes_graficos;
+using SA_objetos;
 
 namespace Schedule_Assistant.vistas
 {

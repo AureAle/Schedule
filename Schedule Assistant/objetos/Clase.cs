@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
-namespace Schedule_Assistant
+namespace SA_objetos
 {
     class Clase
     {
 
 #region propiedades
+
         private int id;
         private String nombreMateria;
         private int creditos;
@@ -24,9 +25,10 @@ namespace Schedule_Assistant
         /// <summary> profesor que da dicha clase </summary>
         public int Profesor { get => profesor; set => profesor = value; }
 
-        #endregion
+#endregion
 
-        #region contructor
+#region contructor
+
         public Clase( String materia,int profesor, int creditos)
         {
             this.nombreMateria = materia;
@@ -34,7 +36,7 @@ namespace Schedule_Assistant
             this.Profesor = profesor;
         }
 
-        #endregion
+#endregion
 
 #region metodos
 

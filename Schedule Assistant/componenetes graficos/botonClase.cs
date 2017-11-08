@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using SA_objetos;
 
 namespace Schedule_Assistant.componenetes_graficos
 {
