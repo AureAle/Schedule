@@ -72,6 +72,7 @@
             this.botonClase40 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.botonClase41 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.pnlProfe = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.lblMaestros = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.botonClase1 = new Schedule_Assistant.componenetes_graficos.botonClase();
@@ -87,7 +88,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(166, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1030, 618);
+            this.panel1.Size = new System.Drawing.Size(1030, 630);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -156,6 +157,7 @@
             // 
             // botonClase3
             // 
+            this.botonClase3.Disponibles = 0;
             this.botonClase3.Location = new System.Drawing.Point(185, 77);
             this.botonClase3.Name = "botonClase3";
             this.botonClase3.Size = new System.Drawing.Size(176, 68);
@@ -164,6 +166,7 @@
             // 
             // botonClase2
             // 
+            this.botonClase2.Disponibles = 0;
             this.botonClase2.Location = new System.Drawing.Point(185, 3);
             this.botonClase2.Name = "botonClase2";
             this.botonClase2.Size = new System.Drawing.Size(176, 68);
@@ -172,6 +175,7 @@
             // 
             // btnHora11
             // 
+            this.btnHora11.Disponibles = 0;
             this.btnHora11.Location = new System.Drawing.Point(3, 3);
             this.btnHora11.Name = "btnHora11";
             this.btnHora11.Size = new System.Drawing.Size(176, 68);
@@ -181,6 +185,7 @@
             // 
             // botonClase5
             // 
+            this.botonClase5.Disponibles = 0;
             this.botonClase5.Location = new System.Drawing.Point(3, 77);
             this.botonClase5.Name = "botonClase5";
             this.botonClase5.Size = new System.Drawing.Size(176, 68);
@@ -189,6 +194,7 @@
             // 
             // botonClase6
             // 
+            this.botonClase6.Disponibles = 0;
             this.botonClase6.Location = new System.Drawing.Point(3, 151);
             this.botonClase6.Name = "botonClase6";
             this.botonClase6.Size = new System.Drawing.Size(176, 68);
@@ -197,6 +203,7 @@
             // 
             // botonClase7
             // 
+            this.botonClase7.Disponibles = 0;
             this.botonClase7.Location = new System.Drawing.Point(185, 151);
             this.botonClase7.Name = "botonClase7";
             this.botonClase7.Size = new System.Drawing.Size(176, 68);
@@ -205,6 +212,7 @@
             // 
             // botonClase8
             // 
+            this.botonClase8.Disponibles = 0;
             this.botonClase8.Location = new System.Drawing.Point(185, 225);
             this.botonClase8.Name = "botonClase8";
             this.botonClase8.Size = new System.Drawing.Size(176, 68);
@@ -213,6 +221,7 @@
             // 
             // botonClase9
             // 
+            this.botonClase9.Disponibles = 0;
             this.botonClase9.Location = new System.Drawing.Point(3, 225);
             this.botonClase9.Name = "botonClase9";
             this.botonClase9.Size = new System.Drawing.Size(176, 68);
@@ -221,6 +230,7 @@
             // 
             // botonClase10
             // 
+            this.botonClase10.Disponibles = 0;
             this.botonClase10.Location = new System.Drawing.Point(3, 299);
             this.botonClase10.Name = "botonClase10";
             this.botonClase10.Size = new System.Drawing.Size(176, 68);
@@ -229,6 +239,7 @@
             // 
             // botonClase11
             // 
+            this.botonClase11.Disponibles = 0;
             this.botonClase11.Location = new System.Drawing.Point(185, 299);
             this.botonClase11.Name = "botonClase11";
             this.botonClase11.Size = new System.Drawing.Size(176, 68);
@@ -237,6 +248,7 @@
             // 
             // botonClase12
             // 
+            this.botonClase12.Disponibles = 0;
             this.botonClase12.Location = new System.Drawing.Point(185, 373);
             this.botonClase12.Name = "botonClase12";
             this.botonClase12.Size = new System.Drawing.Size(176, 68);
@@ -245,6 +257,7 @@
             // 
             // botonClase13
             // 
+            this.botonClase13.Disponibles = 0;
             this.botonClase13.Location = new System.Drawing.Point(3, 373);
             this.botonClase13.Name = "botonClase13";
             this.botonClase13.Size = new System.Drawing.Size(176, 68);
@@ -253,6 +266,7 @@
             // 
             // botonClase14
             // 
+            this.botonClase14.Disponibles = 0;
             this.botonClase14.Location = new System.Drawing.Point(367, 373);
             this.botonClase14.Name = "botonClase14";
             this.botonClase14.Size = new System.Drawing.Size(176, 68);
@@ -261,6 +275,7 @@
             // 
             // botonClase15
             // 
+            this.botonClase15.Disponibles = 0;
             this.botonClase15.Location = new System.Drawing.Point(367, 299);
             this.botonClase15.Name = "botonClase15";
             this.botonClase15.Size = new System.Drawing.Size(176, 68);
@@ -269,6 +284,7 @@
             // 
             // botonClase16
             // 
+            this.botonClase16.Disponibles = 0;
             this.botonClase16.Location = new System.Drawing.Point(367, 225);
             this.botonClase16.Name = "botonClase16";
             this.botonClase16.Size = new System.Drawing.Size(176, 68);
@@ -277,6 +293,7 @@
             // 
             // botonClase17
             // 
+            this.botonClase17.Disponibles = 0;
             this.botonClase17.Location = new System.Drawing.Point(367, 151);
             this.botonClase17.Name = "botonClase17";
             this.botonClase17.Size = new System.Drawing.Size(176, 68);
@@ -285,6 +302,7 @@
             // 
             // botonClase18
             // 
+            this.botonClase18.Disponibles = 0;
             this.botonClase18.Location = new System.Drawing.Point(367, 77);
             this.botonClase18.Name = "botonClase18";
             this.botonClase18.Size = new System.Drawing.Size(176, 68);
@@ -293,6 +311,7 @@
             // 
             // botonClase19
             // 
+            this.botonClase19.Disponibles = 0;
             this.botonClase19.Location = new System.Drawing.Point(549, 77);
             this.botonClase19.Name = "botonClase19";
             this.botonClase19.Size = new System.Drawing.Size(176, 68);
@@ -301,6 +320,7 @@
             // 
             // botonClase20
             // 
+            this.botonClase20.Disponibles = 0;
             this.botonClase20.Location = new System.Drawing.Point(549, 151);
             this.botonClase20.Name = "botonClase20";
             this.botonClase20.Size = new System.Drawing.Size(176, 68);
@@ -309,6 +329,7 @@
             // 
             // botonClase21
             // 
+            this.botonClase21.Disponibles = 0;
             this.botonClase21.Location = new System.Drawing.Point(549, 225);
             this.botonClase21.Name = "botonClase21";
             this.botonClase21.Size = new System.Drawing.Size(176, 68);
@@ -317,6 +338,7 @@
             // 
             // botonClase22
             // 
+            this.botonClase22.Disponibles = 0;
             this.botonClase22.Location = new System.Drawing.Point(549, 299);
             this.botonClase22.Name = "botonClase22";
             this.botonClase22.Size = new System.Drawing.Size(176, 68);
@@ -325,6 +347,7 @@
             // 
             // botonClase23
             // 
+            this.botonClase23.Disponibles = 0;
             this.botonClase23.Location = new System.Drawing.Point(549, 373);
             this.botonClase23.Name = "botonClase23";
             this.botonClase23.Size = new System.Drawing.Size(176, 68);
@@ -333,6 +356,7 @@
             // 
             // botonClase24
             // 
+            this.botonClase24.Disponibles = 0;
             this.botonClase24.Location = new System.Drawing.Point(549, 447);
             this.botonClase24.Name = "botonClase24";
             this.botonClase24.Size = new System.Drawing.Size(176, 68);
@@ -341,6 +365,7 @@
             // 
             // botonClase25
             // 
+            this.botonClase25.Disponibles = 0;
             this.botonClase25.Location = new System.Drawing.Point(549, 521);
             this.botonClase25.Name = "botonClase25";
             this.botonClase25.Size = new System.Drawing.Size(176, 68);
@@ -349,6 +374,7 @@
             // 
             // botonClase26
             // 
+            this.botonClase26.Disponibles = 0;
             this.botonClase26.Location = new System.Drawing.Point(367, 521);
             this.botonClase26.Name = "botonClase26";
             this.botonClase26.Size = new System.Drawing.Size(176, 68);
@@ -357,6 +383,7 @@
             // 
             // botonClase27
             // 
+            this.botonClase27.Disponibles = 0;
             this.botonClase27.Location = new System.Drawing.Point(367, 447);
             this.botonClase27.Name = "botonClase27";
             this.botonClase27.Size = new System.Drawing.Size(176, 68);
@@ -365,6 +392,7 @@
             // 
             // botonClase28
             // 
+            this.botonClase28.Disponibles = 0;
             this.botonClase28.Location = new System.Drawing.Point(185, 447);
             this.botonClase28.Name = "botonClase28";
             this.botonClase28.Size = new System.Drawing.Size(176, 68);
@@ -373,6 +401,7 @@
             // 
             // botonClase29
             // 
+            this.botonClase29.Disponibles = 0;
             this.botonClase29.Location = new System.Drawing.Point(185, 521);
             this.botonClase29.Name = "botonClase29";
             this.botonClase29.Size = new System.Drawing.Size(176, 68);
@@ -381,6 +410,7 @@
             // 
             // botonClase30
             // 
+            this.botonClase30.Disponibles = 0;
             this.botonClase30.Location = new System.Drawing.Point(3, 447);
             this.botonClase30.Name = "botonClase30";
             this.botonClase30.Size = new System.Drawing.Size(176, 68);
@@ -389,6 +419,7 @@
             // 
             // botonClase31
             // 
+            this.botonClase31.Disponibles = 0;
             this.botonClase31.Location = new System.Drawing.Point(3, 521);
             this.botonClase31.Name = "botonClase31";
             this.botonClase31.Size = new System.Drawing.Size(176, 68);
@@ -397,6 +428,7 @@
             // 
             // botonClase32
             // 
+            this.botonClase32.Disponibles = 0;
             this.botonClase32.Location = new System.Drawing.Point(731, 521);
             this.botonClase32.Name = "botonClase32";
             this.botonClase32.Size = new System.Drawing.Size(176, 68);
@@ -405,6 +437,7 @@
             // 
             // botonClase33
             // 
+            this.botonClase33.Disponibles = 0;
             this.botonClase33.Location = new System.Drawing.Point(731, 447);
             this.botonClase33.Name = "botonClase33";
             this.botonClase33.Size = new System.Drawing.Size(176, 68);
@@ -413,6 +446,7 @@
             // 
             // botonClase34
             // 
+            this.botonClase34.Disponibles = 0;
             this.botonClase34.Location = new System.Drawing.Point(731, 299);
             this.botonClase34.Name = "botonClase34";
             this.botonClase34.Size = new System.Drawing.Size(176, 68);
@@ -421,6 +455,7 @@
             // 
             // botonClase35
             // 
+            this.botonClase35.Disponibles = 0;
             this.botonClase35.Location = new System.Drawing.Point(731, 225);
             this.botonClase35.Name = "botonClase35";
             this.botonClase35.Size = new System.Drawing.Size(176, 68);
@@ -429,6 +464,7 @@
             // 
             // botonClase36
             // 
+            this.botonClase36.Disponibles = 0;
             this.botonClase36.Location = new System.Drawing.Point(731, 373);
             this.botonClase36.Name = "botonClase36";
             this.botonClase36.Size = new System.Drawing.Size(176, 68);
@@ -437,6 +473,7 @@
             // 
             // botonClase37
             // 
+            this.botonClase37.Disponibles = 0;
             this.botonClase37.Location = new System.Drawing.Point(731, 151);
             this.botonClase37.Name = "botonClase37";
             this.botonClase37.Size = new System.Drawing.Size(176, 68);
@@ -445,6 +482,7 @@
             // 
             // botonClase38
             // 
+            this.botonClase38.Disponibles = 0;
             this.botonClase38.Location = new System.Drawing.Point(731, 77);
             this.botonClase38.Name = "botonClase38";
             this.botonClase38.Size = new System.Drawing.Size(176, 68);
@@ -453,6 +491,7 @@
             // 
             // botonClase39
             // 
+            this.botonClase39.Disponibles = 0;
             this.botonClase39.Location = new System.Drawing.Point(731, 3);
             this.botonClase39.Name = "botonClase39";
             this.botonClase39.Size = new System.Drawing.Size(176, 68);
@@ -461,6 +500,7 @@
             // 
             // botonClase40
             // 
+            this.botonClase40.Disponibles = 0;
             this.botonClase40.Location = new System.Drawing.Point(549, 3);
             this.botonClase40.Name = "botonClase40";
             this.botonClase40.Size = new System.Drawing.Size(176, 68);
@@ -469,6 +509,7 @@
             // 
             // botonClase41
             // 
+            this.botonClase41.Disponibles = 0;
             this.botonClase41.Location = new System.Drawing.Point(367, 3);
             this.botonClase41.Name = "botonClase41";
             this.botonClase41.Size = new System.Drawing.Size(176, 68);
@@ -478,12 +519,26 @@
             // pnlProfe
             // 
             this.pnlProfe.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlProfe.Controls.Add(this.btnVolver);
             this.pnlProfe.Controls.Add(this.lblMaestros);
             this.pnlProfe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlProfe.Location = new System.Drawing.Point(0, 0);
             this.pnlProfe.Name = "pnlProfe";
             this.pnlProfe.Size = new System.Drawing.Size(1196, 56);
             this.pnlProfe.TabIndex = 33;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolver.BackgroundImage")));
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Location = new System.Drawing.Point(115, 9);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(38, 39);
+            this.btnVolver.TabIndex = 2;
+            this.btnVolver.UseVisualStyleBackColor = false;
             // 
             // lblMaestros
             // 
@@ -507,6 +562,7 @@
             // 
             // botonClase1
             // 
+            this.botonClase1.Disponibles = 0;
             this.botonClase1.Location = new System.Drawing.Point(3, 3);
             this.botonClase1.Name = "botonClase1";
             this.botonClase1.Size = new System.Drawing.Size(157, 50);
@@ -520,7 +576,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1036, 732);
+            this.ClientSize = new System.Drawing.Size(891, 630);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnlProfe);
             this.Controls.Add(this.panel1);
@@ -530,7 +586,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CrearHorarios";
             this.VisibleChanged += new System.EventHandler(this.CrearHorarios_VisibleChanged);
             this.panel1.ResumeLayout(false);
@@ -590,5 +646,6 @@
         private componenetes_graficos.botonClase botonClase39;
         private componenetes_graficos.botonClase botonClase40;
         private componenetes_graficos.botonClase botonClase41;
+        public System.Windows.Forms.Button btnVolver;
     }
 }

@@ -33,9 +33,9 @@
             this.lbl = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnAdminProfes = new System.Windows.Forms.Button();
             this.btnCrearHorarios = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAdminProfes = new System.Windows.Forms.Button();
             this.pnlFondo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -48,8 +48,7 @@
             // 
             // pnlOpciones
             // 
-            this.pnlOpciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlOpciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlOpciones.BackColor = System.Drawing.Color.SteelBlue;
             this.pnlOpciones.Controls.Add(this.lbl);
             this.pnlOpciones.Controls.Add(this.btnHome);
@@ -57,9 +56,9 @@
             this.pnlOpciones.Controls.Add(this.btnAdminProfes);
             this.pnlOpciones.Controls.Add(this.btnCrearHorarios);
             this.pnlOpciones.Controls.Add(this.label3);
-            this.pnlOpciones.Location = new System.Drawing.Point(0, 0);
+            this.pnlOpciones.Location = new System.Drawing.Point(3, 3);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(119, 642);
+            this.pnlOpciones.Size = new System.Drawing.Size(115, 630);
             this.pnlOpciones.TabIndex = 1;
             // 
             // lbl
@@ -98,6 +97,19 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Creación\r\nde Horarios\r\n";
             // 
+            // btnAdminProfes
+            // 
+            this.btnAdminProfes.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdminProfes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdminProfes.BackgroundImage")));
+            this.btnAdminProfes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminProfes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminProfes.Location = new System.Drawing.Point(26, 231);
+            this.btnAdminProfes.Name = "btnAdminProfes";
+            this.btnAdminProfes.Size = new System.Drawing.Size(64, 66);
+            this.btnAdminProfes.TabIndex = 21;
+            this.btnAdminProfes.UseVisualStyleBackColor = false;
+            this.btnAdminProfes.Click += new System.EventHandler(this.btnAdminProfes_Click);
+            // 
             // btnCrearHorarios
             // 
             this.btnCrearHorarios.BackColor = System.Drawing.Color.SteelBlue;
@@ -123,30 +135,15 @@
             this.label3.Text = " Administración\r\n de \r\nProfesores";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnAdminProfes
-            // 
-            this.btnAdminProfes.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAdminProfes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdminProfes.BackgroundImage")));
-            this.btnAdminProfes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminProfes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminProfes.Location = new System.Drawing.Point(26, 231);
-            this.btnAdminProfes.Name = "btnAdminProfes";
-            this.btnAdminProfes.Size = new System.Drawing.Size(64, 66);
-            this.btnAdminProfes.TabIndex = 21;
-            this.btnAdminProfes.UseVisualStyleBackColor = false;
-            this.btnAdminProfes.Click += new System.EventHandler(this.btnAdminProfes_Click);
-            // 
             // pnlFondo
             // 
-            this.pnlFondo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFondo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFondo.Controls.Add(this.pictureBox1);
             this.pnlFondo.Controls.Add(this.lblName);
             this.pnlFondo.Controls.Add(this.pcbLogo);
-            this.pnlFondo.Location = new System.Drawing.Point(117, 0);
+            this.pnlFondo.Location = new System.Drawing.Point(119, 3);
             this.pnlFondo.Name = "pnlFondo";
-            this.pnlFondo.Size = new System.Drawing.Size(902, 642);
+            this.pnlFondo.Size = new System.Drawing.Size(892, 630);
             this.pnlFondo.TabIndex = 2;
             this.pnlFondo.Visible = false;
             this.pnlFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFondo_Paint);
@@ -155,7 +152,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(780, 531);
+            this.pictureBox1.Location = new System.Drawing.Point(770, 519);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -168,7 +165,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(335, 280);
+            this.lblName.Location = new System.Drawing.Point(330, 274);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(400, 55);
             this.lblName.TabIndex = 4;
@@ -180,7 +177,7 @@
             this.pcbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
-            this.pcbLogo.Location = new System.Drawing.Point(163, 176);
+            this.pcbLogo.Location = new System.Drawing.Point(158, 170);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(248, 213);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -192,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1020, 642);
+            this.ClientSize = new System.Drawing.Size(1014, 635);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlFondo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -216,8 +213,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlOpciones;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label label5;
@@ -228,6 +223,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pcbLogo;
         public System.Windows.Forms.Panel pnlFondo;
+        public System.Windows.Forms.Panel pnlOpciones;
     }
 }
 

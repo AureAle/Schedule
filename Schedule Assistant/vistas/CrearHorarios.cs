@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace Schedule_Assistant.vistas
 {
+    
     public partial class CrearHorarios : Form
     {
+        
         private botonClase claseSelec;
 
 #region constructor
@@ -78,7 +80,7 @@ namespace Schedule_Assistant.vistas
                 //ejecutar
                 Conector.agregarHoraClase(celda.Column, celda.Row, clase.Id, 1, 1);
 
-                almacenar
+                //almacenar
 
                 //restar una hora
             }
@@ -90,7 +92,12 @@ namespace Schedule_Assistant.vistas
             if(Visible==true)
                 CargarBotones();
         }
-        
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {         
+           //lo puse por si ocultamos el panel de opciones y se vea más completo poder regresar(? 
+
+        }
     }
 
 #endregion

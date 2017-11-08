@@ -47,7 +47,7 @@
             this.lblMaestros.AutoSize = true;
             this.lblMaestros.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaestros.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblMaestros.Location = new System.Drawing.Point(485, 9);
+            this.lblMaestros.Location = new System.Drawing.Point(359, 9);
             this.lblMaestros.Name = "lblMaestros";
             this.lblMaestros.Size = new System.Drawing.Size(172, 42);
             this.lblMaestros.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.txtNombreProfesor.BackColor = System.Drawing.SystemColors.Window;
             this.txtNombreProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProfesor.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtNombreProfesor.Location = new System.Drawing.Point(441, 135);
+            this.txtNombreProfesor.Location = new System.Drawing.Point(315, 135);
             this.txtNombreProfesor.Name = "txtNombreProfesor";
             this.txtNombreProfesor.Size = new System.Drawing.Size(294, 26);
             this.txtNombreProfesor.TabIndex = 2;
@@ -71,7 +71,7 @@
             this.bttnAgregarProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnAgregarProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnAgregarProfesor.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnAgregarProfesor.Location = new System.Drawing.Point(741, 131);
+            this.bttnAgregarProfesor.Location = new System.Drawing.Point(615, 131);
             this.bttnAgregarProfesor.Name = "bttnAgregarProfesor";
             this.bttnAgregarProfesor.Size = new System.Drawing.Size(93, 36);
             this.bttnAgregarProfesor.TabIndex = 3;
@@ -84,7 +84,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblName.Location = new System.Drawing.Point(298, 139);
+            this.lblName.Location = new System.Drawing.Point(172, 139);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(138, 20);
             this.lblName.TabIndex = 9;
@@ -96,7 +96,7 @@
             this.lstProfesores.ForeColor = System.Drawing.Color.SteelBlue;
             this.lstProfesores.FormattingEnabled = true;
             this.lstProfesores.ItemHeight = 20;
-            this.lstProfesores.Location = new System.Drawing.Point(302, 191);
+            this.lstProfesores.Location = new System.Drawing.Point(176, 191);
             this.lstProfesores.Name = "lstProfesores";
             this.lstProfesores.Size = new System.Drawing.Size(532, 324);
             this.lstProfesores.TabIndex = 10;
@@ -108,7 +108,7 @@
             this.bttnHorariosProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnHorariosProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnHorariosProfesor.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnHorariosProfesor.Location = new System.Drawing.Point(659, 553);
+            this.bttnHorariosProfesor.Location = new System.Drawing.Point(533, 553);
             this.bttnHorariosProfesor.Name = "bttnHorariosProfesor";
             this.bttnHorariosProfesor.Size = new System.Drawing.Size(90, 46);
             this.bttnHorariosProfesor.TabIndex = 28;
@@ -121,7 +121,7 @@
             this.bttnModificarMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnModificarMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnModificarMaterias.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnModificarMaterias.Location = new System.Drawing.Point(577, 553);
+            this.bttnModificarMaterias.Location = new System.Drawing.Point(451, 553);
             this.bttnModificarMaterias.Name = "bttnModificarMaterias";
             this.bttnModificarMaterias.Size = new System.Drawing.Size(90, 46);
             this.bttnModificarMaterias.TabIndex = 30;
@@ -134,7 +134,7 @@
             this.bttnEliminarProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnEliminarProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnEliminarProfesor.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnEliminarProfesor.Location = new System.Drawing.Point(493, 553);
+            this.bttnEliminarProfesor.Location = new System.Drawing.Point(367, 553);
             this.bttnEliminarProfesor.Name = "bttnEliminarProfesor";
             this.bttnEliminarProfesor.Size = new System.Drawing.Size(90, 46);
             this.bttnEliminarProfesor.TabIndex = 29;
@@ -148,7 +148,7 @@
             this.bttnModificarProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnModificarProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnModificarProfesor.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnModificarProfesor.Location = new System.Drawing.Point(409, 553);
+            this.bttnModificarProfesor.Location = new System.Drawing.Point(283, 553);
             this.bttnModificarProfesor.Name = "bttnModificarProfesor";
             this.bttnModificarProfesor.Size = new System.Drawing.Size(86, 46);
             this.bttnModificarProfesor.TabIndex = 27;
@@ -162,7 +162,7 @@
             this.bttnGuardarNuevoNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnGuardarNuevoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnGuardarNuevoNombre.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnGuardarNuevoNombre.Location = new System.Drawing.Point(752, 131);
+            this.bttnGuardarNuevoNombre.Location = new System.Drawing.Point(626, 131);
             this.bttnGuardarNuevoNombre.Name = "bttnGuardarNuevoNombre";
             this.bttnGuardarNuevoNombre.Size = new System.Drawing.Size(93, 36);
             this.bttnGuardarNuevoNombre.TabIndex = 31;
@@ -177,7 +177,7 @@
             this.pnlProfe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlProfe.Location = new System.Drawing.Point(0, 0);
             this.pnlProfe.Name = "pnlProfe";
-            this.pnlProfe.Size = new System.Drawing.Size(1143, 56);
+            this.pnlProfe.Size = new System.Drawing.Size(891, 56);
             this.pnlProfe.TabIndex = 32;
             // 
             // MenuMaestro
@@ -185,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1143, 642);
+            this.ClientSize = new System.Drawing.Size(891, 630);
             this.Controls.Add(this.pnlProfe);
             this.Controls.Add(this.bttnGuardarNuevoNombre);
             this.Controls.Add(this.bttnHorariosProfesor);

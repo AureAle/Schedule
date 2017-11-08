@@ -95,7 +95,7 @@
             this.bttnAgregarMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnAgregarMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnAgregarMaterias.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnAgregarMaterias.Location = new System.Drawing.Point(270, 487);
+            this.bttnAgregarMaterias.Location = new System.Drawing.Point(261, 487);
             this.bttnAgregarMaterias.Name = "bttnAgregarMaterias";
             this.bttnAgregarMaterias.Size = new System.Drawing.Size(146, 32);
             this.bttnAgregarMaterias.TabIndex = 15;
@@ -123,18 +123,18 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Creditos:";
+            this.label1.Text = "Créditos:";
             // 
             // bttnModificarCreditos
             // 
             this.bttnModificarCreditos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnModificarCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnModificarCreditos.ForeColor = System.Drawing.Color.SteelBlue;
-            this.bttnModificarCreditos.Location = new System.Drawing.Point(434, 487);
+            this.bttnModificarCreditos.Location = new System.Drawing.Point(433, 487);
             this.bttnModificarCreditos.Name = "bttnModificarCreditos";
             this.bttnModificarCreditos.Size = new System.Drawing.Size(146, 32);
             this.bttnModificarCreditos.TabIndex = 23;
-            this.bttnModificarCreditos.Text = "Modificar Creditos";
+            this.bttnModificarCreditos.Text = "Modificar Créditos";
             this.bttnModificarCreditos.UseVisualStyleBackColor = true;
             this.bttnModificarCreditos.Click += new System.EventHandler(this.bttnModificarCreditos_Click);
             // 
@@ -184,6 +184,7 @@
             // 
             // UpDwnCreditos
             // 
+            this.UpDwnCreditos.ForeColor = System.Drawing.Color.SteelBlue;
             this.UpDwnCreditos.Location = new System.Drawing.Point(478, 145);
             this.UpDwnCreditos.Maximum = new decimal(new int[] {
             10,
@@ -198,6 +199,7 @@
             this.UpDwnCreditos.Name = "UpDwnCreditos";
             this.UpDwnCreditos.Size = new System.Drawing.Size(72, 26);
             this.UpDwnCreditos.TabIndex = 36;
+            this.UpDwnCreditos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UpDwnCreditos.Value = new decimal(new int[] {
             1,
             0,
