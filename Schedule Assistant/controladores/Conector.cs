@@ -34,10 +34,12 @@ namespace Schedule_Assistant
 
         #endregion
 
-        // CRUD create read update y Delete
-        // agregar leer modificar borrar
+        /* CRUD 
+         * create read update y Delete
+         * agregar leer modificar borrar
+         */
 
-        #region escritura
+#region escritura
 
         /// <summary> registra el maestro indicado enla base de datos, retorna su id </summary>
         public static void agregarProfe(String nombre)
@@ -211,7 +213,7 @@ namespace Schedule_Assistant
         }
 
         /// <summary>  Obtiene lista de clases registradas por id de profe </summary>
-        public static Clase[] leetTodasClases()
+        public static Clase[] leerTodasClases()
         {
             List<Clase> clasesLista = new List<Clase>();
             try
@@ -261,7 +263,7 @@ namespace Schedule_Assistant
 
         #endregion
 
-        #region Actualizar
+#region Actualizar
 
         /// <summary> Actualiza el Nombre de un Profesor </summary>
         public static void actualizarProfesor(int id, string nombre)

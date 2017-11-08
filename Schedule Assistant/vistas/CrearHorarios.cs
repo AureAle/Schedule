@@ -32,7 +32,7 @@ namespace Schedule_Assistant.vistas
         {
             flowLayoutPanel1.Controls.Clear();
 
-            Clase[] clases = Conector.leetTodasClases();
+            Clase[] clases = Conector.leerTodasClases();
             foreach (Clase clase in clases)
             {
                 botonClase boton = new botonClase(clase);
