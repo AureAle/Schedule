@@ -107,11 +107,11 @@
             // lblMaterias
             // 
             this.lblMaterias.AutoSize = true;
-            this.lblMaterias.Font = new System.Drawing.Font("Arial Unicode MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaterias.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblMaterias.Location = new System.Drawing.Point(270, 5);
             this.lblMaterias.Name = "lblMaterias";
-            this.lblMaterias.Size = new System.Drawing.Size(165, 50);
+            this.lblMaterias.Size = new System.Drawing.Size(161, 42);
             this.lblMaterias.TabIndex = 20;
             this.lblMaterias.Text = "Materias";
             // 
@@ -165,11 +165,11 @@
             // lblHoras
             // 
             this.lblHoras.AutoSize = true;
-            this.lblHoras.Font = new System.Drawing.Font("Arial Unicode MS", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoras.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblHoras.Location = new System.Drawing.Point(18, 77);
             this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(135, 39);
+            this.lblHoras.Size = new System.Drawing.Size(133, 33);
             this.lblHoras.TabIndex = 34;
             this.lblHoras.Text = "Profesor:";
             // 
@@ -230,8 +230,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuMaterias";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MenúMaterias";
             this.Click += new System.EventHandler(this.MenuMaterias_Click);
             this.pnlProfe.ResumeLayout(false);

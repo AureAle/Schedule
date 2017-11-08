@@ -146,7 +146,6 @@
             this.pnlFondo.Size = new System.Drawing.Size(892, 630);
             this.pnlFondo.TabIndex = 2;
             this.pnlFondo.Visible = false;
-            this.pnlFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFondo_Paint);
             // 
             // pictureBox1
             // 
