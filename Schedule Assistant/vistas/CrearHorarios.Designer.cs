@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearHorarios));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tablePanelHorairo = new System.Windows.Forms.TableLayoutPanel();
             this.pnlProfe = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblMaestros = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.botonClase1 = new Schedule_Assistant.componenetes_graficos.botonClase();
-            this.botonHoraC1 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
-            this.botonHoraC2 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
-            this.botonHoraC3 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
-            this.botonHoraC4 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
+            this.botonHoraC01 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
+            this.botonHoraC11 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
+            this.botonHoraC10 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
+            this.botonHoraC00 = new Schedule_Assistant.componenetes_graficos.BotonHoraC();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tablePanelHorairo.SuspendLayout();
             this.pnlProfe.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,39 +49,39 @@
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.tablePanelHorairo);
             this.panel1.Location = new System.Drawing.Point(166, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1030, 630);
             this.panel1.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // tablePanelHorairo
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.botonHoraC2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.botonHoraC3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.botonHoraC4, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.botonHoraC1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(117, 33);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(913, 593);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tablePanelHorairo.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanelHorairo.ColumnCount = 5;
+            this.tablePanelHorairo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tablePanelHorairo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tablePanelHorairo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tablePanelHorairo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tablePanelHorairo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tablePanelHorairo.Controls.Add(this.botonHoraC10, 0, 1);
+            this.tablePanelHorairo.Controls.Add(this.botonHoraC00, 0, 0);
+            this.tablePanelHorairo.Controls.Add(this.botonHoraC01, 1, 0);
+            this.tablePanelHorairo.Controls.Add(this.botonHoraC11, 1, 1);
+            this.tablePanelHorairo.Location = new System.Drawing.Point(117, 33);
+            this.tablePanelHorairo.Name = "tablePanelHorairo";
+            this.tablePanelHorairo.RowCount = 8;
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tablePanelHorairo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablePanelHorairo.Size = new System.Drawing.Size(913, 593);
+            this.tablePanelHorairo.TabIndex = 0;
             // 
             // pnlProfe
             // 
@@ -106,6 +106,7 @@
             this.btnVolver.Size = new System.Drawing.Size(38, 39);
             this.btnVolver.TabIndex = 2;
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // lblMaestros
             // 
@@ -137,45 +138,49 @@
             this.botonClase1.Text = "botonClase1";
             this.botonClase1.UseVisualStyleBackColor = true;
             // 
-            // botonHoraC1
+            // botonHoraC01
             // 
-            this.botonHoraC1.Clase = null;
-            this.botonHoraC1.Disponible = false;
-            this.botonHoraC1.Location = new System.Drawing.Point(3, 3);
-            this.botonHoraC1.Name = "botonHoraC1";
-            this.botonHoraC1.Size = new System.Drawing.Size(176, 68);
-            this.botonHoraC1.TabIndex = 2;
-            this.botonHoraC1.UseVisualStyleBackColor = true;
+            this.botonHoraC01.BackColor = System.Drawing.Color.MistyRose;
+            this.botonHoraC01.Clase = null;
+            this.botonHoraC01.Disponible = false;
+            this.botonHoraC01.Location = new System.Drawing.Point(185, 3);
+            this.botonHoraC01.Name = "botonHoraC01";
+            this.botonHoraC01.Size = new System.Drawing.Size(176, 68);
+            this.botonHoraC01.TabIndex = 2;
+            this.botonHoraC01.UseVisualStyleBackColor = true;
             // 
-            // botonHoraC2
+            // botonHoraC11
             // 
-            this.botonHoraC2.Clase = null;
-            this.botonHoraC2.Disponible = false;
-            this.botonHoraC2.Location = new System.Drawing.Point(3, 77);
-            this.botonHoraC2.Name = "botonHoraC2";
-            this.botonHoraC2.Size = new System.Drawing.Size(176, 68);
-            this.botonHoraC2.TabIndex = 2;
-            this.botonHoraC2.UseVisualStyleBackColor = true;
+            this.botonHoraC11.BackColor = System.Drawing.Color.MistyRose;
+            this.botonHoraC11.Clase = null;
+            this.botonHoraC11.Disponible = false;
+            this.botonHoraC11.Location = new System.Drawing.Point(185, 77);
+            this.botonHoraC11.Name = "botonHoraC11";
+            this.botonHoraC11.Size = new System.Drawing.Size(176, 68);
+            this.botonHoraC11.TabIndex = 2;
+            this.botonHoraC11.UseVisualStyleBackColor = true;
             // 
-            // botonHoraC3
+            // botonHoraC10
             // 
-            this.botonHoraC3.Clase = null;
-            this.botonHoraC3.Disponible = false;
-            this.botonHoraC3.Location = new System.Drawing.Point(185, 3);
-            this.botonHoraC3.Name = "botonHoraC3";
-            this.botonHoraC3.Size = new System.Drawing.Size(176, 68);
-            this.botonHoraC3.TabIndex = 2;
-            this.botonHoraC3.UseVisualStyleBackColor = true;
+            this.botonHoraC10.BackColor = System.Drawing.Color.MistyRose;
+            this.botonHoraC10.Clase = null;
+            this.botonHoraC10.Disponible = false;
+            this.botonHoraC10.Location = new System.Drawing.Point(3, 77);
+            this.botonHoraC10.Name = "botonHoraC10";
+            this.botonHoraC10.Size = new System.Drawing.Size(176, 68);
+            this.botonHoraC10.TabIndex = 2;
+            this.botonHoraC10.UseVisualStyleBackColor = true;
             // 
-            // botonHoraC4
+            // botonHoraC00
             // 
-            this.botonHoraC4.Clase = null;
-            this.botonHoraC4.Disponible = false;
-            this.botonHoraC4.Location = new System.Drawing.Point(185, 77);
-            this.botonHoraC4.Name = "botonHoraC4";
-            this.botonHoraC4.Size = new System.Drawing.Size(176, 68);
-            this.botonHoraC4.TabIndex = 2;
-            this.botonHoraC4.UseVisualStyleBackColor = true;
+            this.botonHoraC00.BackColor = System.Drawing.Color.MistyRose;
+            this.botonHoraC00.Clase = null;
+            this.botonHoraC00.Disponible = false;
+            this.botonHoraC00.Location = new System.Drawing.Point(3, 3);
+            this.botonHoraC00.Name = "botonHoraC00";
+            this.botonHoraC00.Size = new System.Drawing.Size(176, 68);
+            this.botonHoraC00.TabIndex = 2;
+            this.botonHoraC00.UseVisualStyleBackColor = true;
             // 
             // CrearHorarios
             // 
@@ -195,9 +200,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CrearHorarios";
+            this.Load += new System.EventHandler(this.CrearHorarios_Load);
             this.VisibleChanged += new System.EventHandler(this.CrearHorarios_VisibleChanged);
             this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tablePanelHorairo.ResumeLayout(false);
             this.pnlProfe.ResumeLayout(false);
             this.pnlProfe.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -211,12 +217,12 @@
         private System.Windows.Forms.Panel pnlProfe;
         private System.Windows.Forms.Label lblMaestros;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tablePanelHorairo;
         private componenetes_graficos.botonClase botonClase1;
         public System.Windows.Forms.Button btnVolver;
-        private componenetes_graficos.BotonHoraC botonHoraC1;
-        private componenetes_graficos.BotonHoraC botonHoraC2;
-        private componenetes_graficos.BotonHoraC botonHoraC3;
-        private componenetes_graficos.BotonHoraC botonHoraC4;
+        private componenetes_graficos.BotonHoraC botonHoraC10;
+        private componenetes_graficos.BotonHoraC botonHoraC00;
+        private componenetes_graficos.BotonHoraC botonHoraC01;
+        private componenetes_graficos.BotonHoraC botonHoraC11;
     }
 }

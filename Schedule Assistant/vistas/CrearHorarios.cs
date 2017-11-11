@@ -1,11 +1,11 @@
 ﻿using System;
+using SA_objetos;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
 using Schedule_Assistant.componenetes_graficos;
-using SA_objetos;
 
 namespace Schedule_Assistant.vistas
 {
@@ -13,7 +13,8 @@ namespace Schedule_Assistant.vistas
     public partial class CrearHorarios : Form
     {
         
-        private botonClase botonClaseSelec;
+        private botonClase ClaseSelec;
+        private Point[] horasNoDisponibles;
 
 #region constructor
 
@@ -26,7 +27,7 @@ namespace Schedule_Assistant.vistas
 
 #region metodos
 
-        public void CargarBotones()
+        private void CargarBotones()
         {
             flowLayoutPanel1.Controls.Clear();
 
@@ -39,60 +40,59 @@ namespace Schedule_Assistant.vistas
             }
         }
 
-        //qiza sea mejor que este sea comportamiento del boton mismo.
-        public void selecQuitarHora()
+        private void horaSelecRestarHora()
         {
-            if (botonClaseSelec.Disponibles < 1)
+            if (ClaseSelec.Disponibles < 1)
             {
-                botonClaseSelec.Disponibles--;
-                //actualizar el boton
+                ClaseSelec.Disponibles--;
+                ClaseSelec.cargarTexto();
             }
             else
             {
-                botonClaseSelec = null;
-                //despintar horas no disponibles
+                ClaseSelec = null;
+                foreach(Point hora in horasNoDisponibles)
+                {
+                    Control control = tablePanelHorairo.GetControlFromPosition(hora.X, hora.Y);
+                    BotonHoraC boton = control as BotonHoraC;
+                    boton.Disponible = true;
+
+                }
             }
         }
 
-        #endregion
+#endregion
 
 #region eventos
 
         private void btnClase_Click(object sender, EventArgs e)
         {
-            if(botonClaseSelec != null)
+            if(ClaseSelec != null)
             {
-                //despintar horas no disponibles
+                //nada
             }
 
-            botonClaseSelec = sender as botonClase;
+            ClaseSelec = sender as botonClase;
             //colorear las horas en las que no pueda ir el maestro
         }
 
         private void botonHora_Click(object sender, EventArgs e)
         {
-            if (botonClaseSelec == null)
+            BotonHoraC botonHora = sender as BotonHoraC;
+
+            if (ClaseSelec == null)
             {
                 //nada
             }
-            else
+            else if (botonHora.asignar(ClaseSelec.Clase))
             {
-                //idnetificar
-                BotonHoraC boton = sender as BotonHoraC;
-                TableLayoutPanelCellPosition celda = tableLayoutPanel1.GetCellPosition(boton);
-                Clase clase = botonClaseSelec.Clase;
+                //ubicar
+                TableLayoutPanelCellPosition celda = tablePanelHorairo.GetCellPosition(botonHora);
 
-                Boolean aceptado = boton.asignar(clase);
-                if (aceptado)
-                {
-                    //registrar en la base de datos
-                    Conector.agregarHoraClase(celda.Column, celda.Row, clase.Id, 1, 1);
-
-
-                    //restar una hora
-                    selecQuitarHora();
-                }
-
+                //registrar en la base de datos
+                Conector.agregarHoraClase(celda.Column, celda.Row, ClaseSelec.Clase.Id, 1, 1);
+                
+                //restar una hora
+                horaSelecRestarHora();
             }
 
         }
@@ -108,7 +108,21 @@ namespace Schedule_Assistant.vistas
            //lo puse por si ocultamos el panel de opciones y se vea más completo poder regresar(? 
 
         }
-    }
+
+        private void CrearHorarios_Load(object sender, EventArgs e)
+        {
+            //lenar tabla
+            for (int row = 0; row < tablePanelHorairo.RowCount; row++)
+            {
+                for (int column = 0; column < tablePanelHorairo.ColumnCount; column++)
+                {
+                    BotonHoraC boton = new BotonHoraC();
+                    tablePanelHorairo.Controls.Add(boton, column, row);
+                }
+            }
+        }
 
 #endregion
+
+    }
 }

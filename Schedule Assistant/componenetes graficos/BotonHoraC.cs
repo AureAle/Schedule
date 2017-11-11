@@ -39,7 +39,9 @@ namespace Schedule_Assistant.componenetes_graficos
 #region constructores
 
         public BotonHoraC()
-        {  }
+        {
+            this.Size = new Size(176, 68);
+        }
 
         public BotonHoraC(Clase clase)
         {

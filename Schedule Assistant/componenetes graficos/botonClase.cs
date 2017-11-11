@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Linq;
+using SA_objetos;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-using SA_objetos;
 
 namespace Schedule_Assistant.componenetes_graficos
 {
     class botonClase: Button
     {
-
 #region propiedades
 
         private Clase clase;
@@ -34,14 +31,22 @@ namespace Schedule_Assistant.componenetes_graficos
         {
             this.clase = clase;
             this.disponibles = clase.Creditos;
+            this.AutoSize = true;
 
+            cargarTexto();
+        }
+
+#endregion
+
+#region metodos
+
+        public void cargarTexto()
+        {
             string profesor = Conector.leerNombreProfesor(clase.Profesor);
             this.Text = 
                 clase.NombreMateria + Environment.NewLine +
                 profesor + Environment.NewLine +
                 disponibles + "/" + clase.Creditos;
-
-            this.AutoSize = true;
         }
 
 #endregion
