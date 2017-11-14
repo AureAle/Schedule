@@ -40,7 +40,7 @@ namespace Schedule_Assistant.componenetes_graficos
 
         public BotonHoraC()
         {
-            this.Size = new Size(176, 68);
+            this.Size = new Size(176, 75);
         }
 
         public BotonHoraC(Clase clase)
