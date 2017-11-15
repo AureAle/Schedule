@@ -34,13 +34,21 @@ namespace Schedule_Assistant.vistas
         }
         private void bttnGuardarGrupo_Click(object sender, EventArgs e)
         {
-
-
             if (GrupoNoVacio())
             {
-                Conector.agregarGrupo(txtGrupo.Text);
-                this.Close();
-                cerro = false;
+               
+                if (Conector.GrupoUnico(txtGrupo.Text))
+                {
+                    Conector.agregarGrupo(txtGrupo.Text);
+
+                    this.Close();
+                    cerro = false;
+                }
+                else
+                {
+                    MessageBox.Show("Grupo ya existente", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
         }
 

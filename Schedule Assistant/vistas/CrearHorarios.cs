@@ -54,7 +54,7 @@ namespace Schedule_Assistant.vistas
 
         private void horaSelecRestarHora()
         {
-            if (ClaseSelec.Disponibles < 1)
+            if (ClaseSelec.Disponibles >= 1)
             {
                 ClaseSelec.Disponibles--;
                 ClaseSelec.cargarTexto();
@@ -62,13 +62,13 @@ namespace Schedule_Assistant.vistas
             else
             {
                 ClaseSelec = null;
-                foreach(Point hora in horasNoDisponibles)
-                {
-                    Control control = tablePanelHorairo.GetControlFromPosition(hora.X, hora.Y);
-                    BotonHoraC boton = control as BotonHoraC;
-                    boton.Disponible = true;
+                //foreach(Point hora in horasNoDisponibles)
+                //{
+                //    Control control = tablePanelHorairo.GetControlFromPosition(hora.X, hora.Y);
+                //    BotonHoraC boton = control as BotonHoraC;
+                //    boton.Disponible = true;
 
-                }
+                //}
             }
         }
 
@@ -100,7 +100,7 @@ namespace Schedule_Assistant.vistas
 
             if (ClaseSelec == null)
             {
-                MessageBox.Show("vacío");
+                MessageBox.Show("Es necesario agregar alguna clase", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (botonHora.asignar(ClaseSelec.Clase))
             {
@@ -108,7 +108,7 @@ namespace Schedule_Assistant.vistas
                 TableLayoutPanelCellPosition celda = tablePanelHorairo.GetCellPosition(botonHora);
 
                 //registrar en la base de datos
-                Conector.agregarHoraClase(celda.Column, celda.Row, ClaseSelec.Clase.Id, 1, 1);
+                Conector.agregarHoraClase(celda.Column+1, celda.Row+1, ClaseSelec.Clase.Id, 20, 1);
                 
                 //restar una hora
                 horaSelecRestarHora();
@@ -119,8 +119,13 @@ namespace Schedule_Assistant.vistas
         private void CrearHorarios_VisibleChanged(object sender, EventArgs e)
         {
             if(Visible==true)
+            {
                 CargarBotones();
                 BorrarColor();
+                lblGrupo.Text = "Horario del grupo: ";
+                lblGrupo.Text += Conector.UltimoGrupo();
+            }
+                
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

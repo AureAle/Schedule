@@ -279,11 +279,11 @@ namespace Schedule_Assistant
             }
         }
 
-        public static string leerGrupo(int idGrupo)
+        public static string leerGrupoPorID(int idGrupo)
         {
             try
             {
-                comando.CommandText = "SELECT * FROM Grupos WHERE ID" + idGrupo;
+                comando.CommandText = "SELECT * FROM Grupos WHERE ID=" + idGrupo;
                 conectar.Open();
                 OleDbDataReader lector = comando.ExecuteReader();
                 lector.Read();
@@ -297,9 +297,67 @@ namespace Schedule_Assistant
             }
         }
 
+        public static string UltimoGrupo()
+        {
+            List<String> grupo = new List<String>();
+            try
+            {
+                comando.CommandText = "SELECT * FROM Grupos";
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+                while (lector.Read())
+                {
+                    grupo.Add(lector["nombre"].ToString());
+                }
+                String u=grupo.ToArray()[grupo.ToArray().Length-1];
+
+                return u;
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        /// <summary>
+        /// Saber si un grupo ya existe o no
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <returns></returns>
+        public static Boolean GrupoUnico(String nombre)
+        {
+            bool unico=true;
+            try
+            {
+                comando.CommandText = "SELECT * FROM Grupos " ;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+                while (lector.Read())
+                {
+                    if (lector["nombre"].ToString() == nombre)
+                    {
+                        unico= false;
+                        break;
+                    }                       
+                    else{
+                        unico= true;
+                    }
+                }
+                return unico;
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
         #endregion
 
-#region Actualizar
+        #region Actualizar
 
         /// <summary> Actualiza el Nombre de un Profesor </summary>
         public static void actualizarProfesor(int id, string nombre)

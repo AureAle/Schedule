@@ -55,16 +55,35 @@ namespace Schedule_Assistant.componenetes_graficos
 
         public Boolean asignar(Clase clase)
         {
-            if (this.disponible==false)
+
+            if (this.disponible == false)
             {
+                MessageBox.Show("beep");
                 /*
                  * feedback negativo
                  * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
                  */
                 return false;
             }
-            if (this.clase != null)
+
+            if (this.clase == null)
             {
+                MessageBox.Show("'CONTROL', Este boton no tiene ninguna clase");
+                this.clase = clase;
+
+                string profesor = Conector.leerNombreProfesor(clase.Profesor);
+                this.Text =
+                    clase.NombreMateria + Environment.NewLine + profesor;
+
+                this.AutoSize = true;
+                MessageBox.Show("'CONTROL', Escribio");
+                return true;
+                //registrar en la base de datos?
+                
+            }
+            else
+            {
+                ;
                 /*
                  * feedback advertencia
                  * por ejemplo un messagebox;
@@ -74,19 +93,6 @@ namespace Schedule_Assistant.componenetes_graficos
                  *  return true;
                  */
                 return false;
-            }
-            else
-            {
-                this.clase = clase;
-
-                string profesor = Conector.leerNombreProfesor(clase.Profesor);
-                this.Text =
-                    clase.NombreMateria + Environment.NewLine + profesor;
-
-                this.AutoSize = true;
-
-                return true;
-                //registrar en la base de datos?
             }
             
         }
