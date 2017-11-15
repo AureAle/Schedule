@@ -14,53 +14,51 @@ namespace Schedule_Assistant
     {
         int idProfe;
 
-        public MenuHorasNoDisponibles(int id, String Nombre)
+        public MenuHorasNoDisponibles(int idProfe, String Nombre)
         {
             InitializeComponent();
-            this.idProfe = id;
+            this.idProfe = idProfe;
             lblNombreProfe.Text = Nombre;
-            
         }
-
 
         private void lblMaestros_Click(object sender, EventArgs e)
         {
 
         }
 
-        /// <summary>
-        /// Llena la lista de horas dependiendo del dia seleccionado
-        /// </summary>
+        /// <summary> Llena la lista de horas dependiendo del dia seleccionado </summary>
         public void LlenarListaHoras()
         {
             lstListaHorariosProfesor.Items.Clear();
             int dia = cmbDia.SelectedIndex + 1;
-            for (int i = 0; i < Conector.leerHorasNoDisponiblesDe(idProfe).Length; i++)
+            HoraNoDisponible[] horaND = Conector.leerHorasNoDisponiblesDe(idProfe);
+            for (int i = 0; i < horaND.Length; i++)
             {
-
-                if (dia == Conector.leerHorasNoDisponiblesDe(idProfe)[i].Dia)
+                if (dia == horaND[i].Dia)
                 {
-                    lstListaHorariosProfesor.Items.Add(Conector.leerHorasNoDisponiblesDe(idProfe)[i]);
-
+                    lstListaHorariosProfesor.Items.Add(horaND[i]);
                 }
             }
         }
 
-        /// <summary>
-        /// Agrega una hora, ya validada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <summary> Agrega una hora, ya validada </summary>
         private void bttnAgregarHorario_Click(object sender, EventArgs e)
         {
             Boolean noEsta = true ;
-            if(cmbDia.SelectedIndex!=-1 && cmbHora.SelectedIndex!=-1)
+
+            if (cmbDia.SelectedIndex == -1 && cmbHora.SelectedIndex == -1)
+            {
+                MessageBox.Show("Se requiere seleccionar un 'dia' y una 'hora'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
             {
                 int hora = cmbHora.SelectedIndex + 1;
                 int dia = cmbDia.SelectedIndex + 1;
-                for (int i = 0; i < Conector.leerHorasNoDisponiblesDe(idProfe).Length; i++)
+                HoraNoDisponible[] horasND = Conector.leerHorasNoDisponiblesDe(idProfe);
+
+                for (int i = 0; i < horasND.Length; i++)
                 {
-                    if (Conector.leerHorasNoDisponiblesDe(idProfe)[i].Dia==dia && Conector.leerHorasNoDisponiblesDe(idProfe)[i].Hora1==hora)
+                    if (horasND[i].Dia == dia && horasND[i].Hora == hora)
                     {
                         noEsta = false;
                         break;
@@ -73,16 +71,11 @@ namespace Schedule_Assistant
                     Conector.agregarHorariosNoDisponibles(idProfe, hnd);
 
                     LlenarListaHoras();
-                    
                 }
                 else
                 {
                     MessageBox.Show("este hora y dia ya se encuentra agregado con este profesor", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Se requiere seleccionar un 'dia' y una 'hora'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -98,11 +91,7 @@ namespace Schedule_Assistant
             LlenarListaHoras();
         }
 
-        /// <summary>
-        /// Elimina una hora seleccionada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <summary> Elimina una hora seleccionada </summary>
         private void bttnEliminarHoraProfesor_Click(object sender, EventArgs e)
         {
             if(lstListaHorariosProfesor.SelectedIndex!=-1)
@@ -116,6 +105,11 @@ namespace Schedule_Assistant
                 MessageBox.Show("Se requiere seleccionar un horario de la lista", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
            
+        }
+
+        private void MenuHorasNoDisponibles_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

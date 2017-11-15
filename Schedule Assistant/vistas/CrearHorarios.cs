@@ -88,7 +88,7 @@ namespace Schedule_Assistant.vistas
             for(int i= 0; i< Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor).Length; i++)
             {
                 this.tablePanelHorairo.GetControlFromPosition(Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor)[i].Dia-1,
-                    Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor)[i].Hora1 - 1).BackColor = Color.IndianRed;
+                    Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor)[i].Hora - 1).BackColor = Color.IndianRed;
             }
             //colorear las horas en las que no pueda ir el maestro
         }

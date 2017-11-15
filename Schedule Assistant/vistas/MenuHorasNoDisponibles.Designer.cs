@@ -208,6 +208,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MenúHorasNoDisponibles";
+            this.Load += new System.EventHandler(this.MenuHorasNoDisponibles_Load);
             this.pnlProfe.ResumeLayout(false);
             this.pnlProfe.PerformLayout();
             this.ResumeLayout(false);

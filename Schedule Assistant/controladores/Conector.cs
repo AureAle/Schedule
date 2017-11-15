@@ -86,7 +86,7 @@ namespace Schedule_Assistant
             try
             {
                 //revisar en la base de datos bien 
-                comando.CommandText = "INSERT INTO HorasNoDisponibles (profesor, hora, dia) VALUES('" + idProfe + "', '" + hnd.Hora1 + "', '" + hnd.Dia + "')";
+                comando.CommandText = "INSERT INTO HorasNoDisponibles (profesor, hora, dia) VALUES('" + idProfe + "', '" + hnd.Hora + "', '" + hnd.Dia + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -185,7 +185,7 @@ namespace Schedule_Assistant
                     int hora = (int)lector["hora"];
                     int dia = (int)lector["dia"];
                     HoraNoDisponible hnd = new HoraNoDisponible(hora, dia);
-                    hnd.Id1 = id;
+                    hnd.Id = id;
                     horasLista.Add(hnd);
                 }
 
@@ -422,7 +422,7 @@ namespace Schedule_Assistant
         {
             try
             {
-                comando.CommandText = "DELETE FROM HorasNoDisponibles WHERE ID =" + hnd.Id1;
+                comando.CommandText = "DELETE FROM HorasNoDisponibles WHERE ID =" + hnd.Id;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
