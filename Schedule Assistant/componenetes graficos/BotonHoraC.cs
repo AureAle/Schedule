@@ -55,16 +55,16 @@ namespace Schedule_Assistant.componenetes_graficos
 
         public Boolean asignar(Clase clase)
         {
-
-            if (this.disponible == false)
-            {
-                MessageBox.Show("beep");
-                /*
-                 * feedback negativo
-                 * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
-                 */
-                return false;
-            }
+            
+            //if (this.disponible == false)
+            //{
+            //    MessageBox.Show("beep");
+            //    /*
+            //     * feedback negativo
+            //     * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
+            //     */
+            //    return false;
+            //}
 
             if (this.clase == null)
             {
