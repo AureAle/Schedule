@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace SA_objetos
 {
@@ -11,19 +7,11 @@ namespace SA_objetos
 
 #region propiedades
 
-        private int id;
-        private String nombreMateria;
-        private int creditos;
-        private int profesor;
+        public int Id;
+        public String NombreMateria;
+        public int Creditos;
+        public int Profesor;
 
-
-        public int Id { get => id; set => id = value; }
-        /// <summary> nombre de la materia </summary>
-        public string NombreMateria { get => nombreMateria; set => nombreMateria = value; }
-        /// <summary> devuelve las horas que se da dicha materia a la semana </summary>
-        public int Creditos { get => creditos; set => creditos = value; }
-        /// <summary> profesor que da dicha clase </summary>
-        public int Profesor { get => profesor; set => profesor = value; }
 
 #endregion
 
@@ -31,7 +19,7 @@ namespace SA_objetos
 
         public Clase( String materia,int profesor, int creditos)
         {
-            this.nombreMateria = materia;
+            this.NombreMateria = materia;
             this.Creditos = creditos;
             this.Profesor = profesor;
         }
@@ -42,7 +30,7 @@ namespace SA_objetos
 
         public override string ToString()
         {
-            return nombreMateria + " | Créditos: " + creditos;
+            return NombreMateria + " | Créditos: " + Creditos;
         }
 
 #endregion

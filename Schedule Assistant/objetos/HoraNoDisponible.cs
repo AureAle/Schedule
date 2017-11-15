@@ -6,10 +6,10 @@ namespace Schedule_Assistant
 
 #region atributos
 
-        public int id;
-        public int hora;
-        public int dia;
-        public string[] strings = {"err", "2:10-3:00","3:00-3:50", "3:50-4:40", "5:10-6:00", "6:00-6:50", "6:50-7:40", "7:40-8:30"};
+        public int Id;
+        public int Hora;
+        public int Dia;
+        private static string[] strings = {"err", "2:10-3:00","3:00-3:50", "3:50-4:40", "5:10-6:00", "6:00-6:50", "6:50-7:40", "7:40-8:30"};
         // private int idprofesor;
 
         #endregion
@@ -18,8 +18,8 @@ namespace Schedule_Assistant
 
         public HoraNoDisponible( int hora, int día)
         {
-            this.hora = hora;
-            this.dia = día;
+            this.Hora = hora;
+            this.Dia = día;
            // this.idprofesor = idprofesor;
         }
 
@@ -29,7 +29,7 @@ namespace Schedule_Assistant
 
         public override string ToString()
         {
-            return strings[hora];
+            return strings[Hora];
         }
 
         #endregion

@@ -1,2 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="control">
+    <Position X="0.5" Y="0.5" Height="0.573" Width="1.21" />
+  </Comment>
+  <Comment CommentText="componentes">
+    <Position X="0.5" Y="1.271" Height="0.573" Width="1.21" />
+  </Comment>
+  <Comment CommentText="form">
+    <Position X="0.542" Y="2.24" Height="0.573" Width="1.21" />
+  </Comment>
+  <Comment CommentText="obj">
+    <Position X="0.51" Y="3.313" Height="0.573" Width="1.21" />
+  </Comment>
+  <Class Name="Schedule_Assistant.componenetes_graficos.botonClase" Collapsed="true">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAIAQAACAAAA=</HashCode>
+      <FileName>componenetes graficos\botonClase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.componenetes_graficos.BotonHoraC" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAABAAAAAQAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>componenetes graficos\BotonHoraC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.Conector" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAAKEQACQAAEAAAAABIAAAAEACABgAAIIIAQAAAIAAE=</HashCode>
+      <FileName>controladores\Conector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.HoraNoDisponible" Collapsed="true">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAkAAAAAAAAAEIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>objetos\HoraNoDisponible.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.Profe" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAACEAAAAgAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>objetos\Profe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.frmMenu" Collapsed="true">
+    <Position X="2.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAAAAACQAEBAAEEGACgACIAAAAAAAAAAAIABAAAE=</HashCode>
+      <FileName>vistas\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.MenuHorasNoDisponibles" Collapsed="true">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiAAAAAASCCAgACAABCKAAADAAIAgAAEQAAEAAAAACA=</HashCode>
+      <FileName>vistas\MenuHorasNoDisponibles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.MenuMaestro" Collapsed="true">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAACECAgAQgAAACIhAACAAAAhABCAAAEBIgBICY=</HashCode>
+      <FileName>vistas\MenuMaestro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.MenuMaterias" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICCwABGgAACAAhgCAAIAgACwCAAAkAAAAEA=</HashCode>
+      <FileName>vistas\MenuMaterias.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SA_objetos.Clase" Collapsed="true">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACGAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAggA=</HashCode>
+      <FileName>objetos\Clase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.vistas.CrearHorarios" Collapsed="true">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACgAACEAAAgAAACAAAgCAICBwAgABAAAAQAAAAQ=</HashCode>
+      <FileName>vistas\CrearHorarios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Schedule_Assistant.vistas.grupo" Collapsed="true">
+    <Position X="8.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAAAAAACAAABAhAgCAAEACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>vistas\grupo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

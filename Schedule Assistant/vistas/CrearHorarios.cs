@@ -1,6 +1,5 @@
 ﻿using System;
 using SA_objetos;
-using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
@@ -14,7 +13,7 @@ namespace Schedule_Assistant.vistas
     {
         
         private botonClase ClaseSelec;
-        private Point[] horasNoDisponibles;
+        private HoraNoDisponible[] horasNoDisponibles;
 
 #region constructor
 
@@ -23,18 +22,19 @@ namespace Schedule_Assistant.vistas
             InitializeComponent();
         }
 
-#endregion
+        #endregion
 
 #region metodos
 
+        /// <summary> le quita el color a cada horaC de tableLayoutPanel </summary>
         public void BorrarColor()
         {
-            for(int row = 0; row < tablePanelHorairo.RowCount; row++)
+            for (int row = 0; row < tablePanelHorairo.RowCount; row++)
             {
                 for (int column = 0; column < tablePanelHorairo.ColumnCount; column++)
                 {
-                    this.tablePanelHorairo.GetControlFromPosition(column, row).BackColor = Color.Transparent;
-
+                    BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(column, row) as BotonHoraC;
+                    boton.Disponible = true;
                 }
             }
         }
@@ -52,51 +52,44 @@ namespace Schedule_Assistant.vistas
             }
         }
 
-        private void horaSelecRestarHora()
+        /// <summary> resta uno a las horas disponibles de la clase selecionada </summary>
+        private void ClaseSelecRestarHora()
         {
-            if (ClaseSelec.Disponibles >= 1)
-            {
-                ClaseSelec.Disponibles--;
-                ClaseSelec.cargarTexto();
-            }
-            else
+            ClaseSelec.Disponibles--;
+            ClaseSelec.cargarTexto();
+
+            if (ClaseSelec.Disponibles < 1)
             {
                 ClaseSelec = null;
-                //foreach(Point hora in horasNoDisponibles)
-                //{
-                //    Control control = tablePanelHorairo.GetControlFromPosition(hora.X, hora.Y);
-                //    BotonHoraC boton = control as BotonHoraC;
-                //    boton.Disponible = true;
-
-                //}
+                foreach (HoraNoDisponible hora in horasNoDisponibles)
+                {
+                    BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(hora.Dia, hora.Hora) as BotonHoraC;
+                    boton.Disponible = true;
+                }
             }
         }
 
-#endregion
+        #endregion
 
 #region eventos
 
         private void btnClase_Click(object sender, EventArgs e)
         {
-            if(ClaseSelec != null)
-            {
-                //nada
-            }
+            BorrarColor();
 
             ClaseSelec = sender as botonClase;
-            BorrarColor();
-            for(int i= 0; i< Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor).Length; i++)
+
+            horasNoDisponibles = Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor);
+            foreach (HoraNoDisponible horaND in horasNoDisponibles)
             {
-                this.tablePanelHorairo.GetControlFromPosition(Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor)[i].Dia-1,
-                    Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor)[i].Hora - 1).BackColor = Color.IndianRed;
+                BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(horaND.Dia - 1, horaND.Hora - 1) as BotonHoraC;
+                boton.Disponible = false;
             }
-            //colorear las horas en las que no pueda ir el maestro
         }
 
         private void botonHoraC_Click(object sender, EventArgs e)
         {
             BotonHoraC botonHora = sender as BotonHoraC;
-            
 
             if (ClaseSelec == null)
             {
@@ -111,7 +104,7 @@ namespace Schedule_Assistant.vistas
                 Conector.agregarHoraClase(celda.Column+1, celda.Row+1, ClaseSelec.Clase.Id, 20, 1);
                 
                 //restar una hora
-                horaSelecRestarHora();
+                ClaseSelecRestarHora();
             }
 
         }
@@ -136,8 +129,6 @@ namespace Schedule_Assistant.vistas
 
         private void CrearHorarios_Load(object sender, EventArgs e)
         {
-            //lenar tabla
-           // lblGrupo.Text += Conector.leerGrupo();
             for (int row = 0; row < tablePanelHorairo.RowCount; row++)
             {
                 for (int column = 0; column < tablePanelHorairo.ColumnCount; column++)

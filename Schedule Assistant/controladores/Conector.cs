@@ -1,14 +1,13 @@
 ﻿using System;
+using SA_objetos;
 using System.Data;
 using System.Data.OleDb;
 using System.Collections.Generic;
-using SA_objetos;
 
 namespace Schedule_Assistant
 {
     abstract class Conector
     {
-        //antes de empezar hagan una copia de la DB en "repos\Schedule\Schedule Assistant\bin\Debug"
         static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=HorariosDB.accdb");
         static OleDbCommand comando = conectar.CreateCommand();
         
@@ -53,7 +52,6 @@ namespace Schedule_Assistant
                 comando.ExecuteNonQuery();
                 //int id = (int)comando.ExecuteScalar();
                 //System.Console.WriteLine("maestro Nº" + id + " registrado");
-
             }
             finally
             {
@@ -62,12 +60,14 @@ namespace Schedule_Assistant
             }
         }
 
+        /// <summary> registra la clase indicada con la informacion indicada </summary>
         internal static void agregarHoraClase(int dia, int hora, int clase, int grupo, int aula)
         {
             try
             {
                 comando.CommandText =
-                    "INSERT INTO Horario " +"(dia, hora, clase, grupo, aula) " +
+                    "INSERT INTO Horario " +
+                    "(dia, hora, clase, grupo, aula) " +
                     "VALUES(" + dia + "," + hora + "," + clase + "," + grupo + "," + aula + ")";
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -86,7 +86,10 @@ namespace Schedule_Assistant
             try
             {
                 //revisar en la base de datos bien 
-                comando.CommandText = "INSERT INTO HorasNoDisponibles (profesor, hora, dia) VALUES('" + idProfe + "', '" + hnd.Hora + "', '" + hnd.Dia + "')";
+                comando.CommandText = 
+                    "INSERT INTO HorasNoDisponibles " + 
+                    "(profesor, hora, dia)" + 
+                    "VALUES('" + idProfe + "', '" + hnd.Hora + "', '" + hnd.Dia + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -104,8 +107,10 @@ namespace Schedule_Assistant
         {
             try
             {
-                 
-                comando.CommandText = "INSERT INTO Clases (maestro, materia, creditos) VALUES('" + clase.Profesor + "', '" + clase.NombreMateria + "', '" + clase.Creditos + "')";
+                comando.CommandText = 
+                    "INSERT INTO Clases " +
+                    "(maestro, materia, creditos) " +
+                    "VALUES('" + clase.Profesor + "', '" + clase.NombreMateria + "', '" + clase.Creditos + "')";
                 conectar.Open();
                 comando.ExecuteNonQuery();
             }
@@ -120,7 +125,10 @@ namespace Schedule_Assistant
         {
             try
             {
-                comando.CommandText = "INSERT INTO Grupos (Nombre) VALUES('" + grupo + "')";
+                comando.CommandText = 
+                    "INSERT INTO Grupos " +
+                    "(Nombre) " +
+                    "VALUES('" + grupo + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -321,32 +329,15 @@ namespace Schedule_Assistant
             }
         }
 
-        /// <summary>
-        /// Saber si un grupo ya existe o no
-        /// </summary>
-        /// <param name="nombre"></param>
-        /// <returns></returns>
-        public static Boolean GrupoUnico(String nombre)
+        /// <summary> Saber si un grupo ya existe o no </summary>
+        public static Boolean GrupoYaExiste(String nombre)
         {
-            bool unico=true;
             try
             {
-                comando.CommandText = "SELECT * FROM Grupos " ;
+                comando.CommandText = "SELECT * FROM Grupos WHERE nombre ='" + nombre + "'";
                 conectar.Open();
                 OleDbDataReader lector = comando.ExecuteReader();
-                lector.Read();
-                while (lector.Read())
-                {
-                    if (lector["nombre"].ToString() == nombre)
-                    {
-                        unico= false;
-                        break;
-                    }                       
-                    else{
-                        unico= true;
-                    }
-                }
-                return unico;
+                return lector.Read();
             }
             finally
             {
@@ -357,7 +348,7 @@ namespace Schedule_Assistant
 
         #endregion
 
-        #region Actualizar
+#region Actualizar
 
         /// <summary> Actualiza el Nombre de un Profesor </summary>
         public static void actualizarProfesor(int id, string nombre)

@@ -53,22 +53,35 @@ namespace Schedule_Assistant.componenetes_graficos
 
 #region metodos
 
+        /// <summary> intenta asigarse la clase indicada, si falla se debuelve un false </summary>
         public Boolean asignar(Clase clase)
         {
-            
-            //if (this.disponible == false)
-            //{
-            //    MessageBox.Show("beep");
-            //    /*
-            //     * feedback negativo
-            //     * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
-            //     */
-            //    return false;
-            //}
 
-            if (this.clase == null)
+            if (this.disponible == false)
             {
-                MessageBox.Show("'CONTROL', Este boton no tiene ninguna clase");
+                /*
+                 * feedback negativo
+                 * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
+                 */
+                return false;
+            }
+            else if (this.clase != null)
+            {
+                /*
+                feedback advertencia
+                por ejemplo un messagebox;
+                y despues se sobreescribe la clase
+                
+                si se sobreescribe
+                return true;
+                si se rechasa sobreescribir
+                return false;
+                return false;
+                */
+                return false;
+            }
+            else 
+            {
                 this.clase = clase;
 
                 string profesor = Conector.leerNombreProfesor(clase.Profesor);
@@ -76,24 +89,9 @@ namespace Schedule_Assistant.componenetes_graficos
                     clase.NombreMateria + Environment.NewLine + profesor;
 
                 this.AutoSize = true;
-                MessageBox.Show("'CONTROL', Escribio");
                 return true;
-                //registrar en la base de datos?
-                
             }
-            else
-            {
-                ;
-                /*
-                 * feedback advertencia
-                 * por ejemplo un messagebox;
-                 *  y despues se sobreescribe la clase
-                 *  
-                 *  si se sobreescribe
-                 *  return true;
-                 */
-                return false;
-            }
+            
             
         }
 
