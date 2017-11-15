@@ -201,5 +201,10 @@ namespace Schedule_Assistant
         {
 
         }
+
+        private void txtNombreProfesor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

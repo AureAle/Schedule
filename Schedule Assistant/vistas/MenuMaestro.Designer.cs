@@ -63,6 +63,7 @@
             this.txtNombreProfesor.Size = new System.Drawing.Size(294, 26);
             this.txtNombreProfesor.TabIndex = 2;
             this.txtNombreProfesor.Click += new System.EventHandler(this.txtNombreProfesor_Click);
+            this.txtNombreProfesor.TextChanged += new System.EventHandler(this.txtNombreProfesor_TextChanged);
             this.txtNombreProfesor.Leave += new System.EventHandler(this.txtNombreProfesor_Leave);
             // 
             // bttnAgregarProfesor
