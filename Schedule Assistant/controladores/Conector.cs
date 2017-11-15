@@ -116,6 +116,23 @@ namespace Schedule_Assistant
             }
         }
 
+        public static void agregarGrupo(string grupo)
+        {
+            try
+            {
+                comando.CommandText = "INSERT INTO Grupos (Nombre) VALUES('" + grupo + "')";
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+
+        }
+
         #endregion
 
 #region lectura
@@ -254,6 +271,24 @@ namespace Schedule_Assistant
                 lector.Read();
 
                 return lector["Nombre"].ToString();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        public static string leerGrupo(int idGrupo)
+        {
+            try
+            {
+                comando.CommandText = "SELECT * FROM Grupos WHERE ID" + idGrupo;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+
+                return lector["nombre"].ToString();
             }
             finally
             {

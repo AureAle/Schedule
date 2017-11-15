@@ -48,7 +48,9 @@
     <Compile Include="componenetes graficos\botonClase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="componenetes graficos\BotonHoraC.cs" />
+    <Compile Include="componenetes graficos\BotonHoraC.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="objetos\Clase.cs" />
     <Compile Include="controladores\Conector.cs" />
     <Compile Include="objetos\HoraNoDisponible.cs" />
@@ -57,6 +59,12 @@
     </Compile>
     <Compile Include="vistas\CrearHorarios.Designer.cs">
       <DependentUpon>CrearHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\grupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\grupo.Designer.cs">
+      <DependentUpon>grupo.cs</DependentUpon>
     </Compile>
     <Compile Include="vistas\Menu.cs">
       <SubType>Form</SubType>
@@ -87,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="vistas\CrearHorarios.resx">
       <DependentUpon>CrearHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vistas\grupo.resx">
+      <DependentUpon>grupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vistas\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

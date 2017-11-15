@@ -131,3 +131,4 @@ C:\Users\auren\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.
 C:\Users\auren\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.exe.config
 C:\Users\auren\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.exe
 C:\Users\auren\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.pdb
+C:\Users\auren\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.grupo.resources

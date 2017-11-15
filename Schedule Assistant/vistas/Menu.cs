@@ -14,8 +14,8 @@ namespace Schedule_Assistant
 {
     public partial class frmMenu : Form
     {
-        private MenuMaestro maestro = new MenuMaestro();
-        private CrearHorarios horarios= new CrearHorarios();
+        public MenuMaestro maestro = new MenuMaestro();
+        public CrearHorarios horarios= new CrearHorarios();
 
         public frmMenu()
         {
@@ -55,9 +55,27 @@ namespace Schedule_Assistant
         
         private void btnCrearHorarios_Click(object sender, EventArgs e)
         {
-            horarios.Visible = true;
-            pnlFondo.Visible = false;
-            maestro.Visible = false;
+            
+            
+            
+            grupo grupo = new grupo();
+            grupo.ShowDialog();
+            if(grupo.cerro)
+            {
+                pnlFondo.Visible = true;
+                maestro.Visible = false;
+                horarios.Visible = false;
+            }
+            else
+            {
+                pnlFondo.Visible = false;
+                maestro.Visible = false;
+                horarios.Visible = true;
+            }
+            
+            
+
+
         }
 
         private void frmMenu_KeyDown(object sender, KeyEventArgs e)

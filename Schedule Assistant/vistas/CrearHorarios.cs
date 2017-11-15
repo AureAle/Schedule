@@ -27,6 +27,18 @@ namespace Schedule_Assistant.vistas
 
 #region metodos
 
+        public void BorrarColor()
+        {
+            for(int row = 0; row < tablePanelHorairo.RowCount; row++)
+            {
+                for (int column = 0; column < tablePanelHorairo.ColumnCount; column++)
+                {
+                    this.tablePanelHorairo.GetControlFromPosition(column, row).BackColor = Color.Transparent;
+
+                }
+            }
+        }
+
         private void CargarBotones()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -72,6 +84,7 @@ namespace Schedule_Assistant.vistas
             }
 
             ClaseSelec = sender as botonClase;
+            BorrarColor();
             for(int i= 0; i< Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor).Length; i++)
             {
                 this.tablePanelHorairo.GetControlFromPosition(Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor)[i].Dia-1,
@@ -80,13 +93,14 @@ namespace Schedule_Assistant.vistas
             //colorear las horas en las que no pueda ir el maestro
         }
 
-        private void botonHora_Click(object sender, EventArgs e)
+        private void botonHoraC_Click(object sender, EventArgs e)
         {
             BotonHoraC botonHora = sender as BotonHoraC;
+            
 
             if (ClaseSelec == null)
             {
-                //nada
+                MessageBox.Show("vacío");
             }
             else if (botonHora.asignar(ClaseSelec.Clase))
             {
@@ -106,6 +120,7 @@ namespace Schedule_Assistant.vistas
         {
             if(Visible==true)
                 CargarBotones();
+                BorrarColor();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -117,11 +132,13 @@ namespace Schedule_Assistant.vistas
         private void CrearHorarios_Load(object sender, EventArgs e)
         {
             //lenar tabla
+           // lblGrupo.Text += Conector.leerGrupo();
             for (int row = 0; row < tablePanelHorairo.RowCount; row++)
             {
                 for (int column = 0; column < tablePanelHorairo.ColumnCount; column++)
                 {
                     BotonHoraC boton = new BotonHoraC();
+                    boton.MouseClick += botonHoraC_Click;
                     tablePanelHorairo.Controls.Add(boton, column, row);
                 }
             }
