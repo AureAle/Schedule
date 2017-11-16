@@ -17,6 +17,7 @@ namespace Schedule_Assistant.componenetes_graficos
 
         private Clase clase;
         private Boolean disponible;
+        private String aula;
         
         public Clase Clase { get => clase; set => clase = value; }
 
@@ -27,16 +28,19 @@ namespace Schedule_Assistant.componenetes_graficos
             set
             {
                 this.disponible = value;
-                this.BackColor = value ? Color.Transparent : Color.MistyRose;
+                this.BackColor = value ? Color.Transparent : Color.IndianRed;
             }
         }
+
+        public string Aula { get => aula; set => aula = value; }
+
         //public int Dia { get => dia; set => dia = value; }
         //public int Hora { get => hora; set => hora = value; }
 
-#endregion
+        #endregion
 
 
-#region constructores
+        #region constructores
 
         public BotonHoraC()
         {
@@ -59,25 +63,30 @@ namespace Schedule_Assistant.componenetes_graficos
 
             if (this.disponible == false)
             {
-                /*
-                 * feedback negativo
-                 * por ejemplo un beep con System.Media.SystemSounds.Beep.Play();
-                 */
+                MessageBox.Show("Hora no disponible para esta clase", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (this.clase != null)
             {
-                /*
-                feedback advertencia
-                por ejemplo un messagebox;
-                y despues se sobreescribe la clase
-                
-                si se sobreescribe
-                return true;
-                si se rechasa sobreescribir
-                return false;
-                return false;
-                */
+                ///SOBRE ESCRIBE HORAC YA CREADA, CASI
+                DialogResult dialogResult = MessageBox.Show("¿Desea cambiar la clase?", "ADVERTENCIA", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //no FUNCA ESTA POPO
+                    //Conector.BorrarHorario(int dia, int hora);
+                    this.clase = clase;
+
+                    string profesor = Conector.leerNombreProfesor(clase.Profesor);
+                    this.Text =
+                        clase.NombreMateria + Environment.NewLine + profesor+Environment.NewLine+Aula;
+
+                    this.AutoSize = true;
+                    return true;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return false;
+                }
                 return false;
             }
             else 
@@ -86,13 +95,11 @@ namespace Schedule_Assistant.componenetes_graficos
 
                 string profesor = Conector.leerNombreProfesor(clase.Profesor);
                 this.Text =
-                    clase.NombreMateria + Environment.NewLine + profesor;
+                    clase.NombreMateria + Environment.NewLine + profesor+ Environment.NewLine+Aula;
 
                 this.AutoSize = true;
                 return true;
-            }
-            
-            
+            }        
         }
 
 #endregion

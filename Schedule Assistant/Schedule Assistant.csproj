@@ -54,6 +54,12 @@
     <Compile Include="objetos\Clase.cs" />
     <Compile Include="controladores\Conector.cs" />
     <Compile Include="objetos\HoraNoDisponible.cs" />
+    <Compile Include="vistas\aula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\aula.Designer.cs">
+      <DependentUpon>aula.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistas\CrearHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="objetos\Profe.cs" />
     <Compile Include="controladores\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="vistas\aula.resx">
+      <DependentUpon>aula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vistas\CrearHorarios.resx">
       <DependentUpon>CrearHorarios.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,8 +10,8 @@ namespace Schedule_Assistant
     {
         static OleDbConnection conectar = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=HorariosDB.accdb");
         static OleDbCommand comando = conectar.CreateCommand();
-        
-#region control
+
+        #region control
 
         public Boolean verificarConexion()
         {
@@ -39,14 +39,14 @@ namespace Schedule_Assistant
          * agregar leer modificar borrar
          */
 
-#region escritura
+        #region escritura
 
         /// <summary> registra el maestro indicado enla base de datos, retorna su id </summary>
         public static void agregarProfe(String nombre)
         {
             try
             {
-                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('"+ nombre+ "')";
+                comando.CommandText = "INSERT INTO Profesores (Nombre) VALUES('" + nombre + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
@@ -86,9 +86,9 @@ namespace Schedule_Assistant
             try
             {
                 //revisar en la base de datos bien 
-                comando.CommandText = 
-                    "INSERT INTO HorasNoDisponibles " + 
-                    "(profesor, hora, dia)" + 
+                comando.CommandText =
+                    "INSERT INTO HorasNoDisponibles " +
+                    "(profesor, hora, dia)" +
                     "VALUES('" + idProfe + "', '" + hnd.Hora + "', '" + hnd.Dia + "')";
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
@@ -107,7 +107,7 @@ namespace Schedule_Assistant
         {
             try
             {
-                comando.CommandText = 
+                comando.CommandText =
                     "INSERT INTO Clases " +
                     "(maestro, materia, creditos) " +
                     "VALUES('" + clase.Profesor + "', '" + clase.NombreMateria + "', '" + clase.Creditos + "')";
@@ -125,7 +125,7 @@ namespace Schedule_Assistant
         {
             try
             {
-                comando.CommandText = 
+                comando.CommandText =
                     "INSERT INTO Grupos " +
                     "(Nombre) " +
                     "VALUES('" + grupo + "')";
@@ -143,7 +143,7 @@ namespace Schedule_Assistant
 
         #endregion
 
-#region lectura
+        #region lectura
 
         /// <summary> retorna un array de todos los profesores en la base de datos </summary>
         public static Profe[] leerTodosProfes()
@@ -160,7 +160,7 @@ namespace Schedule_Assistant
                 while (lector.Read())
                 {
                     int id = (int)lector["ID"];
-                    string  nombre = lector["Nombre"].ToString();
+                    string nombre = lector["Nombre"].ToString();
                     Profe p = new Profe(id, nombre);
 
                     profesLista.Add(p);
@@ -318,7 +318,7 @@ namespace Schedule_Assistant
                 {
                     grupo.Add(lector["nombre"].ToString());
                 }
-                String u=grupo.ToArray()[grupo.ToArray().Length-1];
+                String u = grupo.ToArray()[grupo.ToArray().Length - 1];
 
                 return u;
             }
@@ -346,9 +346,43 @@ namespace Schedule_Assistant
             }
         }
 
+        public static int leerIdAula(String aula)
+        {
+            try
+            {
+                comando.CommandText = "SELECT * FROM Aulas WHERE nombre='" + aula + "'";
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+
+                return (int)lector["ID"];
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+        public static Boolean AulaNoOcupada(int idAula, int idDia, int idHora)
+        {
+            try
+            {
+                comando.CommandText = "SELECT * FROM Horario WHERE dia =" + idDia + "AND hora=" + idHora + "AND aula=" + idAula;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                return (lector.Read()) ? false : true;
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
         #endregion
 
-#region Actualizar
+        #region Actualizar
 
         /// <summary> Actualiza el Nombre de un Profesor </summary>
         public static void actualizarProfesor(int id, string nombre)
@@ -367,7 +401,7 @@ namespace Schedule_Assistant
                     conectar.Close();
             }
         }
-        
+
         /// <summary> Modifica los creditos de una clase </summary>
         public static void actualizarClase(int id, int creditos)
         {
@@ -388,7 +422,7 @@ namespace Schedule_Assistant
 
         #endregion
 
-#region borrar
+        #region borrar
 
         /// <summary> elimina al maestro indicado de la base de datos </summary>
         public static void borrarProfe(int idProfe)
@@ -461,8 +495,29 @@ namespace Schedule_Assistant
                     conectar.Close();
             }
         }
-    }
+        /// <summary>
+        /// BORRAR HORARIO PERO NO SE SABE QUE PETS
+        /// </summary>
+        /// <param name="dia"></param>
+        /// <param name="hora"></param>
+        public static void BorrarHorario(int dia, int hora)
+        {
+            try
+            {
+                comando.CommandText = "DELETE FROM Clases WHERE WHERE dia =" + dia + "AND hora=" + hora;
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                comando.ExecuteNonQuery();
 
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
+    }
 #endregion
 
 }

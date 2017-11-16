@@ -24,14 +24,14 @@ namespace Schedule_Assistant.componenetes_graficos
 
         public botonClase()
         {
-            this.Size = new Size(50,50);
+            this.Size = new Size(157, 50);
         }
 
         public botonClase(Clase clase)
         {
             this.clase = clase;
             this.disponibles = clase.Creditos;
-            this.AutoSize = true;
+            //this.AutoSize = true;
 
             cargarTexto();
         }

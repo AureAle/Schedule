@@ -34,7 +34,22 @@ namespace Schedule_Assistant.vistas
                 for (int column = 0; column < tablePanelHorairo.ColumnCount; column++)
                 {
                     BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(column, row) as BotonHoraC;
+                    boton.BackColor = Color.Transparent;
+
                     boton.Disponible = true;
+                }
+            }
+        }
+        public void BorrarTexto()
+        {
+            for (int row = 0; row < tablePanelHorairo.RowCount; row++)
+            {
+                for (int column = 0; column < tablePanelHorairo.ColumnCount; column++)
+                {
+                    BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(column, row) as BotonHoraC;
+                    boton.BackColor = Color.Transparent;
+
+                    boton.Text = "";
                 }
             }
         }
@@ -48,16 +63,16 @@ namespace Schedule_Assistant.vistas
             {
                 botonClase boton = new botonClase(clase);
                 boton.MouseClick += btnClase_Click;
+                boton.Size = new Size(157, 50);
+                boton.FlatStyle = FlatStyle.Flat;
                 flowLayoutPanel1.Controls.Add(boton);
+
             }
         }
 
         /// <summary> resta uno a las horas disponibles de la clase selecionada </summary>
-        private void ClaseSelecRestarHora()
+        private Boolean ClaseSelecRestarHora(BotonHoraC botonsito)
         {
-            ClaseSelec.Disponibles--;
-            ClaseSelec.cargarTexto();
-
             if (ClaseSelec.Disponibles < 1)
             {
                 ClaseSelec = null;
@@ -66,7 +81,22 @@ namespace Schedule_Assistant.vistas
                     BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(hora.Dia, hora.Hora) as BotonHoraC;
                     boton.Disponible = true;
                 }
+                MessageBox.Show("Creditos insuficientes", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
+            else if (botonsito.BackColor==Color.IndianRed) 
+            {
+                MessageBox.Show("Hora no disponible", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                return false;
+            }
+            else
+            {
+                ClaseSelec.Disponibles--;
+                ClaseSelec.cargarTexto();
+                return true;
+            }
+           
         }
 
         #endregion
@@ -90,22 +120,46 @@ namespace Schedule_Assistant.vistas
         private void botonHoraC_Click(object sender, EventArgs e)
         {
             BotonHoraC botonHora = sender as BotonHoraC;
+            //GENERA FORM AULAS
+            aula a = new aula();
+            a.ShowDialog();
 
-            if (ClaseSelec == null)
+            if(a.getAula()==null)//SI NO SELECCIONA AULA NO HACE NI MAIS
             {
-                MessageBox.Show("Es necesario agregar alguna clase", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //NELL PASTEL
             }
-            else if (botonHora.asignar(ClaseSelec.Clase))
+            else
             {
+                botonHora.Aula = a.getAula();
+                //OBTIENE ID DE AULA DE LA BASE DE DATOS
+                int IdAula = Conector.leerIdAula(botonHora.Aula);
+
                 //ubicar
                 TableLayoutPanelCellPosition celda = tablePanelHorairo.GetCellPosition(botonHora);
-
-                //registrar en la base de datos
-                Conector.agregarHoraClase(celda.Column+1, celda.Row+1, ClaseSelec.Clase.Id, 20, 1);
-                
-                //restar una hora
-                ClaseSelecRestarHora();
+                //SI ESTA OCUPADA EL AULA POR OTRO GRUPO EN LA MISMA HORA, SE LA PELA
+                if (Conector.AulaNoOcupada(IdAula, celda.Column + 1, celda.Row + 1))
+                {
+                    if (ClaseSelec == null)
+                    {
+                        MessageBox.Show("Es necesario agregar alguna clase", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (ClaseSelecRestarHora(botonHora))//SI NO TIENE CREDITOS SE LA PELA
+                    {
+                        if (botonHora.asignar(ClaseSelec.Clase))//SI LO ESCRIBE AL MERO PETS EN EL BOTON LO GUARDA EN LA DB
+                        {
+                            //registrar en la base de datos
+                            Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, 20, IdAula);                          
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Aula Ocupada", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
+            
+
+            
 
         }
 
@@ -115,6 +169,7 @@ namespace Schedule_Assistant.vistas
             {
                 CargarBotones();
                 BorrarColor();
+                BorrarTexto();
                 lblGrupo.Text = "Horario del grupo: ";
                 lblGrupo.Text += Conector.UltimoGrupo();
             }
