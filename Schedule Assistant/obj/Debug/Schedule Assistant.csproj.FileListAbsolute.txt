@@ -164,3 +164,19 @@ C:\Users\USUARIO\Downloads\Schedule-master(5)\Schedule-master\Schedule Assistant
 C:\Users\USUARIO\Downloads\Schedule-master(5)\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.exe
 C:\Users\USUARIO\Downloads\Schedule-master(5)\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
 C:\Users\USUARIO\Downloads\Schedule-master(5)\Schedule-master\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.aula.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.exe.config
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.exe
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\bin\Debug\Schedule Assistant.pdb
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csprojResolveAssemblyReference.cache
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.aula.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.CrearHorarios.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.grupo.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.frmMenu.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuHorasNoDisponibles.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaestro.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.MenuMaterias.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.Properties.Resources.resources
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.GenerateResource.Cache
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.exe
+C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
