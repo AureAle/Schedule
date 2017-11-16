@@ -122,33 +122,33 @@ namespace Schedule_Assistant.vistas
         {
             BotonHoraC botonHora = sender as BotonHoraC;
             //GENERA FORM AULAS
-            if (ClaseSelecRestarHora(botonHora))
+            if (ClaseSelec == null)
             {
-                aula a = new aula();
-                a.ShowDialog();
-                //SE MODIFICÓ EL ORDEN EN QUE SE PREGUNTAN LAS COSAS, AHORA PREGUNTA PRIMERO EL COLOR, ANTES DE MOSTAR-
-                //-EL DIÁLOGO PARA SELECCIONAR EL AULA
-                if (a.getAula() == null)//SI NO SELECCIONA AULA NO HACE NI MAIS Y LE DEVUELVE EL CRÉDITO
+                MessageBox.Show("Es necesario agregar alguna clase", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (ClaseSelecRestarHora(botonHora))
                 {
-                    ClaseSelec.Disponibles++;
-                    ClaseSelec.cargarTexto();
-                }
-                else
-                {
-                    botonHora.Aula = a.getAula();
-                    //OBTIENE ID DE AULA DE LA BASE DE DATOS
-                    int IdAula = Conector.leerIdAula(botonHora.Aula);
-
-                    //ubicar
-                    TableLayoutPanelCellPosition celda = tablePanelHorairo.GetCellPosition(botonHora);
-                    //SI ESTA OCUPADA EL AULA POR OTRO GRUPO EN LA MISMA HORA, SE LA PELA
-                    if (Conector.AulaNoOcupada(IdAula, celda.Column + 1, celda.Row + 1))
+                    aula a = new aula();
+                    a.ShowDialog();
+                    //SE MODIFICÓ EL ORDEN EN QUE SE PREGUNTAN LAS COSAS, AHORA PREGUNTA PRIMERO EL COLOR, ANTES DE MOSTAR-
+                    //-EL DIÁLOGO PARA SELECCIONAR EL AULA
+                    if (a.getAula() == null)//SI NO SELECCIONA AULA NO HACE NI MAIS Y LE DEVUELVE EL CRÉDITO
                     {
-                        if (ClaseSelec == null)
-                        {
-                            MessageBox.Show("Es necesario agregar alguna clase", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
+                        ClaseSelec.Disponibles++;
+                        ClaseSelec.cargarTexto();
+                    }
+                    else
+                    {
+                        botonHora.Aula = a.getAula();
+                        //OBTIENE ID DE AULA DE LA BASE DE DATOS
+                        int IdAula = Conector.leerIdAula(botonHora.Aula);
+
+                        //ubicar
+                        TableLayoutPanelCellPosition celda = tablePanelHorairo.GetCellPosition(botonHora);
+                        //SI ESTA OCUPADA EL AULA POR OTRO GRUPO EN LA MISMA HORA, SE LA PELA
+                        if (Conector.AulaNoOcupada(IdAula, celda.Column + 1, celda.Row + 1))
                         {
                             if (botonHora.asignar(ClaseSelec.Clase))//SI LO ESCRIBE AL MERO PETS EN EL BOTON LO GUARDA EN LA DB
                             {
@@ -156,13 +156,16 @@ namespace Schedule_Assistant.vistas
                                 Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, 20, IdAula);
                             }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Aula Ocupada", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        else
+                        {
+                            MessageBox.Show("Aula Ocupada", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            ClaseSelec.Disponibles++;
+                            ClaseSelec.cargarTexto();
+                        }
                     }
                 }
             }
+            
         }
 
         private void CrearHorarios_VisibleChanged(object sender, EventArgs e)
