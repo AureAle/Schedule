@@ -13,8 +13,8 @@ namespace Schedule_Assistant.componenetes_graficos
     class BotonHoraC: Button
     {
 
-#region propiedades
-
+        #region propiedades
+        private int id;
         private Clase clase;
         private Boolean disponible;
         private String aula;
@@ -33,6 +33,7 @@ namespace Schedule_Assistant.componenetes_graficos
         }
 
         public string Aula { get => aula; set => aula = value; }
+        public int Id { get => id; set => id = value; }
 
         //public int Dia { get => dia; set => dia = value; }
         //public int Hora { get => hora; set => hora = value; }
@@ -58,7 +59,7 @@ namespace Schedule_Assistant.componenetes_graficos
 #region metodos
 
         /// <summary> intenta asigarse la clase indicada, si falla se debuelve un false </summary>
-        public Boolean asignar(Clase clase)
+        public Boolean asignar(Clase clase, int grupo, int dia, int hora)
         {
 
             if (this.disponible == false)
@@ -73,14 +74,10 @@ namespace Schedule_Assistant.componenetes_graficos
                 if (dialogResult == DialogResult.Yes)
                 {
                     //no FUNCA ESTA POPO
-                    //Conector.BorrarHorario(int dia, int hora);
+                    Conector.BorrarHorario(dia,hora, grupo);
                     this.clase = clase;
 
-                    string profesor = Conector.leerNombreProfesor(clase.Profesor);
-                    this.Text =
-                        clase.NombreMateria + Environment.NewLine + profesor+Environment.NewLine+Aula;
-
-                    this.AutoSize = true;
+                    ToString();
                     return true;
                 }
                 else if (dialogResult == DialogResult.No)
@@ -93,16 +90,22 @@ namespace Schedule_Assistant.componenetes_graficos
             {
                 this.clase = clase;
 
-                string profesor = Conector.leerNombreProfesor(clase.Profesor);
-                this.Text =
-                    clase.NombreMateria + Environment.NewLine + profesor+ Environment.NewLine+Aula;
-
-                this.AutoSize = true;
+                ToString();
                 return true;
             }        
         }
 
-#endregion
+        public override string ToString()
+        {
+            string profesor = Conector.leerNombreProfesor(clase.Profesor);
+            return 
+            this.Text =
+                clase.NombreMateria + Environment.NewLine + profesor + Environment.NewLine + Aula;
+
+            this.AutoSize = true;
+        }
+
+        #endregion
 
     }
 }

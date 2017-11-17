@@ -14,6 +14,7 @@ namespace Schedule_Assistant.vistas
         
         private botonClase ClaseSelec;
         private HoraNoDisponible[] horasNoDisponibles;
+        private Boolean editar = false;
 
 #region constructor
 
@@ -150,10 +151,15 @@ namespace Schedule_Assistant.vistas
                         //SI ESTA OCUPADA EL AULA POR OTRO GRUPO EN LA MISMA HORA, SE LA PELA
                         if (Conector.AulaNoOcupada(IdAula, celda.Column + 1, celda.Row + 1))
                         {
-                            if (botonHora.asignar(ClaseSelec.Clase))//SI LO ESCRIBE AL MERO PETS EN EL BOTON LO GUARDA EN LA DB
+                            if (botonHora.asignar(ClaseSelec.Clase, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, celda.Column + 1, celda.Row + 1))//SI LO ESCRIBE AL MERO PETS EN EL BOTON LO GUARDA EN LA DB
                             {
                                 //registrar en la base de datos
-                                Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, 20, IdAula);
+                                Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, IdAula);
+                            }
+                            else
+                            {
+                                ClaseSelec.Disponibles++;
+                                ClaseSelec.cargarTexto();
                             }
                         }
                         else
@@ -176,7 +182,7 @@ namespace Schedule_Assistant.vistas
                 BorrarColor();
                 BorrarTexto();
                 lblGrupo.Text = "Horario del grupo: ";
-                lblGrupo.Text += Conector.UltimoGrupo();
+                lblGrupo.Text += Conector.TodosGrupo()[Conector.TodosGrupo().Length-1].Nombre;
             }
                 
         }

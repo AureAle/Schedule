@@ -180,3 +180,5 @@ C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.c
 C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.CoreCompileInputs.cache
 C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.exe
 C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.aula.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.grupo.resources

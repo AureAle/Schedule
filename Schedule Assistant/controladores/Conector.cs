@@ -305,9 +305,9 @@ namespace Schedule_Assistant
             }
         }
 
-        public static string UltimoGrupo()
+        public static Grupo[] TodosGrupo()
         {
-            List<String> grupo = new List<String>();
+            List<Grupo> grupo = new List<Grupo>();
             try
             {
                 comando.CommandText = "SELECT * FROM Grupos";
@@ -316,11 +316,13 @@ namespace Schedule_Assistant
                 lector.Read();
                 while (lector.Read())
                 {
-                    grupo.Add(lector["nombre"].ToString());
+                    int id = (int)lector["ID"];
+                    String nombre=lector["nombre"].ToString();
+                    Grupo g = new Grupo(id, nombre);
+                    grupo.Add(g);
                 }
-                String u = grupo.ToArray()[grupo.ToArray().Length - 1];
 
-                return u;
+                return grupo.ToArray();
             }
             finally
             {
@@ -500,11 +502,11 @@ namespace Schedule_Assistant
         /// </summary>
         /// <param name="dia"></param>
         /// <param name="hora"></param>
-        public static void BorrarHorario(int dia, int hora)
+        public static void BorrarHorario(int dia, int hora, int grupo)
         {
             try
             {
-                comando.CommandText = "DELETE FROM Clases WHERE WHERE dia =" + dia + "AND hora=" + hora;
+                comando.CommandText = "DELETE FROM Horario  WHERE dia =" + dia + "AND hora=" + hora + "AND grupo=" + grupo;
                 comando.CommandType = CommandType.Text;
                 conectar.Open();
                 comando.ExecuteNonQuery();
