@@ -43,7 +43,9 @@ namespace Schedule_Assistant
             pnlFondo.Visible = true;
             maestro.Visible = false;
             horarios.Visible = false;
-            
+            horarios.editar = false;
+            horarios.crear = false;
+
         }
 
         private void btnAdminProfes_Click(object sender, EventArgs e)
@@ -51,16 +53,46 @@ namespace Schedule_Assistant
             maestro.Visible = true;
             horarios.Visible = false;
             pnlFondo.Visible = false;
+            horarios.editar = false;
+            horarios.crear = false;
         }
         
         private void btnCrearHorarios_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            grupo grupo = new grupo();
-            grupo.ShowDialog();
-            if(grupo.cerro)
+            horarios.crear = true;
+            horarios.editar = false;
+            horarios.Visible = true;
+            if (horarios.CerroCrear)
+            {
+                pnlFondo.Visible = true;
+                maestro.Visible = false;
+                horarios.Visible = false;
+            }
+            else
+            {
+                pnlFondo.Visible = false;
+                maestro.Visible = false;
+                horarios.Visible = true;
+            }
+
+        }
+
+        private void frmMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                pnlOpciones.Visible = !pnlOpciones.Visible;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+               
+                horarios.editar = true;
+                horarios.crear = false;
+                horarios.Visible = true;
+            if (horarios.Cerro)
             {
                 pnlFondo.Visible = true;
                 maestro.Visible = false;
@@ -74,16 +106,6 @@ namespace Schedule_Assistant
             }
             
             
-
-
-        }
-
-        private void frmMenu_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode.ToString() == "F1")
-            {
-                pnlOpciones.Visible = !pnlOpciones.Visible;
-            }
         }
     }
 }

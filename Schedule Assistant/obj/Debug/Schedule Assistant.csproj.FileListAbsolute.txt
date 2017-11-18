@@ -182,3 +182,4 @@ C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.e
 C:\Users\casa\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.aula.resources
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.vistas.grupo.resources
+C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule_Assistant.GrupoSelec.resources

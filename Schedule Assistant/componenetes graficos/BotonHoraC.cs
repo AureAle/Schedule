@@ -51,7 +51,7 @@ namespace Schedule_Assistant.componenetes_graficos
         public BotonHoraC(Clase clase)
         {
             //si este metodo guarda en la base de datos, entonces es un pleonasmo o es reciproco
-            this.asignar(clase);
+            this.asignar(clase,0,0,0);
         }
 
 #endregion

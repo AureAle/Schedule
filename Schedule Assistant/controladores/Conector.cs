@@ -382,6 +382,32 @@ namespace Schedule_Assistant
             }
         }
 
+        //public static HorariosList[] LeerTodosHorarios()
+        //{
+        //    List<Grupo> grupo = new List<Grupo>();
+        //    try
+        //    {
+        //        comando.CommandText = "SELECT * FROM Grupos";
+        //        conectar.Open();
+        //        OleDbDataReader lector = comando.ExecuteReader();
+        //        lector.Read();
+        //        while (lector.Read())
+        //        {
+        //            int id = (int)lector["ID"];
+        //            String nombre = lector["nombre"].ToString();
+        //            Grupo g = new Grupo(id, nombre);
+        //            grupo.Add(g);
+        //        }
+
+        //        return grupo.ToArray();
+        //    }
+        //    finally
+        //    {
+        //        if (conectar.State == ConnectionState.Open)
+        //            conectar.Close();
+        //    }
+        //}
+
         #endregion
 
         #region Actualizar

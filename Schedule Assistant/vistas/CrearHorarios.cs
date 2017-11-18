@@ -11,10 +11,14 @@ namespace Schedule_Assistant.vistas
     
     public partial class CrearHorarios : Form
     {
-        
+        GrupoSelec gs = new GrupoSelec();
+        grupo grupo = new grupo();
+        public Boolean CerroCrear = false;
+        public Boolean Cerro=false;
         private botonClase ClaseSelec;
         private HoraNoDisponible[] horasNoDisponibles;
-        private Boolean editar = false;
+        public Boolean editar = false;
+        public Boolean crear = false;
 
 #region constructor
 
@@ -122,6 +126,8 @@ namespace Schedule_Assistant.vistas
         private void botonHoraC_Click(object sender, EventArgs e)
         {
             BotonHoraC botonHora = sender as BotonHoraC;
+            
+            
             //GENERA FORM AULAS
             if (ClaseSelec == null)
             {
@@ -154,7 +160,15 @@ namespace Schedule_Assistant.vistas
                             if (botonHora.asignar(ClaseSelec.Clase, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, celda.Column + 1, celda.Row + 1))//SI LO ESCRIBE AL MERO PETS EN EL BOTON LO GUARDA EN LA DB
                             {
                                 //registrar en la base de datos
-                                Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, IdAula);
+                                if(editar)
+                                {
+                                    Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, gs.getID(), IdAula);
+                                }
+                                else
+                                {
+                                    Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, IdAula);
+                                }
+                                
                             }
                             else
                             {
@@ -182,7 +196,35 @@ namespace Schedule_Assistant.vistas
                 BorrarColor();
                 BorrarTexto();
                 lblGrupo.Text = "Horario del grupo: ";
-                lblGrupo.Text += Conector.TodosGrupo()[Conector.TodosGrupo().Length-1].Nombre;
+
+                if(editar)
+                {
+                    gs.ShowDialog();
+                    if(gs.cerro)
+                    {
+                        Cerro = gs.cerro;
+                        editar = false;
+                    }
+                    else
+                    {
+                        lblGrupo.Text += Conector.leerGrupoPorID(gs.getID());
+                    }
+                }
+                else if(crear)
+                {
+                    grupo.ShowDialog();
+                    if (grupo.cerro)
+                    {
+                        CerroCrear = grupo.cerro;
+                        crear = false;
+                    }
+                    else
+                    {
+                        lblGrupo.Text += Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Nombre;
+                    }
+                }
+
+
             }
                 
         }

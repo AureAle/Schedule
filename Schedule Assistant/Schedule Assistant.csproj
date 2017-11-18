@@ -51,7 +51,13 @@
     <Compile Include="componenetes graficos\BotonHoraC.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Grupo.cs" />
+    <Compile Include="objetos\Grupo.cs" />
+    <Compile Include="vistas\GrupoSelec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\GrupoSelec.Designer.cs">
+      <DependentUpon>GrupoSelec.cs</DependentUpon>
+    </Compile>
     <Compile Include="objetos\Clase.cs" />
     <Compile Include="controladores\Conector.cs" />
     <Compile Include="objetos\HoraNoDisponible.cs" />
@@ -100,6 +106,9 @@
     <Compile Include="objetos\Profe.cs" />
     <Compile Include="controladores\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="vistas\GrupoSelec.resx">
+      <DependentUpon>GrupoSelec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vistas\aula.resx">
       <DependentUpon>aula.cs</DependentUpon>
     </EmbeddedResource>

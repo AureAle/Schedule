@@ -19,5 +19,10 @@ namespace Schedule_Assistant
 
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
+
+        public override string ToString()
+        {
+            return nombre;
+        }
     }
 }

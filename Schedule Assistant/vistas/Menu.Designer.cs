@@ -40,6 +40,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlOpciones.SuspendLayout();
             this.pnlFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,6 +53,9 @@
             // 
             this.pnlOpciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlOpciones.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnlOpciones.Controls.Add(this.label2);
+            this.pnlOpciones.Controls.Add(this.label1);
+            this.pnlOpciones.Controls.Add(this.button1);
             this.pnlOpciones.Controls.Add(this.lbl);
             this.pnlOpciones.Controls.Add(this.btnHome);
             this.pnlOpciones.Controls.Add(this.label5);
@@ -66,7 +72,7 @@
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.ForeColor = System.Drawing.Color.White;
-            this.lbl.Location = new System.Drawing.Point(30, 138);
+            this.lbl.Location = new System.Drawing.Point(30, 91);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(60, 23);
             this.lbl.TabIndex = 26;
@@ -78,7 +84,7 @@
             this.btnHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHome.BackgroundImage")));
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(26, 71);
+            this.btnHome.Location = new System.Drawing.Point(26, 24);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(64, 64);
             this.btnHome.TabIndex = 23;
@@ -91,7 +97,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 494);
+            this.label5.Location = new System.Drawing.Point(3, 395);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 46);
             this.label5.TabIndex = 25;
@@ -103,7 +109,7 @@
             this.btnAdminProfes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdminProfes.BackgroundImage")));
             this.btnAdminProfes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminProfes.Location = new System.Drawing.Point(26, 231);
+            this.btnAdminProfes.Location = new System.Drawing.Point(26, 151);
             this.btnAdminProfes.Name = "btnAdminProfes";
             this.btnAdminProfes.Size = new System.Drawing.Size(64, 66);
             this.btnAdminProfes.TabIndex = 21;
@@ -116,7 +122,7 @@
             this.btnCrearHorarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCrearHorarios.BackgroundImage")));
             this.btnCrearHorarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrearHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearHorarios.Location = new System.Drawing.Point(23, 399);
+            this.btnCrearHorarios.Location = new System.Drawing.Point(23, 323);
             this.btnCrearHorarios.Name = "btnCrearHorarios";
             this.btnCrearHorarios.Size = new System.Drawing.Size(67, 69);
             this.btnCrearHorarios.TabIndex = 24;
@@ -128,7 +134,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(-4, 300);
+            this.label3.Location = new System.Drawing.Point(-4, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 54);
             this.label3.TabIndex = 22;
@@ -183,6 +189,41 @@
             this.pcbLogo.TabIndex = 3;
             this.pcbLogo.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(22, 541);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 23);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Editar ";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(23, 473);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 65);
+            this.button1.TabIndex = 27;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(19, 564);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 23);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Horarios";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +264,9 @@
         private System.Windows.Forms.PictureBox pcbLogo;
         public System.Windows.Forms.Panel pnlFondo;
         public System.Windows.Forms.Panel pnlOpciones;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
