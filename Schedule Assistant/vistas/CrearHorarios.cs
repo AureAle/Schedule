@@ -92,7 +92,7 @@ namespace Schedule_Assistant.vistas
                     BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(hora.Dia, hora.Hora) as BotonHoraC;
                     boton.Disponible = true;
                 }
-                MessageBox.Show("Creditos insuficientes", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Créditos insuficientes", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
                
             }
