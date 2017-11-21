@@ -119,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(908, 647);
+            this.ClientSize = new System.Drawing.Size(891, 630);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnlProfe);
             this.Controls.Add(this.panel1);

@@ -116,7 +116,7 @@
             this.cmbDia.Items.AddRange(new object[] {
             "Lunes",
             "Martes",
-            "Miercoles",
+            "Miércoles",
             "Jueves",
             "Viernes"});
             this.cmbDia.Location = new System.Drawing.Point(69, 177);
