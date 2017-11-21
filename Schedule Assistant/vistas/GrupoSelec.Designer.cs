@@ -79,7 +79,10 @@
             this.Controls.Add(this.bttnAceptarGrupo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstGrupos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GrupoSelec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grupo";

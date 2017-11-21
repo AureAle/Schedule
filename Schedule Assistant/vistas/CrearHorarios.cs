@@ -194,6 +194,7 @@ namespace Schedule_Assistant.vistas
             {
                 CargarBotones();
                 BorrarColor();
+                
                 BorrarTexto();
                 lblGrupo.Text = "Horario del grupo: ";
 
@@ -227,12 +228,6 @@ namespace Schedule_Assistant.vistas
 
             }
                 
-        }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {         
-           //lo puse por si ocultamos el panel de opciones y se vea más completo poder regresar(? 
-
         }
 
         private void CrearHorarios_Load(object sender, EventArgs e)

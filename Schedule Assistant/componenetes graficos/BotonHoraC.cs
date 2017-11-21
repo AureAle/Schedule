@@ -61,6 +61,7 @@ namespace Schedule_Assistant.componenetes_graficos
         /// <summary> intenta asigarse la clase indicada, si falla se debuelve un false </summary>
         public Boolean asignar(Clase clase, int grupo, int dia, int hora)
         {
+            
 
             if (this.disponible == false)
             {
