@@ -59,6 +59,18 @@ namespace Schedule_Assistant.vistas
             }
         }
 
+        public void CargarHorarios()
+        {
+            //MessageBox.Show(Conector.LeerTodosHorarios(gs.getID()).Length.ToString());
+            for(int i=0; i< Conector.LeerTodosHorarios(gs.getID()).Length; i++)
+            {
+                BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(Conector.LeerTodosHorarios(gs.getID())[i].Dia - 1, Conector.LeerTodosHorarios(gs.getID())[i].Hora - 1) as BotonHoraC;
+                //MessageBox.Show(Conector.LeerTodosHorarios(gs.getID())[i].Clase.ToString());
+                boton.Text =
+                Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor( Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).Profesor) + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(gs.getID())[i].Aula);
+            }
+        }
+
         private void CargarBotones()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -157,24 +169,31 @@ namespace Schedule_Assistant.vistas
                         //SI ESTA OCUPADA EL AULA POR OTRO GRUPO EN LA MISMA HORA, SE LA PELA
                         if (Conector.AulaNoOcupada(IdAula, celda.Column + 1, celda.Row + 1))
                         {
-                            if (botonHora.asignar(ClaseSelec.Clase, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, celda.Column + 1, celda.Row + 1))//SI LO ESCRIBE AL MERO PETS EN EL BOTON LO GUARDA EN LA DB
+                            if(editar)
                             {
-                                //registrar en la base de datos
-                                if(editar)
+                                if (botonHora.asignar(ClaseSelec.Clase, gs.getID(), celda.Column + 1, celda.Row + 1))
                                 {
                                     Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, gs.getID(), IdAula);
                                 }
                                 else
                                 {
-                                    Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, IdAula);
+                                    ClaseSelec.Disponibles++;
+                                    ClaseSelec.cargarTexto();
                                 }
-                                
                             }
                             else
                             {
-                                ClaseSelec.Disponibles++;
-                                ClaseSelec.cargarTexto();
+                                if (botonHora.asignar(ClaseSelec.Clase, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, celda.Column + 1, celda.Row + 1))
+                                {
+                                    Conector.agregarHoraClase(celda.Column + 1, celda.Row + 1, ClaseSelec.Clase.Id, Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id, IdAula);
+                                }
+                                else
+                                {
+                                    ClaseSelec.Disponibles++;
+                                    ClaseSelec.cargarTexto();
+                                }
                             }
+                            
                         }
                         else
                         {
@@ -209,6 +228,7 @@ namespace Schedule_Assistant.vistas
                     else
                     {
                         lblGrupo.Text += Conector.leerGrupoPorID(gs.getID());
+                        CargarHorarios();
                     }
                 }
                 else if(crear)

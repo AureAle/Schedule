@@ -52,6 +52,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="objetos\Grupo.cs" />
+    <Compile Include="objetos\Horarios.cs" />
     <Compile Include="vistas\GrupoSelec.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -238,6 +238,33 @@ namespace Schedule_Assistant
             }
         }
 
+        public static Clase leerClase(int idClase)
+        {
+            List<Clase> clasesLista = new List<Clase>();
+            //REVISAR
+            try
+            {
+                comando.CommandText = "SELECT * FROM Clases WHERE ID= " + idClase;
+                
+                comando.CommandType = CommandType.Text;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+                int profesor = (int)lector["maestro"];
+                String materia = lector["materia"].ToString();
+                int creditos = (int)lector["creditos"];
+                    
+                    Clase c = new Clase(materia, profesor, creditos);
+
+                return c;
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
         /// <summary>  Obtiene lista de clases registradas por id de profe </summary>
         public static Clase[] leerTodasClases()
         {
@@ -348,6 +375,24 @@ namespace Schedule_Assistant
             }
         }
 
+        public static String leerAulaPorId(int idAula)
+        {
+            try
+            {
+                comando.CommandText = "SELECT * FROM Aulas WHERE ID="+idAula;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+
+                return lector["nombre"].ToString(); 
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
         public static int leerIdAula(String aula)
         {
             try
@@ -382,32 +427,35 @@ namespace Schedule_Assistant
             }
         }
 
-        //public static HorariosList[] LeerTodosHorarios()
-        //{
-        //    List<Grupo> grupo = new List<Grupo>();
-        //    try
-        //    {
-        //        comando.CommandText = "SELECT * FROM Grupos";
-        //        conectar.Open();
-        //        OleDbDataReader lector = comando.ExecuteReader();
-        //        lector.Read();
-        //        while (lector.Read())
-        //        {
-        //            int id = (int)lector["ID"];
-        //            String nombre = lector["nombre"].ToString();
-        //            Grupo g = new Grupo(id, nombre);
-        //            grupo.Add(g);
-        //        }
+        public static Horarios[] LeerTodosHorarios(int idgrupo)
+        {
+            List<Horarios> hr = new List<Horarios>();
+            try
+            {
+                comando.CommandText = "SELECT * FROM Horario WHERE grupo ="+idgrupo;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+                while (lector.Read())
+                {
+                    int id = (int)lector["ID"];
+                    int dia = (int)lector["dia"];
+                    int hora = (int)lector["hora"];
+                    int clase = (int)lector["clase"];
+                    int aula = (int)lector["aula"];
+                    Horarios h = new Horarios(id, dia, hora, clase, aula);
+                    hr.Add(h);
+                }
 
-        //        return grupo.ToArray();
-        //    }
-        //    finally
-        //    {
-        //        if (conectar.State == ConnectionState.Open)
-        //            conectar.Close();
-        //    }
-        //}
-       
+                return hr.ToArray();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
 
         #endregion
 

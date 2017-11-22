@@ -68,13 +68,13 @@ namespace Schedule_Assistant.componenetes_graficos
                 MessageBox.Show("Hora no disponible para esta clase", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (this.clase != null)
+            else if (this.clase != null || this.Text != "")
             {
-                ///SOBRE ESCRIBE HORAC YA CREADA, CASI
+                ///SOBRE ESCRIBE UN HORARIO
                 DialogResult dialogResult = MessageBox.Show("¿Desea cambiar la clase?", "ADVERTENCIA", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //no FUNCA ESTA POPO
+                    //BORRA LA REMPLAZADA
                     Conector.BorrarHorario(dia,hora, grupo);
                     this.clase = clase;
 
