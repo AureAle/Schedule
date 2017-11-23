@@ -435,7 +435,7 @@ namespace Schedule_Assistant
                 comando.CommandText = "SELECT * FROM Horario WHERE grupo ="+idgrupo;
                 conectar.Open();
                 OleDbDataReader lector = comando.ExecuteReader();
-                lector.Read();
+                
                 while (lector.Read())
                 {
                     int id = (int)lector["ID"];
@@ -464,7 +464,7 @@ namespace Schedule_Assistant
                 comando.CommandText = "SELECT * FROM Horario WHERE NOT grupo =" + idgrupo+"AND clase="+idClase;
                 conectar.Open();
                 OleDbDataReader lector = comando.ExecuteReader();
-                lector.Read();
+                
                 while (lector.Read())
                 {
                     
