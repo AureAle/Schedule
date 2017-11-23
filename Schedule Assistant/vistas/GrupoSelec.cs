@@ -27,7 +27,7 @@ namespace Schedule_Assistant
             {
                 Grupo grp = lstGrupos.SelectedItem as Grupo;
                 idGrupo = grp.Id;
-                MessageBox.Show(idGrupo.ToString()); 
+                 
                 this.Close();
                 cerro = false; 
             }

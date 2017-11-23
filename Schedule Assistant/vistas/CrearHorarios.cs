@@ -69,10 +69,14 @@ namespace Schedule_Assistant.vistas
                 BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(Conector.LeerTodosHorarios(gs.getID())[i].Dia - 1, Conector.LeerTodosHorarios(gs.getID())[i].Hora - 1) as BotonHoraC;
                 //MessageBox.Show(Conector.LeerTodosHorarios(gs.getID())[i].Clase.ToString());
                 boton.Text =
-                Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor( Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).Profesor) + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(gs.getID())[i].Aula);
+                Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor( Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).Profesor)
+                + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(gs.getID())[i].Aula);
             }
         }
 
+        /// <summary>
+        /// Carga los botones del tipo clase en el panel
+        /// </summary>
         private void CargarBotones()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -98,7 +102,12 @@ namespace Schedule_Assistant.vistas
 
                 return false;
             }
-            else if (ClaseSelec.Disponibles < 1) 
+            else if(botonsito.BackColor==Color.DimGray)
+            {
+                MessageBox.Show("Profesor ocupado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (ClaseSelec.Disponibles < 1)
             {
                 ClaseSelec = null;
                 foreach (HoraNoDisponible hora in horasNoDisponibles)
@@ -138,7 +147,7 @@ namespace Schedule_Assistant.vistas
                     foreach (HoraNoDisponible hnd in profeOcupado)
                     {
                         BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(hnd.Dia - 1, hnd.Hora - 1) as BotonHoraC;
-                        boton.BackColor = Color.MistyRose;
+                        boton.BackColor = Color.DimGray;
                     }
                 }
                 else
@@ -147,7 +156,7 @@ namespace Schedule_Assistant.vistas
                     foreach (HoraNoDisponible hnd in profeOcupado)
                     {
                         BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(hnd.Dia - 1, hnd.Hora - 1) as BotonHoraC;
-                        boton.BackColor = Color.MistyRose;
+                        boton.BackColor = Color.DimGray;
                     }
                 }
             }
