@@ -18,6 +18,7 @@ namespace Schedule_Assistant.vistas
         private botonClase ClaseSelec;
         private HoraNoDisponible[] horasNoDisponibles;
         private Clase[] clap;
+        private HoraNoDisponible[] profeOcupado;
         public Boolean editar = false;
         public Boolean crear = false;
 
@@ -127,21 +128,31 @@ namespace Schedule_Assistant.vistas
             BorrarColor();
 
             ClaseSelec = sender as botonClase;
-            
-            //clap = Conector.leerClasesde(ClaseSelec.Clase.Profesor);
-            //foreach (Clase c in clap)
-            //{
-            //    if (editar)
-            //    {
-            //        Conector.LeerTodosHorariosMenosEste(gs.getID(), c.Id);
-            //    }
-            //    else
-            //    {
 
-            //    }
-            //}
-           
-            
+            clap = Conector.leerClasesde(ClaseSelec.Clase.Profesor);
+            foreach (Clase c in clap)
+            {
+                if (editar)
+                {
+                    profeOcupado= Conector.LeerTodosHorariosMenosEste(gs.getID(), c.Id);
+                    foreach (HoraNoDisponible hnd in profeOcupado)
+                    {
+                        BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(hnd.Dia - 1, hnd.Hora - 1) as BotonHoraC;
+                        boton.BackColor = Color.MistyRose;
+                    }
+                }
+                else
+                {
+                    profeOcupado = Conector.LeerTodosHorariosMenosEste(Conector.TodosGrupo().Length - 1, c.Id);
+                    foreach (HoraNoDisponible hnd in profeOcupado)
+                    {
+                        BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(hnd.Dia - 1, hnd.Hora - 1) as BotonHoraC;
+                        boton.BackColor = Color.MistyRose;
+                    }
+                }
+            }
+
+
             horasNoDisponibles = Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor);
             
             foreach (HoraNoDisponible horaND in horasNoDisponibles)
