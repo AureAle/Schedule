@@ -455,6 +455,35 @@ namespace Schedule_Assistant
                     conectar.Close();
             }
         }
+        public static HoraNoDisponible[] LeerTodosHorariosMenosEste(int idgrupo, int idClase)
+        {
+            List<HoraNoDisponible> hr = new List<HoraNoDisponible>();
+            try
+            {
+
+                comando.CommandText = "SELECT * FROM Horario WHERE NOT grupo =" + idgrupo+"AND clase="+idClase;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                lector.Read();
+                while (lector.Read())
+                {
+                    
+                    int dia = (int)lector["dia"];
+                    int hora = (int)lector["hora"];
+
+                    HoraNoDisponible s = new HoraNoDisponible(hora,dia);
+                    hr.Add(s);
+                }
+
+                return hr.ToArray();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
 
 
         #endregion

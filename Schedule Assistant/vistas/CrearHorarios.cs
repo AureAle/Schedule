@@ -17,6 +17,7 @@ namespace Schedule_Assistant.vistas
         public Boolean Cerro=false;
         private botonClase ClaseSelec;
         private HoraNoDisponible[] horasNoDisponibles;
+        private Clase[] clap;
         public Boolean editar = false;
         public Boolean crear = false;
 
@@ -126,8 +127,23 @@ namespace Schedule_Assistant.vistas
             BorrarColor();
 
             ClaseSelec = sender as botonClase;
+            
+            //clap = Conector.leerClasesde(ClaseSelec.Clase.Profesor);
+            //foreach (Clase c in clap)
+            //{
+            //    if (editar)
+            //    {
+            //        Conector.LeerTodosHorariosMenosEste(gs.getID(), c.Id);
+            //    }
+            //    else
+            //    {
 
+            //    }
+            //}
+           
+            
             horasNoDisponibles = Conector.leerHorasNoDisponiblesDe(ClaseSelec.Clase.Profesor);
+            
             foreach (HoraNoDisponible horaND in horasNoDisponibles)
             {
                 BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(horaND.Dia - 1, horaND.Hora - 1) as BotonHoraC;
