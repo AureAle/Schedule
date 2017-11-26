@@ -455,6 +455,36 @@ namespace Schedule_Assistant
                     conectar.Close();
             }
         }
+
+        public static Horarios[] LeerTodosHorariosPorClase(int idclase)
+        {
+            List<Horarios> hr = new List<Horarios>();
+            try
+            {
+                comando.CommandText = "SELECT * FROM Horario WHERE clase =" + idclase;
+                conectar.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    int id = (int)lector["ID"];
+                    int dia = (int)lector["dia"];
+                    int hora = (int)lector["hora"];
+                    int clase = (int)lector["clase"];
+                    int aula = (int)lector["aula"];
+                    Horarios h = new Horarios(id, dia, hora, clase, aula);
+                    hr.Add(h);
+                }
+
+                return hr.ToArray();
+            }
+            finally
+            {
+                if (conectar.State == ConnectionState.Open)
+                    conectar.Close();
+            }
+        }
+
         public static HoraNoDisponible[] LeerTodosHorariosMenosEste(int idgrupo, int idClase)
         {
             List<HoraNoDisponible> hr = new List<HoraNoDisponible>();

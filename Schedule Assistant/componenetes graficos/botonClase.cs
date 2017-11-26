@@ -30,7 +30,7 @@ namespace Schedule_Assistant.componenetes_graficos
         public botonClase(Clase clase)
         {
             this.clase = clase;
-            this.disponibles = clase.Creditos;
+            this.disponibles = clase.Creditos- Conector.LeerTodosHorariosPorClase(clase.Id).Length; 
             //this.AutoSize = true;
 
             cargarTexto();

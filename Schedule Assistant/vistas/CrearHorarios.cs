@@ -84,7 +84,9 @@ namespace Schedule_Assistant.vistas
             Clase[] clases = Conector.leerTodasClases();
             foreach (Clase clase in clases)
             {
+                
                 botonClase boton = new botonClase(clase);
+                
                 boton.MouseClick += btnClase_Click;
                 boton.Size = new Size(157, 50);
                 boton.FlatStyle = FlatStyle.Flat;
@@ -229,7 +231,7 @@ namespace Schedule_Assistant.vistas
                                     ClaseSelec.cargarTexto();
                                 }
                             }
-                            
+                            CargarBotones();
                         }
                         else
                         {
