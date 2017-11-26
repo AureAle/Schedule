@@ -6,6 +6,9 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using Schedule_Assistant.componenetes_graficos;
 
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace Schedule_Assistant.vistas
 {
     
@@ -301,7 +304,62 @@ namespace Schedule_Assistant.vistas
             }
         }
 
-#endregion
+        #endregion
 
+        private void bttnExportar_Click(object sender, EventArgs e)
+        {
+            Excel.Application oApp;
+            Excel.Worksheet oSheet;
+            Excel.Workbook oBook;
+
+            oApp = new Excel.Application();
+            oBook = oApp.Workbooks.Add();
+            oSheet = (Excel.Worksheet)oBook.Worksheets.get_Item(1);
+
+            oSheet.Cells[1, 2] = "Horario";
+            oSheet.Cells[1, 3] = "del grupo:";
+            
+            if(editar)
+            {
+                oSheet.Cells[1, 4] = Conector.leerGrupoPorID(gs.getID());
+                for (int i = 0; i < Conector.LeerTodosHorarios(gs.getID()).Length; i++)
+                {
+
+                    oSheet.Cells[Conector.LeerTodosHorarios(gs.getID())[i].Hora+3, Conector.LeerTodosHorarios(gs.getID())[i].Dia+1] = Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor(Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).Profesor)
+                    + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(gs.getID())[i].Aula);
+
+                }
+
+            }
+            else
+            {
+                oSheet.Cells[1, 4] = Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Nombre;
+
+                for (int i = 0; i < Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id).Length; i++)
+                {
+
+                    oSheet.Cells[Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Hora + 3, Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Dia + 1] = Conector.leerClase(Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Clase).NombreMateria + Environment.NewLine + 
+                        Conector.leerNombreProfesor(Conector.leerClase(Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Clase).Profesor)
+                    + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Aula);
+
+                }
+            }
+            oSheet.Cells[3, 1] = "Hora";
+            oSheet.Cells[3, 2] = "Lunes";
+            oSheet.Cells[3, 3] = "Martes";
+            oSheet.Cells[3, 4] = "Miercoles";
+            oSheet.Cells[3, 5] = "Jueves";
+            oSheet.Cells[3, 6] = "Viernes";
+
+            oSheet.Cells[4, 1] = "2:10-3:00 PM";
+            oSheet.Cells[5, 1] = "3:00-3:50 PM";
+            oSheet.Cells[6, 1] = "3:50-4:40 PM";
+            oSheet.Cells[7, 1] = "5:10-6:00 PM";
+            oSheet.Cells[8, 1] = "6:00-7:40 PM";
+            oSheet.Cells[9, 1] = "7:40-8:30 PM";
+
+            oBook.Close();
+            oApp.Quit();
+        }
     }
 }

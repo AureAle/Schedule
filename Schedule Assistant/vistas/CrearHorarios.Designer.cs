@@ -34,6 +34,7 @@
             this.pnlProfe = new System.Windows.Forms.Panel();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.bttnExportar = new System.Windows.Forms.Button();
             this.botonClase1 = new Schedule_Assistant.componenetes_graficos.botonClase();
             this.panel1.SuspendLayout();
             this.pnlProfe.SuspendLayout();
@@ -86,11 +87,11 @@
             // lblGrupo
             // 
             this.lblGrupo.AutoSize = true;
-            this.lblGrupo.Font = new System.Drawing.Font("Arial Unicode MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrupo.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblGrupo.Location = new System.Drawing.Point(504, 4);
             this.lblGrupo.Name = "lblGrupo";
-            this.lblGrupo.Size = new System.Drawing.Size(268, 50);
+            this.lblGrupo.Size = new System.Drawing.Size(264, 42);
             this.lblGrupo.TabIndex = 1;
             this.lblGrupo.Text = "Horario Grupo:";
             // 
@@ -102,6 +103,16 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 626);
             this.flowLayoutPanel1.TabIndex = 34;
+            // 
+            // bttnExportar
+            // 
+            this.bttnExportar.Location = new System.Drawing.Point(12, 12);
+            this.bttnExportar.Name = "bttnExportar";
+            this.bttnExportar.Size = new System.Drawing.Size(75, 23);
+            this.bttnExportar.TabIndex = 2;
+            this.bttnExportar.Text = "Exportar";
+            this.bttnExportar.UseVisualStyleBackColor = true;
+            this.bttnExportar.Click += new System.EventHandler(this.bttnExportar_Click);
             // 
             // botonClase1
             // 
@@ -119,7 +130,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(891, 630);
+            this.ClientSize = new System.Drawing.Size(908, 647);
+            this.Controls.Add(this.bttnExportar);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnlProfe);
             this.Controls.Add(this.panel1);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tablePanelHorairo;
         private componenetes_graficos.botonClase botonClase1;
+        private System.Windows.Forms.Button bttnExportar;
     }
 }
