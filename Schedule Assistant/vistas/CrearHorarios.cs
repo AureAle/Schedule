@@ -20,6 +20,7 @@ namespace Schedule_Assistant.vistas
         public Boolean Cerro=false;
         private botonClase ClaseSelec;
         private HoraNoDisponible[] horasNoDisponibles;
+        private Horarios[] h;
         private Clase[] clap;
         private HoraNoDisponible[] profeOcupado;
         public Boolean editar = false;
@@ -67,13 +68,14 @@ namespace Schedule_Assistant.vistas
         public void CargarHorarios()
         {
             //MessageBox.Show(Conector.LeerTodosHorarios(gs.getID()).Length.ToString());
-            for(int i=0; i< Conector.LeerTodosHorarios(gs.getID()).Length; i++)
+            h = Conector.LeerTodosHorarios(gs.getID());
+            for (int i=0; i< h.Length; i++)
             {
-                BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(Conector.LeerTodosHorarios(gs.getID())[i].Dia - 1, Conector.LeerTodosHorarios(gs.getID())[i].Hora - 1) as BotonHoraC;
+                BotonHoraC boton = tablePanelHorairo.GetControlFromPosition(h[i].Dia - 1, h[i].Hora - 1) as BotonHoraC;
                 //MessageBox.Show(Conector.LeerTodosHorarios(gs.getID())[i].Clase.ToString());
                 boton.Text =
-                Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor( Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).Profesor)
-                + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(gs.getID())[i].Aula);
+                Conector.leerClase(h[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor( Conector.leerClase(h[i].Clase).Profesor)
+                + Environment.NewLine + Conector.leerAulaPorId(h[i].Aula);
             }
         }
 
@@ -322,11 +324,12 @@ namespace Schedule_Assistant.vistas
             if(editar)
             {
                 oSheet.Cells[1, 4] = Conector.leerGrupoPorID(gs.getID());
-                for (int i = 0; i < Conector.LeerTodosHorarios(gs.getID()).Length; i++)
+                h = Conector.LeerTodosHorarios(gs.getID());
+                for (int i = 0; i < h.Length; i++)
                 {
 
-                    oSheet.Cells[Conector.LeerTodosHorarios(gs.getID())[i].Hora+3, Conector.LeerTodosHorarios(gs.getID())[i].Dia+1] = Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor(Conector.leerClase(Conector.LeerTodosHorarios(gs.getID())[i].Clase).Profesor)
-                    + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(gs.getID())[i].Aula);
+                    oSheet.Cells[h[i].Hora+3, h[i].Dia+1] = Conector.leerClase(h[i].Clase).NombreMateria + Environment.NewLine + Conector.leerNombreProfesor(Conector.leerClase(h[i].Clase).Profesor)
+                    + Environment.NewLine + Conector.leerAulaPorId(h[i].Aula);
 
                 }
 
@@ -334,13 +337,13 @@ namespace Schedule_Assistant.vistas
             else
             {
                 oSheet.Cells[1, 4] = Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Nombre;
-
-                for (int i = 0; i < Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id).Length; i++)
+                h = Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id);
+                for (int i = 0; i < h.Length; i++)
                 {
 
-                    oSheet.Cells[Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Hora + 3, Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Dia + 1] = Conector.leerClase(Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Clase).NombreMateria + Environment.NewLine + 
-                        Conector.leerNombreProfesor(Conector.leerClase(Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Clase).Profesor)
-                    + Environment.NewLine + Conector.leerAulaPorId(Conector.LeerTodosHorarios(Conector.TodosGrupo()[Conector.TodosGrupo().Length - 1].Id)[i].Aula);
+                    oSheet.Cells[h[i].Hora + 3, h[i].Dia + 1] = Conector.leerClase(h[i].Clase).NombreMateria + Environment.NewLine + 
+                        Conector.leerNombreProfesor(Conector.leerClase(h[i].Clase).Profesor)
+                    + Environment.NewLine + Conector.leerAulaPorId(h[i].Aula);
 
                 }
             }
