@@ -318,6 +318,41 @@ namespace Schedule_Assistant.vistas
             oBook = oApp.Workbooks.Add();
             oSheet = (Excel.Worksheet)oBook.Worksheets.get_Item(1);
 
+            //rango de celdas
+            Excel.Range rango = oSheet.Range["A1", "F9"];
+            //estilo del borde 
+            rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+            rango.BorderAround(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlMedium, Excel.XlColorIndex.xlColorIndexAutomatic, Excel.XlColorIndex.xlColorIndexAutomatic);
+            //estilo de fuente
+            oSheet.Rows.Cells.Font.Size = 11;
+            oSheet.Rows.Cells.Font.Name = "Calibri";
+            //ancho de columnas 
+            rango.ColumnWidth = 20;
+            //text align
+            rango.HorizontalAlignment = HorizontalAlignment.Center;
+            rango.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+           
+            //rango.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.AliceBlue);
+
+
+            Excel.Range rangoTitulo = oSheet.Range["B1", "D1"];
+            Excel.Range rangoDias = oSheet.Range["A3", "F3"];
+            Excel.Range rangoGrupo = oSheet.Range["A1","F2"];
+            Excel.Range rangoCampos = oSheet.Range["A4", "F9"];
+
+            //color de Horario y grupo
+            rangoTitulo.Font.Size = 14;
+            rangoTitulo.Font.Bold = true;
+            rangoDias.Font.Bold = true;
+            rangoDias.Font.Size = 14;
+            rangoDias.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.DarkBlue);
+            rangoGrupo.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Silver);
+            rangoDias.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.SkyBlue);
+            rangoCampos.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.AliceBlue);
+
+            
+
             oSheet.Cells[1, 2] = "Horario";
             oSheet.Cells[1, 3] = "del grupo:";
             
@@ -350,7 +385,7 @@ namespace Schedule_Assistant.vistas
             oSheet.Cells[3, 1] = "Hora";
             oSheet.Cells[3, 2] = "Lunes";
             oSheet.Cells[3, 3] = "Martes";
-            oSheet.Cells[3, 4] = "Miercoles";
+            oSheet.Cells[3, 4] = "Miércoles";
             oSheet.Cells[3, 5] = "Jueves";
             oSheet.Cells[3, 6] = "Viernes";
 

@@ -203,3 +203,4 @@ C:\Users\USUARIO\Downloads\Schedule-master(1)\Schedule-master\Schedule Assistant
 C:\Users\USUARIO\Downloads\Schedule-master(1)\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.exe
 C:\Users\USUARIO\Downloads\Schedule-master(1)\Schedule-master\Schedule Assistant\obj\Debug\Schedule Assistant.pdb
 C:\Users\xboxm\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.ResolveComReference.cache
+C:\Users\auren\Desktop\Schedule\Schedule Assistant\obj\Debug\Schedule Assistant.csproj.ResolveComReference.cache
