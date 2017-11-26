@@ -329,7 +329,7 @@ namespace Schedule_Assistant.vistas
             //ancho de columnas 
             rango.ColumnWidth = 20;
             //text align
-            rango.HorizontalAlignment = HorizontalAlignment.Center;
+            //rango.HorizontalAlignment = HorizontalAlignment.Center;
             rango.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
            

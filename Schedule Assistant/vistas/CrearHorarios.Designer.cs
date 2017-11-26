@@ -34,8 +34,8 @@
             this.pnlProfe = new System.Windows.Forms.Panel();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.bttnExportar = new System.Windows.Forms.Button();
             this.botonClase1 = new Schedule_Assistant.componenetes_graficos.botonClase();
+            this.bttnExportar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlProfe.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -104,16 +104,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 626);
             this.flowLayoutPanel1.TabIndex = 34;
             // 
-            // bttnExportar
-            // 
-            this.bttnExportar.Location = new System.Drawing.Point(12, 12);
-            this.bttnExportar.Name = "bttnExportar";
-            this.bttnExportar.Size = new System.Drawing.Size(75, 23);
-            this.bttnExportar.TabIndex = 2;
-            this.bttnExportar.Text = "Exportar";
-            this.bttnExportar.UseVisualStyleBackColor = true;
-            this.bttnExportar.Click += new System.EventHandler(this.bttnExportar_Click);
-            // 
             // botonClase1
             // 
             this.botonClase1.Disponibles = 0;
@@ -123,6 +113,20 @@
             this.botonClase1.TabIndex = 0;
             this.botonClase1.Text = "botonClase1";
             this.botonClase1.UseVisualStyleBackColor = true;
+            // 
+            // bttnExportar
+            // 
+            this.bttnExportar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bttnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnExportar.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnExportar.ForeColor = System.Drawing.Color.SteelBlue;
+            this.bttnExportar.Location = new System.Drawing.Point(3, 12);
+            this.bttnExportar.Name = "bttnExportar";
+            this.bttnExportar.Size = new System.Drawing.Size(157, 34);
+            this.bttnExportar.TabIndex = 2;
+            this.bttnExportar.Text = "Exportar a Excel";
+            this.bttnExportar.UseVisualStyleBackColor = false;
+            this.bttnExportar.Click += new System.EventHandler(this.bttnExportar_Click);
             // 
             // CrearHorarios
             // 
